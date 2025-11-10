@@ -1,30 +1,30 @@
 {
   "metadata": {
     "title": "AtavicoLabs — Web & Mobile Apps for SMEs | Fast & Scalable Development",
-    "description": "Turn your ideas into working digital products. Web apps, mobile apps and SaaS platforms with polished design, full-stack development and fast delivery. No surprises, just tangible results.",
+    "description": "Turn your ideas into working digital products. Web apps, mobile apps, and SaaS platforms with polished design, full-stack development and fast delivery. No surprises, just tangible results.",
     "keywords": "web app development, Flutter mobile apps, fast MVP, full-stack development, UX design, SaaS platforms, SME software development, web agency Italy"
   },
   "hero": {
     "title": "Turn your idea into a working digital product",
-    "subtitle": "We build scalable web and mobile apps with polished design and fast delivery. No surprises, just tangible results.",
-    "cta": "Start Your Project",
-    "scrollIndicator": "Learn More"
+    "subtitle": "We build scalable web and mobile apps, ready to grow your business. No surprises, just tangible results delivered fast.",
+    "cta": "Start your project today",
+    "scrollIndicator": "Learn more"
   },
   "about": {
     "title": "About Us",
-    "subtitle": "We help SMEs launch working digital products quickly: web apps, mobile apps, and SaaS platforms. Our approach combines polished UX design and full-stack development, ensuring transparency, reliability, and speed at every step.",
+    "subtitle": "We help SMEs launch working digital products fast: web apps, mobile apps, and SaaS platforms. Our approach combines polished UX design and full-stack development, ensuring transparency, clear milestones, and no surprises at every step.",
     "technologies": [
       {
         "title": "User-Centered Design",
-        "description": "Intuitive interfaces that people love to use. We design modern, consistent, and accessible UX/UI experiences across all devices."
+        "description": "Intuitive, accessible interfaces people love to use. Modern, consistent UX/UI across all devices."
       },
       {
         "title": "Full-Stack Development",
-        "description": "We build complete products with Next.js, React and Node.js. Fast, scalable web apps optimized for performance."
+        "description": "Fast, scalable web apps built with Next.js, React, and Node.js. Robust backends optimized for performance."
       },
       {
         "title": "Native Mobile Apps",
-        "description": "iOS and Android apps with a single Flutter codebase. Native performance, smooth experience and optimized costs."
+        "description": "iOS and Android apps from a single Flutter codebase, delivering native performance, smooth experience, and optimized costs."
       }
     ]
   },
@@ -35,7 +35,7 @@
     "items": [
       {
         "title": "MVP Web App",
-        "description": "Launch your idea with a solid, scalable MVP. Intuitive design, robust backend, and fast delivery.",
+        "description": "A solid, scalable MVP, ready to test your market immediately. Intuitive design, robust backend, and fast delivery.",
         "features": [
           "Full-stack architecture",
           "Responsive and intuitive design",
@@ -91,7 +91,7 @@
   },
   "cta": {
     "title": "Ready to start?",
-    "subtitle": "Contact us and let's turn your idea into a real digital product, fast.",
+    "subtitle": "Contact us today and get a working digital product fast.",
     "email": "contact@atavicolabs.com",
     "phone": "+39 366 454 3662"
   },
