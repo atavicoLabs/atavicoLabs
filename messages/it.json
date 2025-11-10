@@ -73,19 +73,19 @@
     "subtitle": "Una selezione di prodotti digitali realizzati con cura e visione",
     "items": [
       {
-        "title": "TaskFlow SaaS",
-        "description": "Piattaforma di gestione attività per team distribuiti, con collaborazione in tempo reale e interfaccia pulita.",
-        "tags": ["Next.js", "PostgreSQL", "WebSockets"]
+        "title": "Syncora",
+        "description": "Syncora è una piattaforma intelligente per la pianificazione del lavoro. Grazie all'AI, crea turni ottimizzati analizzando disponibilità e ruoli, riducendo errori e risparmiando ore di gestione.",
+        "tags": ["Next.js", "Node.js", "MongoDB", "OpenAI API"]
       },
       {
-        "title": "FitTrack Mobile",
-        "description": "App fitness multipiattaforma con piani personalizzati e analisi avanzate.",
-        "tags": ["Flutter", "Firebase", "ML Kit"]
+        "title": "Nuvia",
+        "description": "Nuvia trasforma i dati ambientali in esperienze visive chiare e coinvolgenti. Una dashboard intelligente per monitorare consumi, emissioni e KPI ESG in tempo reale.",
+        "tags": ["React", "D3.js", "PostgreSQL", "TensorFlow"]
       },
       {
-        "title": "ShopLocal Marketplace",
-        "description": "Marketplace che connette piccole attività con clienti locali, pensato per crescere in modo scalabile.",
-        "tags": ["React", "Node.js", "Stripe"]
+        "title": "Loopin",
+        "description": "Loopin è l'app che rivoluziona il feedback creativo. Consente a team e creator di commentare e collaborare in modo visivo e immediato, accelerando i cicli di revisione.",
+        "tags": ["Flutter", "Firebase", "WebSockets"]
       }
     ]
   },
