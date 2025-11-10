@@ -1,0 +1,113 @@
+{
+  "hero": {
+    "title": "Turn your idea into a working digital product",
+    "subtitle": "We build scalable web and mobile apps with polished design and fast delivery. No surprises, just tangible results.",
+    "cta": "Start Your Project",
+    "scrollIndicator": "Learn More"
+  },
+  "about": {
+    "title": "About Us",
+    "subtitle": "We help SMEs launch working digital products quickly: web apps, mobile apps, and SaaS platforms. Our approach combines polished UX design and full-stack development, ensuring transparency, reliability, and speed at every step.",
+    "technologies": [
+      {
+        "title": "User-Centered Design",
+        "description": "Intuitive interfaces that people love to use. We design modern, consistent, and accessible UX/UI experiences across all devices."
+      },
+      {
+        "title": "Full-Stack Development",
+        "description": "We build complete products with Next.js, React and Node.js. Fast, scalable web apps optimized for performance."
+      },
+      {
+        "title": "Native Mobile Apps",
+        "description": "iOS and Android apps with a single Flutter codebase. Native performance, smooth experience and optimized costs."
+      }
+    ]
+  },
+  "services": {
+    "title": "Services",
+    "subtitle": "Choose the solution that fits your project",
+    "mostPopular": "Most Popular",
+    "items": [
+      {
+        "title": "MVP Web App",
+        "description": "Launch your idea with a solid, scalable MVP. Intuitive design, robust backend, and fast delivery.",
+        "features": [
+          "Full-stack architecture",
+          "Responsive and intuitive design",
+          "Database integration",
+          "Secure authentication"
+        ],
+        "price": "from €5,000"
+      },
+      {
+        "title": "Flutter Mobile App",
+        "description": "iOS and Android apps from a single codebase, delivering native performance and premium UX.",
+        "features": [
+          "iOS and Android",
+          "Native performance",
+          "Push notifications",
+          "Offline support"
+        ],
+        "price": "from €6,000"
+      },
+      {
+        "title": "Full Digital Product",
+        "description": "Web + Mobile + integrated backend, ready to scale and grow your business.",
+        "features": [
+          "Web + Mobile App",
+          "Unified backend",
+          "Admin dashboards",
+          "API integration"
+        ],
+        "price": "from €10,000"
+      }
+    ]
+  },
+  "portfolio": {
+    "title": "Recent Projects",
+    "subtitle": "A selection of digital products built with care and vision",
+    "items": [
+      {
+        "title": "TaskFlow SaaS",
+        "description": "Task management platform for distributed teams, with real-time collaboration and clean interface.",
+        "tags": ["Next.js", "PostgreSQL", "WebSockets"]
+      },
+      {
+        "title": "FitTrack Mobile",
+        "description": "Cross-platform fitness app with personalized workout plans and advanced analytics.",
+        "tags": ["Flutter", "Firebase", "ML Kit"]
+      },
+      {
+        "title": "ShopLocal Marketplace",
+        "description": "Marketplace connecting small businesses with local customers, designed to scale.",
+        "tags": ["React", "Node.js", "Stripe"]
+      }
+    ]
+  },
+  "cta": {
+    "title": "Ready to start?",
+    "subtitle": "Contact us and let's turn your idea into a real digital product, fast.",
+    "email": "contact@atavicolabs.com",
+    "phone": "+39 366 454 3662"
+  },
+  "footer": {
+    "brand": "AtavicoLabs",
+    "description": "We design and develop end-to-end digital products — from MVPs to complete platforms. A creative studio of technology and design for ambitious teams.",
+    "quickLinks": {
+      "title": "Quick Links",
+      "about": "About Us",
+      "services": "Services",
+      "portfolio": "Portfolio",
+      "contact": "Contact"
+    },
+    "contact": {
+      "title": "Contact",
+      "location": "Location: Italy"
+    },
+    "copyright": "© {year} AtavicoLabs. All rights reserved.",
+    "legal": {
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service"
+    }
+  }
+}

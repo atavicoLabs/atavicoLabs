@@ -2,8 +2,11 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 
 export default function Hero() {
+  const t = useTranslations('hero');
+  
   return (
     <section className="relative min-h-screen gradient-bg overflow-hidden">
       {/* Animated background elements */}
@@ -28,7 +31,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            We build digital products end-to-end — from database to design.
+            {t('subtitle')}
           </motion.p>
 
           <motion.div
@@ -40,7 +43,7 @@ export default function Hero() {
               href="#contact"
               className="inline-block px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white text-lg font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-blue-500/50"
             >
-              Let&apos;s Build Together
+              {t('cta')}
             </Link>
           </motion.div>
         </motion.div>
@@ -54,7 +57,7 @@ export default function Hero() {
         transition={{ duration: 0.8, delay: 1 }}
       >
         <div className="flex flex-col items-center gap-2">
-          <span className="text-gray-400 text-sm">Scroll to explore</span>
+          <span className="text-gray-400 text-sm">{t('scrollIndicator')}</span>
           <div className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center">
             <motion.div
               className="w-1.5 h-3 bg-blue-500 rounded-full mt-2"

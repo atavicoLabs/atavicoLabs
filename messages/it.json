@@ -1,0 +1,113 @@
+{
+  "hero": {
+    "title": "Trasforma la tua idea in un prodotto digitale funzionante",
+    "subtitle": "Creiamo web e mobile app scalabili, con design curato e consegna rapida. Nessuna sorpresa, solo risultati concreti.",
+    "cta": "Inizia il progetto",
+    "scrollIndicator": "Scopri di più"
+  },
+  "about": {
+    "title": "Chi Siamo",
+    "subtitle": "Aiutiamo PMI a lanciare rapidamente prodotti digitali funzionanti: web app, app mobile e piattaforme SaaS. Il nostro approccio combina design UX curato e sviluppo full-stack, garantendo trasparenza, sicurezza e velocità in ogni fase.",
+    "technologies": [
+      {
+        "title": "Design Centrato sull'Utente",
+        "description": "Interfacce intuitive che le persone amano usare. Progettiamo esperienze UX/UI moderne, coerenti e accessibili su tutti i dispositivi."
+      },
+      {
+        "title": "Sviluppo Full-Stack",
+        "description": "Costruiamo prodotti completi con Next.js, React e Node.js. App web veloci, scalabili e ottimizzate per le performance."
+      },
+      {
+        "title": "App Mobile Native",
+        "description": "App iOS e Android con un'unica base di codice Flutter. Performance native, esperienza fluida e costi ottimizzati."
+      }
+    ]
+  },
+  "services": {
+    "title": "Servizi",
+    "subtitle": "Scegli la soluzione più adatta al tuo progetto",
+    "mostPopular": "Più Richiesto",
+    "items": [
+      {
+        "title": "MVP Web App",
+        "description": "Lancia la tua idea con un MVP solido e scalabile. Design intuitivo, backend robusto e consegna rapida.",
+        "features": [
+          "Architettura full-stack",
+          "Design reattivo e intuitivo",
+          "Integrazione database",
+          "Autenticazione sicura"
+        ],
+        "price": "a partire da €5.000"
+      },
+      {
+        "title": "App Mobile Flutter",
+        "description": "App iOS e Android da un'unica base di codice, con prestazioni native e UX premium.",
+        "features": [
+          "iOS e Android",
+          "Performance nativa",
+          "Notifiche push",
+          "Supporto offline"
+        ],
+        "price": "a partire da €6.000"
+      },
+      {
+        "title": "Prodotto Digitale Completo",
+        "description": "Web + Mobile + backend integrato, pronto a scalare e a far crescere il tuo business.",
+        "features": [
+          "App Web + Mobile",
+          "Backend unificato",
+          "Dashboard amministrative",
+          "Integrazione API"
+        ],
+        "price": "a partire da €10.000"
+      }
+    ]
+  },
+  "portfolio": {
+    "title": "Progetti Recenti",
+    "subtitle": "Una selezione di prodotti digitali realizzati con cura e visione",
+    "items": [
+      {
+        "title": "TaskFlow SaaS",
+        "description": "Piattaforma di gestione attività per team distribuiti, con collaborazione in tempo reale e interfaccia pulita.",
+        "tags": ["Next.js", "PostgreSQL", "WebSockets"]
+      },
+      {
+        "title": "FitTrack Mobile",
+        "description": "App fitness multipiattaforma con piani di allenamento personalizzati e analisi avanzate.",
+        "tags": ["Flutter", "Firebase", "ML Kit"]
+      },
+      {
+        "title": "ShopLocal Marketplace",
+        "description": "Marketplace che connette piccole attività con clienti locali, pensato per crescere in modo scalabile.",
+        "tags": ["React", "Node.js", "Stripe"]
+      }
+    ]
+  },
+  "cta": {
+    "title": "Pronto a partire?",
+    "subtitle": "Contattaci e trasformiamo la tua idea in un prodotto digitale reale, in tempi rapidi.",
+    "email": "contact@atavicolabs.com",
+    "phone": "+39 366 454 3662"
+  },
+  "footer": {
+    "brand": "AtavicoLabs",
+    "description": "Progettiamo e sviluppiamo prodotti digitali end-to-end — dagli MVP alle piattaforme complete. Uno studio creativo di tecnologia e design per team ambiziosi.",
+    "quickLinks": {
+      "title": "Link Rapidi",
+      "about": "Chi Siamo",
+      "services": "Servizi",
+      "portfolio": "Portfolio",
+      "contact": "Contatti"
+    },
+    "contact": {
+      "title": "Contatti",
+      "location": "Sede: Italia"
+    },
+    "copyright": "© {year} AtavicoLabs. Tutti i diritti riservati.",
+    "legal": {
+      "privacy": "Privacy Policy",
+      "terms": "Termini di Servizio"
+    }
+  }
+}

@@ -4,31 +4,18 @@ import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 
-const projects = [
-  {
-    title: 'TaskFlow SaaS',
-    description: 'A modern task management platform for remote teams with real-time collaboration.',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80',
-    tags: ['Next.js', 'PostgreSQL', 'WebSockets'],
-  },
-  {
-    title: 'FitTrack Mobile',
-    description: 'Cross-platform fitness tracking app with personalized workout plans and analytics.',
-    image: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&q=80',
-    tags: ['Flutter', 'Firebase', 'ML Kit'],
-  },
-  {
-    title: 'ShopLocal Marketplace',
-    description: 'E-commerce platform connecting local businesses with customers in their area.',
-    image: 'https://images.unsplash.com/photo-1557821552-17105176677c?w=800&q=80',
-    tags: ['React', 'Node.js', 'Stripe'],
-  },
+const images = [
+  'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80',
+  'https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&q=80',
+  'https://images.unsplash.com/photo-1557821552-17105176677c?w=800&q=80',
 ];
 
 export default function Portfolio() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
+  const t = useTranslations('portfolio');
 
   return (
     <section id="portfolio" className="py-24 px-4 sm:px-6 lg:px-8 bg-slate-900/50">
@@ -40,16 +27,16 @@ export default function Portfolio() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">Recent Projects</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">{t('title')}</h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Showcasing our expertise in building scalable digital products
+            {t('subtitle')}
           </p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
+          {[0, 1, 2].map((index) => (
             <motion.div
-              key={project.title}
+              key={index}
               initial={{ opacity: 0, y: 50 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
               transition={{ duration: 0.8, delay: index * 0.2 }}
@@ -57,8 +44,8 @@ export default function Portfolio() {
             >
               <div className="relative h-64 overflow-hidden">
                 <Image
-                  src={project.image}
-                  alt={project.title}
+                  src={images[index]}
+                  alt={t(`items.${index}.title`)}
                   fill
                   className="object-cover transition-transform duration-300 group-hover:scale-110"
                 />
@@ -66,16 +53,16 @@ export default function Portfolio() {
               </div>
 
               <div className="p-6">
-                <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
-                <p className="text-gray-400 mb-4">{project.description}</p>
+                <h3 className="text-2xl font-bold mb-2">{t(`items.${index}.title`)}</h3>
+                <p className="text-gray-400 mb-4">{t(`items.${index}.description`)}</p>
 
                 <div className="flex flex-wrap gap-2">
-                  {project.tags.map((tag) => (
+                  {[0, 1, 2].map((i) => (
                     <span
-                      key={tag}
+                      key={i}
                       className="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full text-sm"
                     >
-                      {tag}
+                      {t(`items.${index}.tags.${i}`)}
                     </span>
                   ))}
                 </div>
