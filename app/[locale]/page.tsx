@@ -9,15 +9,59 @@ import LanguageSwitcher from '@/app/components/LanguageSwitcher';
 
 export async function generateMetadata({params}: {params: Promise<{locale: string}>}) {
   const {locale} = await params;
-  const t = await getTranslations({locale, namespace: 'hero'});
+  const t = await getTranslations({locale, namespace: 'metadata'});
+  
+  const title = t('title');
+  const description = t('description');
+  const keywords = t('keywords');
   
   return {
-    title: locale === 'it' 
-      ? "AtavicoLabs — Design e Sviluppo di Prodotti Digitali"
-      : "AtavicoLabs — Digital Product Design & Development",
-    description: locale === 'it'
-      ? "AtavicoLabs progetta e sviluppa prodotti digitali moderni — dalle web app alle esperienze mobile. Un team design-driven che combina UX, sviluppo full-stack e strategia tecnologica per aiutare startup e brand a crescere."
-      : "AtavicoLabs designs and develops modern digital products — from web apps to mobile experiences. A design-driven team combining UX, full-stack development, and technology strategy to help startups and brands grow.",
+    title,
+    description,
+    keywords,
+    authors: [{name: 'AtavicoLabs'}],
+    creator: 'AtavicoLabs',
+    publisher: 'AtavicoLabs',
+    alternates: {
+      canonical: `https://atavicolabs.com/${locale === 'it' ? 'it' : 'en'}`,
+      languages: {
+        'it': 'https://atavicolabs.com/it',
+        'en': 'https://atavicolabs.com/en',
+      },
+    },
+    openGraph: {
+      type: 'website',
+      locale: locale === 'it' ? 'it_IT' : 'en_US',
+      url: `https://atavicolabs.com/${locale === 'it' ? 'it' : 'en'}`,
+      siteName: 'AtavicoLabs',
+      title,
+      description,
+      images: [
+        {
+          url: 'https://atavicolabs.com/og-image.jpg',
+          width: 1200,
+          height: 630,
+          alt: 'AtavicoLabs - Digital Product Development',
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: ['https://atavicolabs.com/og-image.jpg'],
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
+    },
   };
 }
 

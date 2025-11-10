@@ -12,10 +12,6 @@ export default function LanguageSwitcher() {
 
   // Get path without locale
   const getLocalizedPath = (newLocale: string) => {
-    console.log('Current pathname:', pathname);
-    console.log('Current locale:', locale);
-    console.log('Switching to:', newLocale);
-    
     // Remove current locale from pathname
     let pathWithoutLocale = pathname;
     
@@ -32,7 +28,6 @@ export default function LanguageSwitcher() {
     
     // Always use locale prefix
     const newPath = `/${newLocale}${pathWithoutLocale === '/' ? '' : pathWithoutLocale}`;
-    console.log('New path:', newPath);
     return newPath;
   };
 

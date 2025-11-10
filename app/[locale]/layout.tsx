@@ -23,9 +23,41 @@ export default async function LocaleLayout({
   }
 
   const messages = await getMessages({locale});
+  
+  // Structured Data for SEO
+  const structuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'AtavicoLabs',
+    url: 'https://atavicolabs.com',
+    logo: 'https://atavicolabs.com/logo.png',
+    description: locale === 'it' 
+      ? 'Sviluppo di web app, mobile app e piattaforme SaaS per PMI'
+      : 'Web app, mobile app and SaaS platform development for SMEs',
+    address: {
+      '@type': 'PostalAddress',
+      addressCountry: 'IT',
+    },
+    contactPoint: {
+      '@type': 'ContactPoint',
+      telephone: '+39-366-454-3662',
+      email: 'contact@atavicolabs.com',
+      contactType: 'customer service',
+      availableLanguage: ['Italian', 'English'],
+    },
+    sameAs: [
+      'https://github.com/atavicoLabs',
+    ],
+  };
 
   return (
     <html lang={locale}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{__html: JSON.stringify(structuredData)}}
+        />
+      </head>
       <body className="antialiased">
         <NextIntlClientProvider messages={messages} locale={locale}>
           {children}
