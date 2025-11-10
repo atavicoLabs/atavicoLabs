@@ -28,7 +28,7 @@ export default function CTA() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a
-              href="mailto:hello@atavicolabs.dev"
+              href="mailto:contact@atavicolabs.com"
               className="inline-flex items-center gap-2 px-8 py-4 bg-white text-blue-600 font-semibold rounded-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg"
             >
               <svg
@@ -44,11 +44,11 @@ export default function CTA() {
                   d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                 />
               </svg>
-              hello@atavicolabs.dev
+              contact@atavicolabs.com
             </a>
 
             <a
-              href="tel:+393331234567"
+              href="tel:+393664543662"
               className="inline-flex items-center gap-2 px-8 py-4 bg-slate-800 text-white font-semibold rounded-lg hover:bg-slate-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
             >
               <svg
@@ -64,7 +64,7 @@ export default function CTA() {
                   d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
                 />
               </svg>
-              +39 333 123 4567
+              +39 366 454 3662
             </a>
           </div>
 

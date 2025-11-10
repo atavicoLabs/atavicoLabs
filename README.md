@@ -107,4 +107,4 @@ MIT License - feel free to use this template for your projects!
 
 ## 🤝 Contact
 
-For questions or support, reach out at hello@atavicolabs.dev
+For questions or support, reach out at contact@atavicolabs.com
