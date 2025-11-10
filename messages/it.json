@@ -89,6 +89,100 @@
       }
     ]
   },
+  "process": {
+    "title": "Come Lavoriamo",
+    "subtitle": "Un processo chiaro e trasparente, dal brief al lancio",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Analisi",
+        "description": "Brief strategico, studio del mercato e definizione degli obiettivi. Allineamento completo prima di iniziare.",
+        "duration": "1-2 settimane"
+      },
+      {
+        "number": "02",
+        "title": "Prototipazione",
+        "description": "Wireframe, mockup UI/UX e test di usabilità. Validiamo il design con te prima dello sviluppo.",
+        "duration": "2-3 settimane"
+      },
+      {
+        "number": "03",
+        "title": "Sviluppo",
+        "description": "Sviluppo iterativo con demo settimanali. Codice pulito, testing continuo e deployment su staging.",
+        "duration": "4-8 settimane"
+      },
+      {
+        "number": "04",
+        "title": "Lancio",
+        "description": "Deploy in produzione, testing finale e formazione del team. Assistenza post-lancio inclusa.",
+        "duration": "1 settimana"
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "Cosa Dicono di Noi",
+    "subtitle": "La fiducia dei nostri clienti è il nostro miglior risultato",
+    "items": [
+      {
+        "quote": "AtavicoLabs ha trasformato la nostra idea in un prodotto funzionante in tempi record. Professionalità, trasparenza e risultati concreti. Consigliati al 100%.",
+        "author": "Marco Benedetti",
+        "role": "CEO",
+        "company": "FinTech Solutions"
+      },
+      {
+        "quote": "Finalmente un team che capisce sia il design che la tecnologia. Hanno lanciato la nostra app mobile in 6 settimane, con una UX che i nostri utenti adorano.",
+        "author": "Sofia Marinelli",
+        "role": "Founder",
+        "company": "WellnessPro"
+      },
+      {
+        "quote": "Collaborazione impeccabile. Comunicazione chiara, milestone rispettate e zero sorprese sul budget. È raro trovare un partner così affidabile.",
+        "author": "Luca Ferri",
+        "role": "CTO",
+        "company": "LogiTech Europe"
+      }
+    ]
+  },
+  "blog": {
+    "title": "Insights & Risorse",
+    "subtitle": "Guide pratiche e best practice per fondatori e team tech",
+    "cta": "Leggi l'articolo",
+    "items": [
+      {
+        "title": "Da Idea a MVP in 8 Settimane: La Guida Completa",
+        "description": "Come validare rapidamente la tua idea con un MVP funzionante. Metodologia, stack tecnologico e budget realistici per startup.",
+        "category": "Startup",
+        "readTime": "8 min",
+        "date": "2025-11-05"
+      },
+      {
+        "title": "Flutter vs React Native: Quale Scegliere nel 2025?",
+        "description": "Confronto tecnico e pratico tra i due framework leader per app mobile. Performance, ecosistema, costi e casi d'uso reali.",
+        "category": "Mobile Dev",
+        "readTime": "6 min",
+        "date": "2025-10-28"
+      },
+      {
+        "title": "UX Design per SaaS: 7 Principi per Aumentare le Conversioni",
+        "description": "I pattern di design che trasformano visitatori in clienti paganti. Onboarding, dashboard e micro-interazioni che fanno la differenza.",
+        "category": "Design",
+        "readTime": "10 min",
+        "date": "2025-10-15"
+      }
+    ]
+  },
+  "newsletter": {
+    "title": "Resta aggiornato con noi",
+    "subtitle": "Scarica la nostra checklist gratuita e ricevi consigli settimanali su MVP, design e sviluppo software.",
+    "placeholder": "Il tuo indirizzo email",
+    "cta": "Iscriviti Gratis",
+    "incentive": "🎁 Bonus: Checklist 'Da Idea a MVP in 30 Giorni'",
+    "privacy": "Niente spam, solo contenuti di valore. Cancella l'iscrizione quando vuoi.",
+    "success": {
+      "title": "Grazie per l'iscrizione!",
+      "message": "Controlla la tua email per scaricare la checklist gratuita."
+    }
+  },
   "cta": {
     "title": "Pronto a partire?",
     "subtitle": "Contattaci oggi e ricevi un prodotto digitale funzionante in tempi rapidi.",

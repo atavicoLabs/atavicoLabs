@@ -2,7 +2,11 @@ import {getTranslations} from 'next-intl/server';
 import Hero from '@/app/components/Hero';
 import About from '@/app/components/About';
 import Services from '@/app/components/Services';
+import Process from '@/app/components/Process';
 import Portfolio from '@/app/components/Portfolio';
+import Testimonials from '@/app/components/Testimonials';
+import Blog from '@/app/components/Blog';
+import Newsletter from '@/app/components/Newsletter';
 import CTA from '@/app/components/CTA';
 import Footer from '@/app/components/Footer';
 import LanguageSwitcher from '@/app/components/LanguageSwitcher';
@@ -76,7 +80,11 @@ export default function HomePage() {
       <Hero />
       <About />
       <Services />
+      <Process />
       <Portfolio />
+      <Testimonials />
+      <Blog />
+      {/* <Newsletter /> */}
       <CTA />
       <Footer />
     </main>

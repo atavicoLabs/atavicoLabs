@@ -89,6 +89,100 @@
       }
     ]
   },
+  "process": {
+    "title": "How We Work",
+    "subtitle": "A clear and transparent process, from brief to launch",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Analysis",
+        "description": "Strategic brief, market research and goal setting. Complete alignment before we start building.",
+        "duration": "1-2 weeks"
+      },
+      {
+        "number": "02",
+        "title": "Prototyping",
+        "description": "Wireframes, UI/UX mockups and usability testing. We validate design with you before development.",
+        "duration": "2-3 weeks"
+      },
+      {
+        "number": "03",
+        "title": "Development",
+        "description": "Iterative development with weekly demos. Clean code, continuous testing and staging deployment.",
+        "duration": "4-8 weeks"
+      },
+      {
+        "number": "04",
+        "title": "Launch",
+        "description": "Production deployment, final testing and team training. Post-launch support included.",
+        "duration": "1 week"
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "What Clients Say",
+    "subtitle": "Our clients' trust is our best achievement",
+    "items": [
+      {
+        "quote": "AtavicoLabs turned our idea into a working product in record time. Professionalism, transparency and concrete results. 100% recommended.",
+        "author": "Marco Benedetti",
+        "role": "CEO",
+        "company": "FinTech Solutions"
+      },
+      {
+        "quote": "Finally a team that understands both design and technology. They launched our mobile app in 6 weeks, with a UX our users love.",
+        "author": "Sofia Marinelli",
+        "role": "Founder",
+        "company": "WellnessPro"
+      },
+      {
+        "quote": "Flawless collaboration. Clear communication, milestones met and zero budget surprises. Rare to find such a reliable partner.",
+        "author": "Luca Ferri",
+        "role": "CTO",
+        "company": "LogiTech Europe"
+      }
+    ]
+  },
+  "blog": {
+    "title": "Insights & Resources",
+    "subtitle": "Practical guides and best practices for founders and tech teams",
+    "cta": "Read Article",
+    "items": [
+      {
+        "title": "From Idea to MVP in 8 Weeks: The Complete Guide",
+        "description": "How to quickly validate your idea with a working MVP. Methodology, tech stack and realistic budgets for startups.",
+        "category": "Startup",
+        "readTime": "8 min",
+        "date": "2025-11-05"
+      },
+      {
+        "title": "Flutter vs React Native: Which to Choose in 2025?",
+        "description": "Technical and practical comparison of the two leading mobile frameworks. Performance, ecosystem, costs and real use cases.",
+        "category": "Mobile Dev",
+        "readTime": "6 min",
+        "date": "2025-10-28"
+      },
+      {
+        "title": "UX Design for SaaS: 7 Principles to Boost Conversions",
+        "description": "Design patterns that turn visitors into paying customers. Onboarding, dashboards and micro-interactions that make the difference.",
+        "category": "Design",
+        "readTime": "10 min",
+        "date": "2025-10-15"
+      }
+    ]
+  },
+  "newsletter": {
+    "title": "Stay Updated With Us",
+    "subtitle": "Download our free checklist and receive weekly tips on MVPs, design, and software development.",
+    "placeholder": "Your email address",
+    "cta": "Subscribe Free",
+    "incentive": "🎁 Bonus: 'From Idea to MVP in 30 Days' Checklist",
+    "privacy": "No spam, only valuable content. Unsubscribe anytime.",
+    "success": {
+      "title": "Thanks for subscribing!",
+      "message": "Check your email to download the free checklist."
+    }
+  },
   "cta": {
     "title": "Ready to start?",
     "subtitle": "Contact us today and get a working digital product fast.",
