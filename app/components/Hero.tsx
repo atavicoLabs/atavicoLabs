@@ -19,7 +19,7 @@ export default function Hero() {
           transition={{ duration: 0.8 }}
         >
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
-            Studio Full Stack
+            AtavicoLabs
           </h1>
           
           <motion.p

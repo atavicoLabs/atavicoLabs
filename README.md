@@ -1,4 +1,4 @@
-# Studio Full Stack - Landing Page
+# AtavicoLabs - Landing Page
 
 Modern responsive landing page built with Next.js 14, React, and Tailwind CSS.
 
@@ -107,4 +107,4 @@ MIT License - feel free to use this template for your projects!
 
 ## 🤝 Contact
 
-For questions or support, reach out at hello@studiofullstack.dev
+For questions or support, reach out at hello@atavicolabs.dev

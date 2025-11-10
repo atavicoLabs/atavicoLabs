@@ -28,7 +28,7 @@ export default function CTA() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a
-              href="mailto:hello@studiofullstack.dev"
+              href="mailto:hello@atavicolabs.dev"
               className="inline-flex items-center gap-2 px-8 py-4 bg-white text-blue-600 font-semibold rounded-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg"
             >
               <svg
@@ -44,7 +44,7 @@ export default function CTA() {
                   d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                 />
               </svg>
-              hello@studiofullstack.dev
+              hello@atavicolabs.dev
             </a>
 
             <a
