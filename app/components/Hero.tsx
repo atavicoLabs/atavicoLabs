@@ -91,13 +91,13 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <div className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 flex justify-center">
-            <h1 className="relative inline-block whitespace-nowrap">
+          <div className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 flex justify-center w-full px-4">
+            <h1 className="relative inline-block max-w-full">
               {/* Invisible placeholder reserves full width */}
-              <span className="invisible" aria-hidden="true">{fullText}</span>
+              <span className="invisible block" aria-hidden="true">{fullText}</span>
               
               {/* Visible text overlays at the same position, left-aligned */}
-              <span className="absolute left-0 top-0 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
+              <span className="absolute left-0 top-0 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent block">
                 {displayedText}
                 {showCursor && (
                   <motion.span
