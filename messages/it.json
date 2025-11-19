@@ -34,7 +34,7 @@
   },
   "services": {
     "title": "Un team, un processo, qualità costante.",
-    "subtitle": "Progettiamo, sviluppiamo e manteniamo prodotti digitali completi. Un team, un processo, qualità costante.",
+    "subtitle": "Un team, un processo, qualità costante.",
     "cta": "Guarda il portfolio",
     "items": [
       {
@@ -46,7 +46,7 @@
         "description": "App iOS e Android native o cross-platform, veloci, consistenti e progettate per durare. Prestazioni reali, codice stabile, manutenzione semplificata."
       },
       {
-        "title": "Sviluppo Web & Full-Stack",
+        "title": "Sviluppo Full-Stack",
         "description": "Costruiamo piattaforme robuste, API sicure e dashboard affidabili. Architetture moderne, versionamento chiaro e zero sorprese tecniche."
       },
       {
@@ -161,8 +161,7 @@
   "cta": {
     "title": "Costruiamo qualcosa insieme.",
     "subtitle": "Parliamo del tuo progetto — anche solo per capire se possiamo aiutarti.",
-    "email": "contact@atavicolabs.com",
-    "phone": "+39 366 454 3662"
+    "email": "contact@atavicolabs.com"
   },
   "footer": {
     "brand": "AtavicoLabs",

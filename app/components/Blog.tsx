@@ -11,7 +11,7 @@ export default function Blog() {
     <section 
       id="blog" 
       ref={ref}
-      className="relative py-24 md:py-32 px-6 lg:px-8 bg-warm-darker"
+    className="relative py-24 md:py-32 px-6 lg:px-8 bg-warm-black"
     >
       <div className="relative max-w-6xl mx-auto">
         <div className="mb-20">

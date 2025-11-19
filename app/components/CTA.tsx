@@ -33,9 +33,9 @@ export default function CTA() {
             {t('subtitle')}
           </p>
 
-          {/* Contact info */}
+          {/* Contact info - only email (phone removed) */}
           <div 
-            className={`flex flex-col sm:flex-row items-center justify-center gap-6 text-warm-muted fade-in ${isRevealed ? 'revealed' : ''}`}
+            className={`flex items-center justify-center gap-6 text-warm-muted fade-in ${isRevealed ? 'revealed' : ''}`}
             style={{ animationDelay: '250ms' }}
           >
             <a
@@ -43,13 +43,6 @@ export default function CTA() {
               className="hover:text-warm-accent transition-colors duration-300"
             >
               {t('email')}
-            </a>
-            <span className="hidden sm:block text-warm-border">•</span>
-            <a
-              href={`tel:${t('phone').replace(/\s/g, '')}`}
-              className="hover:text-warm-accent transition-colors duration-300"
-            >
-              {t('phone')}
             </a>
           </div>
 

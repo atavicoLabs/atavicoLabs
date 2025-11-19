@@ -3,7 +3,8 @@
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { useReveal } from '../hooks/useReveal';
-import LanguageSwitcher from './LanguageSwitcher';
+// LanguageSwitcher is intentionally not used in the footer per request.
+// import LanguageSwitcher from './LanguageSwitcher';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -67,11 +68,7 @@ export default function Footer() {
                   contact@atavicolabs.com
                 </a>
               </li>
-              <li>
-                <a href="tel:+393664543662" className="hover:text-warm-accent transition-colors duration-300">
-                  +39 366 454 3662
-                </a>
-              </li>
+              {/* Phone removed per request */}
               <li className="pt-2">
                 <span className="text-xs text-warm-muted/70">{t('contact.location')}</span>
               </li>
@@ -85,9 +82,7 @@ export default function Footer() {
             {t('copyright', {year: currentYear})}
           </p>
           <div className="flex items-center gap-6">
-            {/* Language Switcher */}
-            <LanguageSwitcher />
-            
+            {/* Language switcher removed from footer */}
             {/* Legal Links */}
             <div className="flex gap-6 text-xs">
               <Link href="/privacy" className="text-warm-muted/70 hover:text-warm-accent transition-colors duration-300">

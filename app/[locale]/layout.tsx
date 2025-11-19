@@ -40,7 +40,6 @@ export default async function LocaleLayout({
     },
     contactPoint: {
       '@type': 'ContactPoint',
-      telephone: '+39-366-454-3662',
       email: 'contact@atavicolabs.com',
       contactType: 'customer service',
       availableLanguage: ['Italian', 'English'],

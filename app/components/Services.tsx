@@ -32,15 +32,16 @@ export default function Services() {
   ];
 
   return (
-    <section id="services" className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
-      {/* Glassmorphism background with lighter tone */}
-      <div className="absolute inset-0 bg-gradient-to-b from-slate-800/30 via-slate-800/20 to-slate-900/30 backdrop-blur-xl"></div>
+  <section id="services" className="relative py-28 px-6 sm:px-8 lg:px-12 overflow-hidden">
+  {/* Glassmorphism background with lighter tone (avoid heavy backdrop-filter for scroll perf) */}
+  <div className="absolute inset-0 bg-gradient-to-b from-slate-800/30 via-slate-800/20 to-slate-900/30"></div>
       
       {/* Subtle glow elements */}
-      <div className="absolute top-0 right-1/4 w-[400px] h-[400px] bg-blue-500/3 rounded-full blur-[100px]"></div>
-      <div className="absolute bottom-0 left-1/4 w-[400px] h-[400px] bg-purple-500/3 rounded-full blur-[100px]"></div>
+  {/* Subtle glow elements (smaller and less blur to reduce repaints) */}
+  <div className="absolute top-0 right-1/4 w-72 h-72 bg-blue-500/6 rounded-full blur-3xl"></div>
+  <div className="absolute bottom-0 left-1/4 w-72 h-72 bg-purple-500/6 rounded-full blur-3xl"></div>
 
-      <div className="relative z-10 max-w-6xl mx-auto">
+  <div className="relative z-10 max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -57,9 +58,9 @@ export default function Services() {
         </motion.div>
 
         {/* Lightweight icon-based grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-6xl mx-auto">
           {services.map((service, index) => (
-            <motion.div
+              <motion.div
               key={service.key}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -72,21 +73,21 @@ export default function Services() {
               className="group relative"
             >
               {/* Glassmorphic card */}
-              <div className="relative bg-white/5 backdrop-blur-md p-6 rounded-2xl border border-white/10 hover:border-white/20 transition-all duration-300 hover:bg-white/8">
+              <div className="relative bg-white/5 p-8 rounded-2xl border border-white/10 hover:border-white/20 transition-transform duration-300">
                 {/* Icon with gradient */}
-                <div className={`inline-flex items-center justify-center w-16 h-16 rounded-xl bg-gradient-to-br ${service.gradient} p-0.5 mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                  <div className="w-full h-full bg-slate-900 rounded-[11px] flex items-center justify-center text-white">
+                <div className={`inline-flex items-center justify-center w-20 h-20 rounded-xl bg-gradient-to-br ${service.gradient} p-0.5 mb-5 group-hover:scale-105 transition-transform duration-300`}>
+                  <div className="w-full h-full bg-slate-900 rounded-lg flex items-center justify-center text-white">
                     {service.icon}
                   </div>
                 </div>
 
                 {/* Title */}
-                <h3 className="text-xl font-bold mb-2 group-hover:text-blue-400 transition-colors duration-300">
+                <h3 className="text-2xl font-bold mb-3 group-hover:text-blue-400 transition-colors duration-300">
                   {t(`items.${index}.title`)}
                 </h3>
 
                 {/* Micro description */}
-                <p className="text-gray-400 text-sm leading-relaxed">
+                <p className="text-gray-400 text-base leading-relaxed">
                   {t(`items.${index}.description`)}
                 </p>
               </div>

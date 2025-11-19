@@ -114,6 +114,9 @@ export default function HomePage() {
         <CTA />
       </section>
       
+      {/* Floating language selector (bottom-right) */}
+      <LanguageSwitcher />
+
       {/* Footer */}
       <Footer />
     </main>

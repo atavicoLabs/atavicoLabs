@@ -46,7 +46,7 @@
         "description": "Native or cross-platform iOS and Android apps, fast, consistent and built to last. Real performance, stable code, simplified maintenance."
       },
       {
-        "title": "Web & Full-Stack Development",
+        "title": "Full-Stack Development",
         "description": "We build robust platforms, secure APIs and reliable dashboards. Modern architectures, clear versioning and zero technical surprises."
       },
       {
@@ -161,8 +161,7 @@
   "cta": {
     "title": "Let's build something together.",
     "subtitle": "Let's talk about your project — even just to understand if we are the right fit to help.",
-    "email": "contact@atavicolabs.com",
-    "phone": "+39 366 454 3662"
+    "email": "contact@atavicolabs.com"
   },
   "footer": {
     "brand": "AtavicoLabs",

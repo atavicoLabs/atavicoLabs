@@ -1,74 +1,102 @@
-'use client';
+"use client";
 
-import {useLocale} from 'next-intl';
-import {usePathname} from 'next/navigation';
-import {useState} from 'react';
-import Link from 'next/link';
+import Link from "next/link";
+import { useLocale } from "next-intl";
+import { usePathname } from "next/navigation";
+import { useEffect, useRef, useState } from "react";
 
 export default function LanguageSwitcher() {
   const locale = useLocale();
   const pathname = usePathname();
-  const [isOpen, setIsOpen] = useState(false);
+  const [visible, setVisible] = useState(true);
+  const lastY = useRef(0);
+  const visibleRef = useRef<boolean>(true);
 
-  // Get path without locale
+  // Build localized path preserving the rest of the pathname
   const getLocalizedPath = (newLocale: string) => {
-    // Remove current locale from pathname
-    let pathWithoutLocale = pathname;
-    
-    if (pathname.startsWith('/it/') || pathname === '/it') {
-      pathWithoutLocale = pathname.slice(3);
-    } else if (pathname.startsWith('/en/') || pathname === '/en') {
-      pathWithoutLocale = pathname.slice(3);
+    let pathWithoutLocale = pathname || "/";
+
+    if (pathWithoutLocale.startsWith("/it/") || pathWithoutLocale === "/it") {
+      pathWithoutLocale = pathWithoutLocale.slice(3);
+    } else if (pathWithoutLocale.startsWith("/en/") || pathWithoutLocale === "/en") {
+      pathWithoutLocale = pathWithoutLocale.slice(3);
     }
-    
-    // Ensure path starts with /
-    if (!pathWithoutLocale.startsWith('/')) {
-      pathWithoutLocale = '/' + pathWithoutLocale;
+
+    if (!pathWithoutLocale.startsWith("/")) {
+      pathWithoutLocale = "/" + pathWithoutLocale;
     }
-    
-    // Always use locale prefix
-    const newPath = `/${newLocale}${pathWithoutLocale === '/' ? '' : pathWithoutLocale}`;
-    return newPath;
+
+    return `/${newLocale}${pathWithoutLocale === "/" ? "" : pathWithoutLocale}`;
   };
 
-  return (
-    <div className="relative">
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 px-4 py-2 bg-slate-800/80 backdrop-blur-sm text-white rounded-lg hover:bg-slate-700 transition-all duration-300 border border-slate-700"
-      >
-        <span className="text-lg">{locale === 'it' ? '🇮🇹' : '🇬🇧'}</span>
-        <span className="font-medium">{locale.toUpperCase()}</span>
-        <svg
-          className={`w-4 h-4 transition-transform ${isOpen ? 'rotate-180' : ''}`}
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-        </svg>
-      </button>
+  useEffect(() => {
+    lastY.current = typeof window !== "undefined" ? window.scrollY : 0;
 
-      {isOpen && (
-        <div className="absolute top-full right-0 mt-2 bg-slate-800 border border-slate-700 rounded-lg overflow-hidden shadow-xl z-50">
-          <Link
-            href={getLocalizedPath('it')}
-            onClick={() => setIsOpen(false)}
-            className="flex items-center gap-3 w-full px-4 py-3 text-left hover:bg-slate-700 transition-colors"
-          >
-            <span className="text-lg">🇮🇹</span>
-            <span className="font-medium">Italiano</span>
-          </Link>
-          <Link
-            href={getLocalizedPath('en')}
-            onClick={() => setIsOpen(false)}
-            className="flex items-center gap-3 w-full px-4 py-3 text-left hover:bg-slate-700 transition-colors"
-          >
-            <span className="text-lg">🇬🇧</span>
-            <span className="font-medium">English</span>
-          </Link>
-        </div>
-      )}
+    let ticking = false;
+    const onScroll = () => {
+      const y = window.scrollY;
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          // hide when scrolling down, show when scrolling up
+          if (y > lastY.current + 5) {
+            if (visibleRef.current) {
+              visibleRef.current = false;
+              setVisible(false);
+            }
+          } else if (y < lastY.current - 5) {
+            if (!visibleRef.current) {
+              visibleRef.current = true;
+              setVisible(true);
+            }
+          }
+          lastY.current = y;
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    // passive listener to avoid blocking the main thread
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  // keep ref in sync if visible is changed elsewhere
+  useEffect(() => {
+    visibleRef.current = visible;
+  }, [visible]);
+
+  return (
+    <div
+      role="navigation"
+      aria-label="Language selector"
+      className={`fixed right-5 bottom-5 z-50 transition-transform transition-opacity duration-300 ease-out transform ${
+        visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+      }`}
+      style={{ willChange: 'transform, opacity' }}
+    >
+      {/* Larger, more visible floating pill */}
+      <div className="flex items-center gap-3 bg-warm-black/70 border border-warm-border rounded-lg px-2 py-2 shadow-lg">
+        <Link
+          href={getLocalizedPath('it')}
+          className={`text-base md:text-lg font-semibold uppercase tracking-wider px-3 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-warm-accent transition-colors ${
+            locale === 'it' ? 'text-warm-accent bg-warm-accent/10' : 'text-warm-muted/80 hover:text-warm-accent'
+          }`}
+          aria-current={locale === 'it' ? 'page' : undefined}
+        >
+          IT
+        </Link>
+
+        <Link
+          href={getLocalizedPath('en')}
+          className={`text-base md:text-lg font-semibold uppercase tracking-wider px-3 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-warm-accent transition-colors ${
+            locale === 'en' ? 'text-warm-accent bg-warm-accent/10' : 'text-warm-muted/80 hover:text-warm-accent'
+          }`}
+          aria-current={locale === 'en' ? 'page' : undefined}
+        >
+          EN
+        </Link>
+      </div>
     </div>
   );
 }

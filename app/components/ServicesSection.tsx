@@ -75,11 +75,11 @@ export default function ServicesSection() {
   return (
     <section 
       ref={ref}
-      className="relative w-full py-24 md:py-32 px-6 bg-warm-black"
+      className="relative w-full py-32 md:py-40 px-6 lg:px-12 bg-warm-black"
     >
       <div className="relative max-w-6xl mx-auto">
         {/* Header - Centered */}
-        <div className="text-center max-w-6xl mx-auto mb-20 md:mb-28">
+  <div className="text-center max-w-4xl mx-auto mb-24 md:mb-32">
           <h2 
             ref={titleRef}
             className="text-4xl md:text-5xl lg:text-6xl font-semibold text-white tracking-tight leading-tight"
@@ -102,7 +102,7 @@ export default function ServicesSection() {
         </div>
 
         {/* Services Grid - 2x2 Minimal (appear when title passes midpoint) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-20 md:gap-y-24">
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-20 md:gap-y-24">
           {services.map((service, i) => (
             <div
               key={i}
@@ -113,18 +113,19 @@ export default function ServicesSection() {
               style={{
                 opacity: revealed[i] ? 1 : 0,
                 transform: revealed[i] ? 'translateY(0)' : 'translateY(6px)',
-                filter: revealed[i] ? 'blur(0px)' : 'blur(6px)',
-                transition: 'opacity 0.95s cubic-bezier(0.16, 0.84, 0.44, 1), transform 0.95s cubic-bezier(0.16, 0.84, 0.44, 1), filter 0.95s ease-out',
+                transition: 'opacity 0.95s cubic-bezier(0.16, 0.84, 0.44, 1), transform 0.95s cubic-bezier(0.16, 0.84, 0.44, 1)',
                 transitionDelay: `${revealed[i] ? i * 0.18 : 0}s`,
                 willChange: 'transform, opacity'
               }}
             >
-              <h3 className="text-2xl md:text-3xl font-semibold text-white leading-tight mb-4">
-                {service.title}
-              </h3>
-              <p className="text-base md:text-lg text-warm-muted leading-relaxed">
-                {service.description}
-              </p>
+              <div className="p-6 md:p-8 bg-warm-card/5 rounded-2xl border border-warm-border">
+                <h3 className="text-2xl md:text-3xl font-semibold text-white leading-tight mb-4">
+                  {service.title}
+                </h3>
+                <p className="text-base md:text-lg text-warm-muted leading-relaxed">
+                  {service.description}
+                </p>
+              </div>
             </div>
           ))}
         </div>
