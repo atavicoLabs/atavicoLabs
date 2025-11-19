@@ -7,6 +7,7 @@ import { useState, useEffect } from 'react';
 export default function Hero() {
   const t = useTranslations('hero');
   const { ref, isRevealed, isMounted } = useReveal({ threshold: 0.1, once: true });
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
   
   const [visibleChars, setVisibleChars] = useState(0);
   const [showTagline, setShowTagline] = useState(false);
@@ -36,6 +37,16 @@ export default function Hero() {
     return () => clearInterval(typeInterval);
   }, [isRevealed, isMounted, fullText]);
 
+  // Respect prefer-reduced-motion: if user requests reduced motion, avoid autoplaying video
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const handle = () => setPrefersReducedMotion(!!mq.matches);
+    handle();
+    mq.addEventListener ? mq.addEventListener('change', handle) : mq.addListener(handle);
+    return () => mq.removeEventListener ? mq.removeEventListener('change', handle) : mq.removeListener(handle);
+  }, []);
+
   return (
     <section 
       ref={ref}
@@ -46,6 +57,20 @@ export default function Hero() {
         paddingBottom: '20vh'
       }}
     >
+      {/* Optional video background: place your file at `public/hero.mp4` to enable. */}
+      {!prefersReducedMotion && (
+        <video
+          className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+          autoPlay
+          muted
+          loop
+          playsInline
+          aria-hidden="true"
+        >
+          <source src="/hero.mp4" type="video/mp4" />
+        </video>
+      )}
+
       {/* Background Pattern - subtle */}
       <div 
         className="absolute inset-0 opacity-[0.02] pointer-events-none"
