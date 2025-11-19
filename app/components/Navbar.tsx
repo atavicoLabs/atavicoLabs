@@ -55,12 +55,15 @@ export default function Navbar() {
             >
               Processo
             </a>
+            {/* Temporarily hide 'Chi siamo' link in the navbar. To restore, remove the JSX comment. */}
+            {/*
             <a
               href="#about"
               className="text-lg font-semibold text-warm-text hover:text-warm-accent transition-colors duration-200"
             >
               Chi siamo
             </a>
+            */}
             <a
               href="#cta"
               className="text-lg font-semibold text-warm-text hover:text-warm-accent transition-colors duration-200"

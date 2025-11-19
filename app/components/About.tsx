@@ -8,10 +8,12 @@ export default function About() {
   const { ref, isRevealed } = useReveal();
 
   return (
+    // Temporarily hide the About section (keep markup in-place).
+    // To restore, remove the `hidden` class below.
     <section 
       id="about" 
       ref={ref}
-      className="relative py-24 md:py-32 px-6 lg:px-8 bg-warm-darker"
+      className="hidden relative py-24 md:py-32 px-6 lg:px-8 bg-warm-darker"
     >
       <div className="max-w-5xl mx-auto relative z-10">
         {/* Header */}
