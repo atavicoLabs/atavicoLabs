@@ -2,81 +2,101 @@
 
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
+import { useReveal } from '../hooks/useReveal';
+import LanguageSwitcher from './LanguageSwitcher';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
   const t = useTranslations('footer');
+  const { ref, isRevealed } = useReveal();
 
   return (
-    <footer className="bg-slate-950 py-12 px-4 sm:px-6 lg:px-8 border-t border-slate-800">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-          <div className="col-span-1 md:col-span-2">
-            <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
+    <footer 
+      ref={ref}
+      className="relative bg-warm-black py-12 px-6 lg:px-8 border-t border-warm-border"
+    >
+      <div className={`relative max-w-5xl mx-auto fade-up ${isRevealed ? 'revealed' : ''}`}>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+          {/* Brand column */}
+          <div className="md:col-span-1">
+            <h3 className="text-lg font-semibold text-warm-text mb-3">
               {t('brand')}
             </h3>
-            <p className="text-gray-400 max-w-md mb-4">
+            <p className="text-warm-muted text-sm leading-relaxed">
               {t('description')}
             </p>
           </div>
 
+          {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">{t('quickLinks.title')}</h4>
+            <h4 className="text-sm font-medium text-warm-secondary mb-4">
+              {t('quickLinks.title')}
+            </h4>
             <ul className="space-y-2">
               <li>
-                <Link href="#about" className="text-gray-400 hover:text-blue-500 transition-colors">
+                <Link href="#about" className="text-sm text-warm-muted hover:text-warm-accent transition-colors duration-300">
                   {t('quickLinks.about')}
                 </Link>
               </li>
               <li>
-                <Link href="#services" className="text-gray-400 hover:text-blue-500 transition-colors">
+                <Link href="#services" className="text-sm text-warm-muted hover:text-warm-accent transition-colors duration-300">
                   {t('quickLinks.services')}
                 </Link>
               </li>
               <li>
-                <Link href="#portfolio" className="text-gray-400 hover:text-blue-500 transition-colors">
+                <Link href="#portfolio" className="text-sm text-warm-muted hover:text-warm-accent transition-colors duration-300">
                   {t('quickLinks.portfolio')}
                 </Link>
               </li>
               <li>
-                <Link href="#contact" className="text-gray-400 hover:text-blue-500 transition-colors">
+                <Link href="#contact" className="text-sm text-warm-muted hover:text-warm-accent transition-colors duration-300">
                   {t('quickLinks.contact')}
                 </Link>
               </li>
             </ul>
           </div>
 
+          {/* Contact */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">{t('contact.title')}</h4>
-            <ul className="space-y-2 text-gray-400">
+            <h4 className="text-sm font-medium text-warm-secondary mb-4">
+              {t('contact.title')}
+            </h4>
+            <ul className="space-y-2 text-warm-muted text-sm">
               <li>
-                <a href="mailto:contact@atavicolabs.com" className="hover:text-blue-500 transition-colors">
+                <a href="mailto:contact@atavicolabs.com" className="hover:text-warm-accent transition-colors duration-300">
                   contact@atavicolabs.com
                 </a>
               </li>
               <li>
-                <a href="tel:+393664543662" className="hover:text-blue-500 transition-colors">
+                <a href="tel:+393664543662" className="hover:text-warm-accent transition-colors duration-300">
                   +39 366 454 3662
                 </a>
               </li>
               <li className="pt-2">
-                <span className="text-sm">{t('contact.location')}</span>
+                <span className="text-xs text-warm-muted/70">{t('contact.location')}</span>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-gray-400 text-sm">
+        {/* Bottom bar - minimal */}
+        <div className="pt-8 border-t border-warm-border flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-warm-muted/50 text-xs">
             {t('copyright', {year: currentYear})}
           </p>
-          <div className="flex gap-6 text-sm">
-            <Link href="/privacy" className="text-gray-400 hover:text-blue-500 transition-colors">
-              {t('legal.privacy')}
-            </Link>
-            <Link href="/terms" className="text-gray-400 hover:text-blue-500 transition-colors">
-              {t('legal.terms')}
-            </Link>
+          <div className="flex items-center gap-6">
+            {/* Language Switcher */}
+            <LanguageSwitcher />
+            
+            {/* Legal Links */}
+            <div className="flex gap-6 text-xs">
+              <Link href="/privacy" className="text-warm-muted/70 hover:text-warm-accent transition-colors duration-300">
+                {t('legal.privacy')}
+              </Link>
+              <Link href="/terms" className="text-warm-muted/70 hover:text-warm-accent transition-colors duration-300">
+                {t('legal.terms')}
+              </Link>
+            </div>
           </div>
         </div>
       </div>

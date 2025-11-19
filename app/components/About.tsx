@@ -1,44 +1,54 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
+import { useReveal } from '../hooks/useReveal';
 
 export default function About() {
   const t = useTranslations('about');
+  const { ref, isRevealed } = useReveal();
 
   return (
-    <section id="about" className="py-24 px-4 sm:px-6 lg:px-8 bg-slate-900/50">
-      <div className="max-w-7xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">{t('title')}</h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+    <section 
+      id="about" 
+      ref={ref}
+      className="relative py-24 md:py-32 px-6 lg:px-8 bg-warm-darker"
+    >
+      <div className="max-w-5xl mx-auto relative z-10">
+        {/* Header */}
+        <div className="mb-20">
+          <h2 
+            className={`text-3xl md:text-4xl lg:text-5xl font-semibold text-warm-text tracking-tight leading-tight mb-6 fade-up ${
+              isRevealed ? 'revealed' : ''
+            }`}
+          >
+            {t('title')}
+          </h2>
+          <p 
+            className={`text-lg md:text-xl text-warm-secondary max-w-2xl leading-relaxed fade-up ${
+              isRevealed ? 'revealed' : ''
+            }`}
+            style={{ animationDelay: '100ms' }}
+          >
             {t('subtitle')}
           </p>
-        </motion.div>
+        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* Technology blocks - stagger with scale */}
+        <div className={`grid md:grid-cols-3 gap-12 stagger-container ${isRevealed ? 'revealed' : ''}`}>
           {[0, 1, 2].map((index) => (
-            <motion.div
+            <div
               key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ 
-                duration: 0.6,
-                delay: index * 0.15,
-                ease: "easeOut"
-              }}
-              className="bg-slate-800/50 backdrop-blur-sm p-8 rounded-xl border border-slate-700 hover:border-blue-500 transition-all duration-300 hover:transform hover:scale-105"
+              className="stagger-child space-y-4"
+              style={{ '--stagger-delay': `${90 * index}ms` } as React.CSSProperties}
             >
-              <h3 className="text-2xl font-bold mb-4">{t(`technologies.${index}.title`)}</h3>
-              <p className="text-gray-400 leading-relaxed">{t(`technologies.${index}.description`)}</p>
-            </motion.div>
+              <h3 className="text-xl md:text-2xl font-semibold text-warm-text leading-tight">
+                {t(`technologies.${index}.title`)}
+              </h3>
+              
+              <p className="text-warm-muted leading-relaxed">
+                {t(`technologies.${index}.description`)}
+              </p>
+            </div>
           ))}
         </div>
       </div>

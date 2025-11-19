@@ -2,6 +2,7 @@ import {getTranslations} from 'next-intl/server';
 import Hero from '@/app/components/Hero';
 import About from '@/app/components/About';
 import Services from '@/app/components/Services';
+import ServicesSection from '@/app/components/ServicesSection';
 import Process from '@/app/components/Process';
 import Portfolio from '@/app/components/Portfolio';
 import Testimonials from '@/app/components/Testimonials';
@@ -10,6 +11,7 @@ import Newsletter from '@/app/components/Newsletter';
 import CTA from '@/app/components/CTA';
 import Footer from '@/app/components/Footer';
 import LanguageSwitcher from '@/app/components/LanguageSwitcher';
+import Navbar from '@/app/components/Navbar';
 
 export async function generateMetadata({params}: {params: Promise<{locale: string}>}) {
   const {locale} = await params;
@@ -72,20 +74,47 @@ export async function generateMetadata({params}: {params: Promise<{locale: strin
 export default function HomePage() {
   return (
     <main className="min-h-screen">
-      {/* Language Switcher - Fixed position */}
-      <div className="fixed top-6 right-6 z-50">
-        <LanguageSwitcher />
-      </div>
+      {/* Navbar - Fixed glass effect */}
+      <Navbar />
       
+      {/* 1. Hero - Ispirazione */}
       <Hero />
-      <About />
-      <Services />
-      <Process />
-      <Portfolio />
+      
+      {/* 2. Services - Le nostre competenze al lavoro */}
+      <section id="services">
+        <ServicesSection />
+      </section>
+      
+      {/* 3. Portfolio - Prova concreta */}
+      <section id="portfolio">
+        <Portfolio />
+      </section>
+      
+      {/* 4. Process - Coinvolgimento (How We Work) */}
+      <section id="process">
+        <Process />
+      </section>
+      
+      {/* 5. About - Credibilità sintetica (Chi Siamo) */}
+      <section id="about">
+        <About />
+      </section>
+      
+      {/* 6. Testimonials - Fiducia */}
       <Testimonials />
+      
+      {/* 7. Blog - Valore */}
       <Blog />
+      
+      {/* Newsletter - Disabled */}
       {/* <Newsletter /> */}
-      <CTA />
+      
+      {/* 8. CTA finale - Conversione */}
+      <section id="cta">
+        <CTA />
+      </section>
+      
+      {/* Footer */}
       <Footer />
     </main>
   );

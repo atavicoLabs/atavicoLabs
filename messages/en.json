@@ -1,142 +1,129 @@
 {
   "metadata": {
-    "title": "AtavicoLabs — Web & Mobile Apps for SMEs | Fast & Scalable Development",
-    "description": "Turn your ideas into working digital products. Web apps, mobile apps, and SaaS platforms with polished design, full-stack development and fast delivery. No surprises, just tangible results.",
-    "keywords": "web app development, Flutter mobile apps, fast MVP, full-stack development, UX design, SaaS platforms, SME software development, web agency Italy"
+    "title": "AtavicoLabs — Solid digital products, built with care",
+    "description": "We design and build web and mobile products for SMEs and product teams: essential design, reliable engineering and measurable outcomes.",
+    "keywords": "software development, web apps, mobile apps, ux design, mvp, full-stack development, digital consulting"
   },
   "hero": {
-    "title": "We Shape Your Ideas",
-    "subtitle": "We transform your ideas into concrete digital experiences.",
-    "cta": "Enter the Lab",
-    "scrollIndicator": "Learn more"
+    "tagline": "Reliable software for SMEs and demanding teams.",
+    "title1": "We build",
+    "title2": "digital products.",
+    "subtitleLine1": "",
+    "subtitleLine2": "",
+    "cta": "",
+    "trust": "",
+    "scroll": ""
   },
   "about": {
-    "title": "About Us",
-    "subtitle": "We help SMEs launch working digital products fast: web apps, mobile apps, and SaaS platforms. Our approach combines polished UX design and full-stack development, ensuring transparency, clear milestones, and no surprises at every step.",
+    "title": "About us",
+    "subtitle": "A design and development studio that combines craftsmanship-level care with solid engineering. We build digital products that are reliable, understandable and pleasant to use.",
     "technologies": [
       {
-        "title": "User-Centered Design",
-        "description": "Intuitive, accessible interfaces people love to use. Modern, consistent UX/UI across all devices."
+        "title": "Care",
+        "description": "Every detail matters: architecture, interfaces, micro-interactions and communication."
       },
       {
-        "title": "Full-Stack Development",
-        "description": "Fast, scalable web apps built with Next.js, React, and Node.js. Robust backends optimized for performance."
+        "title": "Clarity",
+        "description": "Transparent processes, testable prototypes and no unnecessary jargon."
       },
       {
-        "title": "Native Mobile Apps",
-        "description": "iOS and Android apps from a single Flutter codebase, delivering native performance, smooth experience, and optimized costs."
+        "title": "Reliability",
+        "description": "Stable, scalable development designed to last well beyond the first release."
       }
     ]
   },
   "services": {
-    "title": "Services",
-    "subtitle": "Choose the solution that fits your project",
-    "mostPopular": "Most Popular",
+    "title": "What we do",
+    "subtitle": "One team, one process, consistent quality.",
+    "cta": "View portfolio",
     "items": [
       {
-        "title": "MVP Web App",
-        "description": "A solid, scalable MVP, ready to test your market immediately. Intuitive design, robust backend, and fast delivery.",
-        "features": [
-          "Full-stack architecture",
-          "Responsive and intuitive design",
-          "Database integration",
-          "Secure authentication"
-        ],
-        "price": "from €5,000"
+        "title": "UX/UI Design",
+        "description": "We design clear, functional interfaces based on real goals. Design systems, clickable prototypes and user testing to reduce risks and costs."
       },
       {
-        "title": "Flutter Mobile App",
-        "description": "iOS and Android apps from a single codebase, delivering native performance and premium UX.",
-        "features": [
-          "iOS and Android",
-          "Native performance",
-          "Push notifications",
-          "Offline support"
-        ],
-        "price": "from €6,000"
+        "title": "Mobile Apps",
+        "description": "Native or cross-platform iOS and Android apps, fast, consistent and built to last. Real performance, stable code, simplified maintenance."
       },
       {
-        "title": "Full Digital Product",
-        "description": "Web + Mobile + integrated backend, ready to scale and grow your business.",
-        "features": [
-          "Web + Mobile App",
-          "Unified backend",
-          "Admin dashboards",
-          "API integration"
-        ],
-        "price": "from €10,000"
+        "title": "Web & Full-Stack Development",
+        "description": "We build robust platforms, secure APIs and reliable dashboards. Modern architectures, clear versioning and zero technical surprises."
+      },
+      {
+        "title": "AI & Automation",
+        "description": "Reliable AI integrations and automated workflows that reduce costs and time. Models, orchestration and tools that actually serve the business."
       }
     ]
   },
   "portfolio": {
-    "title": "Recent Projects",
-    "subtitle": "A selection of digital products built with care and vision",
+    "title": "Selected projects",
+    "subtitle": "Concrete solutions that improve operations, quality and decision-making.",
     "items": [
       {
-        "title": "Syncora",
-        "description": "Syncora is an AI-driven platform that helps teams schedule smarter. It learns from habits, workloads, and preferences to automate shift planning — freeing managers from spreadsheets forever.",
+        "title": "Lytera",
+        "description": "AI-based shift planning system. 70% reduction in planning time and –85% fewer operational errors.",
         "tags": ["Next.js", "Node.js", "MongoDB", "OpenAI API"]
       },
       {
-        "title": "Nuvia",
-        "description": "Nuvia brings sustainability data to life. With live dashboards powered by AI and IoT data, it helps companies visualize and reduce their environmental footprint.",
+        "title": "Crispin",
+        "description": "ESG dashboard for environmental KPIs and sustainability. Audits 40% faster, €180k/year in avoided costs.",
         "tags": ["React", "D3.js", "PostgreSQL", "TensorFlow"]
       },
       {
-        "title": "Loopin",
-        "description": "Loopin is the app that makes creative feedback fast and fun. Built for designers and creators, it turns scattered comments into structured, actionable insights.",
+        "title": "Vectis",
+        "description": "Visual collaboration platform for creative teams. –50% revision cycles, +60% client satisfaction.",
         "tags": ["Flutter", "Firebase", "WebSockets"]
       }
     ]
   },
   "process": {
-    "title": "How We Work",
-    "subtitle": "A clear and transparent process, from brief to launch",
+    "title": "How we work",
+    "subtitle": "A clear process, with no surprises.",
     "steps": [
       {
         "number": "01",
         "title": "Analysis",
-        "description": "Strategic brief, market research and goal setting. Complete alignment before we start building.",
-        "duration": "1-2 weeks"
+        "description": "We understand goals, constraints and context. Output: shared documentation.",
+        "duration": "1–2 weeks"
       },
       {
         "number": "02",
-        "title": "Prototyping",
-        "description": "Wireframes, UI/UX mockups and usability testing. We validate design with you before development.",
-        "duration": "2-3 weeks"
+        "title": "Design",
+        "description": "Wireframes, UI and system architecture. Output: realistic prototype.",
+        "duration": "2–3 weeks"
       },
       {
         "number": "03",
         "title": "Development",
-        "description": "Iterative development with weekly demos. Clean code, continuous testing and staging deployment.",
-        "duration": "4-8 weeks"
+        "description": "Clean code, clear versioning and continuous checks. Output: testable releases.",
+        "duration": "4–8 weeks"
       },
       {
         "number": "04",
         "title": "Launch",
-        "description": "Production deployment, final testing and team training. Post-launch support included.",
+        "description": "Deploy, optimization and post-launch support.",
         "duration": "1 week"
       }
     ]
   },
   "testimonials": {
-    "title": "What Clients Say",
-    "subtitle": "Our clients' trust is our best achievement",
+    "title": "What clients say",
+    "subtitle": "Partnerships built on trust, clarity and real results.",
     "items": [
       {
-        "quote": "AtavicoLabs turned our idea into a working product in record time. Professionalism, transparency and concrete results. 100% recommended.",
+        "quote": "They turned a complex idea into a stable, ready-to-use product. Communication was impeccable.",
         "author": "Marco Benedetti",
         "role": "CEO",
         "company": "FinTech Solutions"
       },
       {
-        "quote": "Finally a team that understands both design and technology. They launched our mobile app in 6 weeks, with a UX our users love.",
+        "quote": "Polished UX, clean code, deadlines met. A rare partner to find.",
         "author": "Sofia Marinelli",
         "role": "Founder",
         "company": "WellnessPro"
       },
       {
-        "quote": "Flawless collaboration. Clear communication, milestones met and zero budget surprises. Rare to find such a reliable partner.",
+        "quote": "They guided us through every phase, from concept to launch. A calm and highly professional experience.",
         "author": "Luca Ferri",
         "role": "CTO",
         "company": "LogiTech Europe"
@@ -144,64 +131,52 @@
     ]
   },
   "blog": {
-    "title": "Insights & Resources",
-    "subtitle": "Practical guides and best practices for founders and tech teams",
-    "cta": "Read Article",
+    "title": "Insights",
+    "subtitle": "Practical guides and processes to help you build better products.",
+    "cta": "Read article",
     "items": [
       {
-        "title": "From Idea to MVP in 8 Weeks: The Complete Guide",
-        "description": "How to quickly validate your idea with a working MVP. Methodology, tech stack and realistic budgets for startups.",
-        "category": "Startup",
-        "readTime": "8 min",
+        "title": "How to evaluate a software proposal without common mistakes",
+        "description": "Clear criteria to analyze offers, compare solutions and choose the right partner.",
+        "category": "Business",
+        "readTime": "7 min",
         "date": "2025-11-05"
       },
       {
-        "title": "Flutter vs React Native: Which to Choose in 2025?",
-        "description": "Technical and practical comparison of the two leading mobile frameworks. Performance, ecosystem, costs and real use cases.",
-        "category": "Mobile Dev",
+        "title": "When an MVP is the right choice — and when it isn't",
+        "description": "A practical guide to understand if an MVP is the right path for your project.",
+        "category": "Product",
         "readTime": "6 min",
         "date": "2025-10-28"
       },
       {
-        "title": "UX Design for SaaS: 7 Principles to Boost Conversions",
-        "description": "Design patterns that turn visitors into paying customers. Onboarding, dashboards and micro-interactions that make the difference.",
+        "title": "Why clarity in design reduces development costs",
+        "description": "Patterns and principles that avoid waste and make teams' work simpler.",
         "category": "Design",
-        "readTime": "10 min",
+        "readTime": "9 min",
         "date": "2025-10-15"
       }
     ]
   },
-  "newsletter": {
-    "title": "Stay Updated With Us",
-    "subtitle": "Download our free checklist and receive weekly tips on MVPs, design, and software development.",
-    "placeholder": "Your email address",
-    "cta": "Subscribe Free",
-    "incentive": "🎁 Bonus: 'From Idea to MVP in 30 Days' Checklist",
-    "privacy": "No spam, only valuable content. Unsubscribe anytime.",
-    "success": {
-      "title": "Thanks for subscribing!",
-      "message": "Check your email to download the free checklist."
-    }
-  },
   "cta": {
-    "title": "Ready to start?",
-    "subtitle": "Contact us today and get a working digital product fast.",
+    "title": "Let's build something together.",
+    "subtitle": "Let's talk about your project — even just to understand if we are the right fit to help.",
     "email": "contact@atavicolabs.com",
     "phone": "+39 366 454 3662"
   },
   "footer": {
     "brand": "AtavicoLabs",
-    "description": "We design and develop end-to-end digital products — from MVPs to complete platforms. A creative studio of technology and design for ambitious teams.",
+    "description": "Design & development studio. Digital products built with care, designed to last.",
     "quickLinks": {
-      "title": "Quick Links",
-      "about": "About Us",
+      "title": "Quick links",
+      "about": "About us",
       "services": "Services",
       "portfolio": "Portfolio",
       "contact": "Contact"
     },
     "contact": {
       "title": "Contact",
-      "location": "Location: Italy"
+      "location": "Italy"
     },
     "copyright": "© {year} AtavicoLabs. All rights reserved.",
     "legal": {

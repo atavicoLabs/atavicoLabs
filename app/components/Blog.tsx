@@ -1,83 +1,73 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
+import { useReveal } from '../hooks/useReveal';
 
 export default function Blog() {
   const t = useTranslations('blog');
+  const { ref, isRevealed } = useReveal();
 
   return (
-    <section id="blog" className="py-24 px-4 sm:px-6 lg:px-8 gradient-bg">
-      <div className="max-w-7xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">{t('title')}</h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+    <section 
+      id="blog" 
+      ref={ref}
+      className="relative py-24 md:py-32 px-6 lg:px-8 bg-warm-darker"
+    >
+      <div className="relative max-w-6xl mx-auto">
+        <div className="mb-20">
+          <h2 
+            className={`text-3xl md:text-4xl lg:text-5xl font-semibold text-warm-text tracking-tight leading-tight mb-6 fade-up ${isRevealed ? 'revealed' : ''}`}
+          >
+            {t('title')}
+          </h2>
+          <p 
+            className={`text-lg md:text-xl text-warm-secondary max-w-2xl leading-relaxed fade-up ${isRevealed ? 'revealed' : ''}`}
+            style={{ animationDelay: '100ms' }}
+          >
             {t('subtitle')}
           </p>
-        </motion.div>
+        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* Articles - fade-up with stagger 100ms */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {[0, 1, 2].map((index) => (
-            <motion.article
+            <article
               key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ 
-                duration: 0.6,
-                delay: index * 0.15,
-                ease: "easeOut"
-              }}
-              className="group bg-slate-800/50 backdrop-blur-sm rounded-xl overflow-hidden border border-slate-700 hover:border-blue-500 transition-all duration-300 hover:transform hover:scale-105"
+              className={`group fade-up stagger-child ${isRevealed ? 'revealed' : ''}`}
+              style={{ '--stagger-delay': '100ms' } as React.CSSProperties}
             >
-              {/* Category badge */}
-              <div className="p-6 pb-0">
-                <div className="flex items-center justify-between mb-4">
-                  <span className="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full text-sm font-semibold">
+              <a href="#" className="block">
+                <div className="space-y-4">
+                  {/* Category badge - slight delay */}
+                  <span 
+                    className={`inline-block px-3 py-1 text-xs text-warm-muted border border-warm-border ${
+                      isRevealed ? 'fade-in' : 'fade-up'
+                    }`}
+                    style={{ animationDelay: `${100 * index + 100}ms` }}
+                  >
                     {t(`items.${index}.category`)}
                   </span>
-                  <span className="text-gray-400 text-sm">
-                    {t(`items.${index}.readTime`)}
-                  </span>
-                </div>
-              </div>
 
-              {/* Content */}
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-3 group-hover:text-blue-400 transition-colors">
-                  {t(`items.${index}.title`)}
-                </h3>
-                <p className="text-gray-400 leading-relaxed mb-4">
-                  {t(`items.${index}.description`)}
-                </p>
+                  {/* Title */}
+                  <h3 className="text-xl md:text-2xl font-semibold text-warm-text leading-tight group-hover:text-warm-accent transition-colors duration-300">
+                    {t(`items.${index}.title`)}
+                  </h3>
 
-                {/* Read more link */}
-                <div className="flex items-center justify-between pt-4 border-t border-slate-700">
-                  <span className="text-sm text-gray-500">
-                    {new Date(t(`items.${index}.date`)).toLocaleDateString('it-IT', {
-                      day: 'numeric',
-                      month: 'long',
-                      year: 'numeric'
-                    })}
-                  </span>
-                  <a
-                    href="#"
-                    className="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 transition-colors font-semibold"
-                  >
-                    {t('cta')}
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  {/* Description */}
+                  <p className="text-warm-muted leading-relaxed">
+                    {t(`items.${index}.description`)}
+                  </p>
+
+                  {/* Read article CTA */}
+                  <div className="flex items-center gap-2 text-sm text-warm-accent font-medium group-hover:gap-3 transition-all duration-300">
+                    <span>{t('cta')}</span>
+                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
-                  </a>
+                  </div>
                 </div>
-              </div>
-            </motion.article>
+              </a>
+            </article>
           ))}
         </div>
       </div>

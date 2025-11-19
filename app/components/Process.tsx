@@ -1,75 +1,103 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
+import { useReveal } from '../hooks/useReveal';
 
 export default function Process() {
   const t = useTranslations('process');
+  const { ref, isRevealed } = useReveal();
+
+  const steps = [
+    {
+      number: '01',
+      title: t('steps.0.title'),
+      description: t('steps.0.description'),
+      duration: t('steps.0.duration'),
+    },
+    {
+      number: '02',
+      title: t('steps.1.title'),
+      description: t('steps.1.description'),
+      duration: t('steps.1.duration'),
+    },
+    {
+      number: '03',
+      title: t('steps.2.title'),
+      description: t('steps.2.description'),
+      duration: t('steps.2.duration'),
+    },
+    {
+      number: '04',
+      title: t('steps.3.title'),
+      description: t('steps.3.description'),
+      duration: t('steps.3.duration'),
+    },
+  ];
 
   return (
-    <section id="process" className="py-24 px-4 sm:px-6 lg:px-8 gradient-bg">
-      <div className="max-w-7xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">{t('title')}</h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+    <section 
+      id="process" 
+      ref={ref}
+      className="relative py-24 md:py-32 px-6 lg:px-8 bg-warm-darker"
+    >
+      <div className="relative max-w-5xl mx-auto">
+        {/* Section header */}
+        <div className="mb-20">
+          <h2 
+            className={`text-3xl md:text-4xl lg:text-5xl font-semibold text-warm-text tracking-tight leading-tight mb-6 fade-up ${isRevealed ? 'revealed' : ''}`}
+          >
+            {t('title')}
+          </h2>
+          <p 
+            className={`text-lg md:text-xl text-warm-secondary max-w-2xl leading-relaxed fade-up ${isRevealed ? 'revealed' : ''}`}
+            style={{ animationDelay: '100ms' }}
+          >
             {t('subtitle')}
           </p>
-        </motion.div>
+        </div>
 
-        <div className="relative">
-          {/* Timeline line - hidden on mobile */}
-          <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gradient-to-b from-blue-500 via-blue-400 to-blue-500"></div>
+        {/* Vertical timeline with draw-line animation */}
+        <div className="relative space-y-0">
+          {/* Timeline line */}
+          <div 
+            className={`absolute left-6 md:left-10 top-0 w-px bg-warm-border ${
+              isRevealed ? 'animate-draw-line' : 'h-0'
+            }`}
+            style={{ height: 'calc(100% - 3rem)' }}
+          />
 
-          <div className="space-y-12 md:space-y-24">
-            {[0, 1, 2, 3].map((index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className={`flex flex-col md:flex-row items-center gap-8 ${
-                  index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-                }`}
-              >
-                {/* Content card */}
-                <div className="flex-1 w-full">
-                  <div className="bg-slate-800/50 backdrop-blur-sm p-8 rounded-xl border border-slate-700 hover:border-blue-500 transition-all duration-300">
-                    <div className="flex items-start gap-4 mb-4">
-                      <span className="text-6xl font-bold text-blue-500/20">
-                        {t(`steps.${index}.number`)}
-                      </span>
-                      <div className="flex-1">
-                        <h3 className="text-2xl font-bold mb-2">
-                          {t(`steps.${index}.title`)}
-                        </h3>
-                        <span className="inline-block px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full text-sm mb-4">
-                          {t(`steps.${index}.duration`)}
-                        </span>
-                      </div>
-                    </div>
-                    <p className="text-gray-300 leading-relaxed">
-                      {t(`steps.${index}.description`)}
-                    </p>
+          {/* Steps - stagger 120ms */}
+          {steps.map((step, index) => (
+            <div
+              key={index}
+              className={`relative py-12 fade-up stagger-child ${isRevealed ? 'revealed' : ''}`}
+              style={{ '--stagger-delay': '120ms' } as React.CSSProperties}
+            >
+              <div className="flex items-start gap-6 md:gap-12">
+                {/* Number with dot indicator */}
+                <div className="relative flex-shrink-0">
+                  <div className="absolute left-1/2 -translate-x-1/2 top-4 w-3 h-3 rounded-full bg-warm-accent" />
+                  <div className="text-4xl md:text-5xl font-semibold text-warm-muted pl-8 md:pl-12">
+                    {step.number}
                   </div>
                 </div>
 
-                {/* Center dot */}
-                <div className="hidden md:flex items-center justify-center flex-shrink-0 w-16 h-16 rounded-full bg-blue-500 border-4 border-slate-900 shadow-lg shadow-blue-500/50 z-10">
-                  <div className="w-3 h-3 bg-white rounded-full"></div>
+                <div className="flex-1 pt-0 md:pt-1 border-b border-warm-border pb-12 last:border-0">
+                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-4">
+                    <h3 className="text-xl md:text-2xl font-semibold text-warm-text leading-tight">
+                      {step.title}
+                    </h3>
+                    <span className="px-3 py-1 text-xs text-warm-muted border border-warm-border whitespace-nowrap self-start">
+                      {step.duration}
+                    </span>
+                  </div>
+                  <p className="text-warm-muted leading-relaxed max-w-2xl">
+                    {step.description}
+                  </p>
                 </div>
-
-                {/* Spacer for alternating layout */}
-                <div className="flex-1 hidden md:block"></div>
-              </motion.div>
-            ))}
-          </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
