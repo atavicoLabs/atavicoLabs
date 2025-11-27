@@ -1,81 +1,82 @@
 {
   "metadata": {
-    "title": "AtavicoLabs — Solid digital products, built with care",
-    "description": "We design and build web and mobile products for SMEs and product teams: essential design, reliable engineering and measurable outcomes.",
+    "title": "AtavicoLabs — Solid digital products, crafted with care",
+    "description": "We design and develop web and mobile apps for SMEs and product teams: essential design, reliable engineering and measurable results.",
     "keywords": "software development, web apps, mobile apps, ux design, mvp, full-stack development, digital consulting"
   },
+  "navbar": {
+    "about": "About",
+    "work": "Projects",
+    "process": "Process",
+    "insights": "Insights",
+    "contact": "Contact"
+  },
   "hero": {
-    "tagline": "TECHNICAL DESIGN • RELIABLE DEVELOPMENT",
-    "title": "We build software that works. No compromises on quality.",
-    "description": "We design and build web apps, platforms and custom systems for companies seeking documentable quality and transparent partnerships. Modern architectures, tested code, punctual releases.",
-    "cta": "Explore projects",
-    "scroll": "Scroll"
+    "label": "Design. Development. Release.",
+    "title": "Solid digital products, crafted with care.",
+    "description": "End-to-end solutions for companies seeking quality, transparency and on-time releases.",
+    "ctaPrimary": "View projects",
+    "ctaSecondary": "How we work",
+    "available": "Available for projects",
+    "since": "Since 2017",
+    "remote": "Remote-first",
+    "onsite": "On-site on request",
+    "deliveryNote": "Remote delivery, on-site support only for critical phases."
   },
   "about": {
-    "title": "About us",
-    "subtitle": "A design and development studio that combines craftsmanship-level care with solid engineering. We build digital products that are reliable, understandable and pleasant to use.",
+    "title": "Care, precision, continuity.",
+    "subtitle": "Every project starts from a real need. We transform it into a concrete product through a process that controls every phase: analysis, design, development and release. Technology as a means, quality as a goal.",
     "technologies": [
-      {
-        "title": "Care",
-        "description": "Every detail matters: architecture, interfaces, micro-interactions and communication."
-      },
-      {
-        "title": "Clarity",
-        "description": "Transparent processes, testable prototypes and no unnecessary jargon."
-      },
-      {
-        "title": "Reliability",
-        "description": "Stable, scalable development designed to last well beyond the first release."
-      }
+      {}
     ]
   },
   "services": {
     "title": "One team, one process, consistent quality.",
-    "subtitle": "We build end-to-end products: design, engineering and release in one continuous flow. No silos, no surprises, no wasted work.",
-    "cta": "View portfolio",
+    "subtitle": "We build end-to-end products: design, engineering and release in a continuous flow.",
+    "cta": "Explore portfolio",
     "items": [
       {
         "title": "UX/UI Design",
-        "description": "We design clear, functional interfaces based on real goals. Design systems, clickable prototypes and user testing to reduce risks and costs."
+        "description": "Clear, consistent interfaces based on real goals. Wireframes, design systems and prototypes that reduce risks and time."
       },
       {
-        "title": "Web & Mobile Apps",
-        "description": "Native or cross-platform iOS and Android apps, fast, consistent and built to last. Real performance, stable code, simplified maintenance."
+        "title": "Web & Mobile Development",
+        "description": "Fast, stable applications built to last. Modern architectures, reliable code, easy maintenance."
       },
       {
         "title": "Full-Stack Development",
-        "description": "We build robust platforms, secure APIs and reliable dashboards. Modern architectures, clear versioning and zero technical surprises."
+        "description": "Secure APIs, solid backends and reliable dashboards. Scalable solutions with high technical standards."
       },
       {
         "title": "AI & Automation",
-        "description": "Reliable AI integrations and automated workflows that reduce costs and time. Models, orchestration and tools that actually serve the business."
+        "description": "AI integrations that simplify processes and reduce costs. Custom automations, from concept to deployment."
       }
     ]
   },
   "portfolio": {
-    "title": "Selected projects",
-    "subtitle": "Real projects, built to last. Concrete solutions that improve operations, quality and decision-making.",
+    "title": "Our work.",
+    "subtitle": "Real projects, built to last. Concrete solutions that improve processes, quality and decisions.",
     "items": [
       {
         "title": "Lytera",
-        "description": "AI-based shift planning system. 70% reduction in planning time and –85% fewer operational errors.",
+        "description": "AI-based shift planning system. –70% planning time and –85% operational errors.",
         "tags": ["Next.js", "Node.js", "MongoDB", "OpenAI API"]
       },
       {
         "title": "Crispin",
-        "description": "ESG dashboard for environmental KPIs and sustainability. Audits 40% faster, €180k/year in avoided costs.",
+        "description": "ESG dashboard for environmental KPIs and sustainability. 40% faster audits, €180k/year in avoided costs.",
         "tags": ["React", "D3.js", "PostgreSQL", "TensorFlow"]
       },
       {
         "title": "Vectis",
-        "description": "Visual collaboration platform for creative teams. –50% revision cycles, +60% client satisfaction.",
+        "description": "Visual collaboration platform for creative teams. –50% review cycles, +60% client satisfaction.",
         "tags": ["Flutter", "Firebase", "WebSockets"]
       }
     ]
   },
   "process": {
-    "title": "How we work",
-    "subtitle": "A clear process, with no surprises.",
+    "title": "How we work.",
+    "subtitle": "A clear process, no surprises.",
     "steps": [
       {
         "number": "01",
@@ -92,12 +93,12 @@
       {
         "number": "03",
         "title": "Development",
-        "description": "Clean code, clear versioning and continuous checks. Output: testable releases.",
+        "description": "Clean code, clear versioning and continuous verification. Output: testable releases.",
         "duration": "4–8 weeks"
       },
       {
         "number": "04",
-        "title": "Launch",
+        "title": "Release",
         "description": "Deploy, optimization and post-launch support.",
         "duration": "1 week"
       }
@@ -105,10 +106,10 @@
   },
   "testimonials": {
     "title": "What clients say",
-    "subtitle": "Partnerships built on trust, clarity and real results.",
+    "subtitle": "Collaborations based on trust, clarity and real results.",
     "items": [
       {
-        "quote": "They turned a complex idea into a stable, ready-to-use product. Communication was impeccable.",
+        "quote": "They transformed a complex idea into a stable, ready-to-use product. Impeccable communication.",
         "author": "Marco Benedetti",
         "role": "CEO",
         "company": "FinTech Solutions"
@@ -120,7 +121,7 @@
         "company": "WellnessPro"
       },
       {
-        "quote": "They guided us through every phase, from concept to launch. A calm and highly professional experience.",
+        "quote": "They guided us through every phase, from concept to release. A calm and professional experience.",
         "author": "Luca Ferri",
         "role": "CTO",
         "company": "LogiTech Europe"
@@ -129,18 +130,18 @@
   },
   "blog": {
     "title": "Insights",
-    "subtitle": "Practical guides and processes to help you build better products.",
+    "subtitle": "Practical guides and processes to build better products.",
     "cta": "Read article",
     "items": [
       {
-        "title": "How to evaluate a software proposal without common mistakes",
-        "description": "Clear criteria to analyze offers, compare solutions and choose the right partner.",
+        "title": "How to evaluate a software quote without common mistakes",
+        "description": "Clear criteria to analyze proposals, compare solutions and choose the right partner.",
         "category": "Business",
         "readTime": "7 min",
         "date": "2025-11-05"
       },
       {
-        "title": "When an MVP is the right choice — and when it isn't",
+        "title": "When to choose an MVP — and when not to",
         "description": "A practical guide to understand if an MVP is the right path for your project.",
         "category": "Product",
         "readTime": "6 min",
@@ -148,7 +149,7 @@
       },
       {
         "title": "Why clarity in design reduces development costs",
-        "description": "Patterns and principles that avoid waste and make teams' work simpler.",
+        "description": "Patterns and principles that avoid waste and simplify team work.",
         "category": "Design",
         "readTime": "9 min",
         "date": "2025-10-15"
@@ -156,28 +157,29 @@
     ]
   },
   "cta": {
-    "title": "Let's build something together.",
-    "subtitle": "Let's talk about your project — even just to understand if we are the right fit to help.",
+    "title": "Let's build something solid.",
+    "subtitle": "Whether it's a new product or an existing platform, we can help you design, develop and release concrete solutions.",
+    "cta": "Let's talk",
     "email": "contact@atavicolabs.com"
   },
   "footer": {
     "brand": "AtavicoLabs",
-    "description": "Design & development studio. Digital products built with care, designed to last.",
+    "description": "Design, development and release of digital products.",
     "quickLinks": {
-      "title": "Quick links",
-      "about": "About us",
+      "title": "Menu",
       "services": "Services",
       "portfolio": "Portfolio",
+      "process": "Process",
       "contact": "Contact"
     },
     "contact": {
       "title": "Contact",
       "location": "Italy"
     },
-    "copyright": "© {year} AtavicoLabs. All rights reserved.",
+    "copyright": "© {year} AtavicoLabs",
     "legal": {
-      "privacy": "Privacy Policy",
-      "terms": "Terms of Service"
+      "privacy": "Privacy",
+      "terms": "Terms"
     }
   }
 }

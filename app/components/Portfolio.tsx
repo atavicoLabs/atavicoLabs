@@ -17,22 +17,22 @@ export default function Portfolio() {
     <section 
       id="portfolio" 
       ref={ref}
-      className="relative py-24 px-6 lg:px-16 bg-carbone"
+      className="relative py-40 px-6 lg:px-16 bg-carbone w-full overflow-hidden border-t border-grigio/20"
     >
       {/* Section Number - top right */}
-      <div className="absolute top-12 right-6 lg:right-16 text-[14px] font-mono text-oliva/40">[03]</div>
+      <div className="absolute top-12 right-6 lg:right-16 text-[11px] font-mono text-oliva/30">[04]</div>
 
       <div className="relative max-w-7xl mx-auto">
         {/* Header - max-width 750px */}
         <div className="max-w-[750px] mb-16">
-          <div className="text-[9px] uppercase tracking-wider text-grigio/60 font-light mb-3">PORTFOLIO</div>
+          <div className="text-[11px] uppercase tracking-[0.15em] text-grigio/60 font-light mb-4">Work</div>
           <h2 
             className={`text-[32px] font-medium text-sabbia mb-4 leading-[1.2] fade-up ${isRevealed ? 'revealed' : ''}`}
           >
             {t('title')}
           </h2>
           <p 
-            className={`text-[16px] leading-[1.7] text-sabbia/60 font-light fade-up ${isRevealed ? 'revealed' : ''}`}
+            className={`text-[17px] leading-[1.65] text-sabbia/60 font-light max-w-[520px] fade-up ${isRevealed ? 'revealed' : ''}`}
             style={{ animationDelay: '100ms' }}
           >
             {t('subtitle')}
@@ -50,9 +50,9 @@ export default function Portfolio() {
               className={`group block fade-up ${isRevealed ? 'revealed' : ''}`}
               style={{ animationDelay: `${index * 100 + 200}ms` }}
             >
-              <div className={`flex items-start gap-8 border border-grigio/20 bg-grafite/30 group-hover:border-oliva/40 transition-all duration-300 group-hover:-translate-y-1 ${isFeatured ? 'p-12 md:p-16' : 'p-8'}`}>
+              <div className={`flex flex-col lg:flex-row items-start gap-12 border border-grigio/20 bg-grafite/30 group-hover:border-oliva/40 transition-all duration-300 group-hover:-translate-y-1 ${isFeatured ? 'p-6 md:p-12 lg:p-16' : 'p-6 md:p-8'}`}>
                 {/* Mockup - Wireframe Style */}
-                <div className={`${isFeatured ? 'w-[640px] h-[480px]' : 'w-[320px] h-[240px]'} bg-carbone border border-grigio/20 flex-shrink-0 hidden lg:flex items-center justify-center group-hover:border-oliva/30 transition-colors duration-300 relative overflow-hidden`}>
+                <div className={`${isFeatured ? 'w-full lg:w-[640px] h-[320px] lg:h-[480px]' : 'w-full lg:w-[320px] h-[200px] lg:h-[240px]'} bg-carbone border border-grigio/20 flex-shrink-0 hidden lg:flex items-center justify-center group-hover:border-oliva/30 transition-colors duration-300 relative overflow-hidden`}>
                   {/* Wireframe Grid */}
                   <svg className="absolute inset-0 w-full h-full" viewBox="0 0 320 240" preserveAspectRatio="none">
                     <defs>
@@ -86,10 +86,10 @@ export default function Portfolio() {
 
                   {/* Metrics Box */}
                   <div className="border border-grigio/20 p-4 space-y-2">
-                    <div className="text-[9px] uppercase tracking-wider text-grigio/60 font-light mb-3">METRICHE PROGETTO</div>
+                    <div className="text-[9px] uppercase tracking-wider text-grigio/70 font-light mb-3">METRICHE PROGETTO</div>
                     <div className={`grid ${isFeatured ? 'grid-cols-3' : 'grid-cols-2'} gap-4 text-[11px]`}>
                       <div>
-                        <div className="text-grigio/60">Timeline</div>
+                        <div className="text-grigio/70">Timeline</div>
                         <div className="text-sabbia font-medium">
                           {index === 0 && '8 settimane'}
                           {index === 1 && '12 settimane'}
@@ -97,14 +97,14 @@ export default function Portfolio() {
                         </div>
                       </div>
                       <div>
-                        <div className="text-grigio/60">Status</div>
+                        <div className="text-grigio/70">Status</div>
                         <div className="text-oliva flex items-center gap-1.5">
                           <span className="w-1.5 h-1.5 rounded-full bg-oliva"></span>
                           In produzione
                         </div>
                       </div>
                       <div>
-                        <div className="text-grigio/60">Team</div>
+                        <div className="text-grigio/70">Team</div>
                         <div className="text-sabbia">
                           {index === 0 && '3 dev + 1 designer'}
                           {index === 1 && '4 dev + 1 analyst'}

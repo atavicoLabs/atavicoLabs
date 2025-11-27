@@ -12,11 +12,8 @@ export default function Footer() {
   return (
     <footer 
       ref={ref}
-      className="relative bg-carbone py-20 px-6 lg:px-16 border-t border-grigio/20"
+      className="relative bg-carbone py-20 px-6 lg:px-16 border-t border-grigio/20 w-full overflow-hidden"
     >
-      {/* Section Number */}
-      <div className="absolute top-12 right-6 lg:right-16 text-[14px] font-mono text-oliva/40">[09]</div>
-
       <div className={`relative max-w-7xl mx-auto fade-up ${isRevealed ? 'revealed' : ''}`}>
         
         {/* 4-Column Grid */}
@@ -30,7 +27,7 @@ export default function Footer() {
             <p className="text-grigio text-[13px] leading-[1.7] opacity-70 mb-6">
               {t('description')}
             </p>
-            <div className="text-[10px] font-mono text-grigio/40">
+            <div className="text-[10px] font-mono text-grigio/60">
               Milano, Italia<br />
               45.4642° N, 9.1900° E
             </div>
@@ -38,7 +35,7 @@ export default function Footer() {
 
           {/* Column 2: Services */}
           <div>
-            <h4 className="text-[11px] uppercase tracking-wider text-grigio/60 mb-4 font-light">Servizi</h4>
+            <h4 className="text-[11px] uppercase tracking-[0.15em] text-grigio/60 mb-4 font-light">Servizi</h4>
             <ul className="space-y-3">
               <li>
                 <Link href="#services" className="text-[13px] text-sabbia/70 hover:text-oliva transition-colors duration-300">
@@ -65,7 +62,7 @@ export default function Footer() {
 
           {/* Column 3: Resources */}
           <div>
-            <h4 className="text-[11px] uppercase tracking-wider text-grigio/60 mb-4 font-light">Risorse</h4>
+            <h4 className="text-[11px] uppercase tracking-[0.15em] text-grigio/60 mb-4 font-light">Risorse</h4>
             <ul className="space-y-3">
               <li>
                 <Link href="#portfolio" className="text-[13px] text-sabbia/70 hover:text-oliva transition-colors duration-300">
@@ -92,7 +89,7 @@ export default function Footer() {
 
           {/* Column 4: Newsletter */}
           <div>
-            <h4 className="text-[11px] uppercase tracking-wider text-grigio/60 mb-4 font-light">Newsletter</h4>
+            <h4 className="text-[11px] uppercase tracking-[0.15em] text-grigio/60 mb-4 font-light">Newsletter</h4>
             <p className="text-[12px] text-sabbia/60 leading-[1.6] mb-4">
               Aggiornamenti mensili su design, sviluppo e best practice.
             </p>

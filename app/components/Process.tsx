@@ -48,23 +48,23 @@ export default function Process() {
     <section 
       id="process" 
       ref={ref}
-      className="relative py-24 px-6 lg:px-16 bg-carbone"
+      className="relative py-40 px-6 lg:px-16 bg-carbone w-full overflow-hidden border-t border-grigio/20"
     >
       {/* Section Number - top right */}
-      <div className="absolute top-12 right-6 lg:right-16 text-[14px] font-mono text-oliva/40">[04]</div>
+      <div className="absolute top-12 right-6 lg:right-16 text-[11px] font-mono text-oliva/30">[05]</div>
 
       <div className="relative max-w-[900px] mx-auto">
 
         {/* Header */}
         <div className="max-w-[750px] mb-16">
-          <div className="text-[9px] uppercase tracking-wider text-grigio/60 font-light mb-3">PROCESSO</div>
+          <div className="text-[11px] uppercase tracking-[0.15em] text-grigio/60 font-light mb-4">How we work</div>
           <h2 
             className={`text-[32px] font-medium text-sabbia mb-4 leading-[1.2] fade-up ${isRevealed ? 'revealed' : ''}`}
           >
             {t('title')}
           </h2>
           <p 
-            className={`text-[16px] leading-[1.7] text-sabbia/60 font-light fade-up ${isRevealed ? 'revealed' : ''}`}
+            className={`text-[17px] leading-[1.65] text-sabbia/60 font-light max-w-[520px] fade-up ${isRevealed ? 'revealed' : ''}`}
             style={{ animationDelay: '100ms' }}
           >
             {t('subtitle')}
@@ -88,13 +88,13 @@ export default function Process() {
             {[0, 1, 2, 3].map((index) => {
               const percentages = ['15%', '25%', '50%', '10%'];
               return (
-              <div
+                <div
                 key={index}
                 ref={(el) => { stepRefs.current[index] = el; if (el && observerRef.current) observerRef.current.observe(el); }}
-                className={`relative fade-up ${revealed[index] ? 'revealed' : 'opacity-0'}`}
+                className={`relative fade-up max-w-full ${revealed[index] ? 'revealed' : 'opacity-0'}`}
                 style={{ 
                   transitionDelay: `${index * 150}ms`,
-                  marginLeft: `${index * 40}px` // Diagonal offset
+                  marginLeft: `min(${index * 40}px, calc(25vw - 40px))` // Diagonal offset responsive
                 }}
               >
                 {/* Dot on timeline */}
@@ -113,7 +113,7 @@ export default function Process() {
                 {/* Content */}
                 <div className="pl-16">
                   <div className="mb-2 flex items-center gap-3">
-                    <span className="text-[10px] font-mono text-grigio/40">PHASE_0{index + 1}</span>
+                    <span className="text-[10px] font-mono text-grigio/60">PHASE_0{index + 1}</span>
                     <span className="text-[10px] text-grigio/50">•</span>
                     <span className="text-[10px] text-grigio/50">{percentages[index]} del progetto</span>
                   </div>
@@ -128,27 +128,27 @@ export default function Process() {
                   </div>
 
                   {/* Deliverables */}
-                  <div className="border border-grigio/20 bg-carbone/50 p-5">
-                    <div className="text-[9px] uppercase tracking-wider text-grigio/60 mb-3">DELIVERABLES</div>
+                  <div className="border border-grigio/30 bg-carbone/50 p-5">
+                    <div className="text-[11px] uppercase tracking-[0.15em] text-grigio/70 mb-3">Deliverables</div>
                   <div className="space-y-2">
                     {index === 0 && (
                       <>
                         <div className="flex items-center gap-2.5 text-[13px] text-sabbia/70">
                           <svg className="w-4 h-4 flex-shrink-0" viewBox="0 0 16 16" fill="none">
-                            <rect x="0.5" y="0.5" width="15" height="15" stroke="rgb(78, 88, 78)" strokeWidth="1" />
-                            <path d="M4 8l2.5 2.5L12 5" stroke="rgb(78, 88, 78)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                            <rect x="0.5" y="0.5" width="15" height="15" fill="rgb(78, 88, 78)" stroke="rgb(78, 88, 78)" strokeWidth="1" />
+                            <path d="M4 8l2.5 2.5L12 5" stroke="rgb(232, 230, 220)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                           </svg>
                           <span>Product brief condiviso</span>
                         </div>
                         <div className="flex items-center gap-2.5 text-[13px] text-sabbia/70">
                           <svg className="w-4 h-4 flex-shrink-0" viewBox="0 0 16 16" fill="none">
-                            <rect x="0.5" y="0.5" width="15" height="15" stroke="rgb(78, 88, 78)" strokeWidth="1" />
-                            <path d="M4 8l2.5 2.5L12 5" stroke="rgb(78, 88, 78)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                            <rect x="0.5" y="0.5" width="15" height="15" fill="rgb(78, 88, 78)" stroke="rgb(78, 88, 78)" strokeWidth="1" />
+                            <path d="M4 8l2.5 2.5L12 5" stroke="rgb(232, 230, 220)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                           </svg>
                           <span>Technical requirements</span>
                         </div>
                         <div className="flex items-center gap-2.5 text-[13px] text-sabbia/70">
-                          <div className="w-4 h-4 border border-grigio/30 flex-shrink-0" />
+                          <div className="w-4 h-4 border border-grigio/40 flex-shrink-0" />
                           <span>Project timeline</span>
                         </div>
                       </>
@@ -157,20 +157,20 @@ export default function Process() {
                       <>
                         <div className="flex items-center gap-2.5 text-[13px] text-sabbia/70">
                           <svg className="w-4 h-4 flex-shrink-0" viewBox="0 0 16 16" fill="none">
-                            <rect x="0.5" y="0.5" width="15" height="15" stroke="rgb(78, 88, 78)" strokeWidth="1" />
-                            <path d="M4 8l2.5 2.5L12 5" stroke="rgb(78, 88, 78)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                            <rect x="0.5" y="0.5" width="15" height="15" fill="rgb(78, 88, 78)" stroke="rgb(78, 88, 78)" strokeWidth="1" />
+                            <path d="M4 8l2.5 2.5L12 5" stroke="rgb(232, 230, 220)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                           </svg>
                           <span>Design system library</span>
                         </div>
                         <div className="flex items-center gap-2.5 text-[13px] text-sabbia/70">
                           <svg className="w-4 h-4 flex-shrink-0" viewBox="0 0 16 16" fill="none">
-                            <rect x="0.5" y="0.5" width="15" height="15" stroke="rgb(78, 88, 78)" strokeWidth="1" />
-                            <path d="M4 8l2.5 2.5L12 5" stroke="rgb(78, 88, 78)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                            <rect x="0.5" y="0.5" width="15" height="15" fill="rgb(78, 88, 78)" stroke="rgb(78, 88, 78)" strokeWidth="1" />
+                            <path d="M4 8l2.5 2.5L12 5" stroke="rgb(232, 230, 220)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                           </svg>
                           <span>Clickable prototype</span>
                         </div>
                         <div className="flex items-center gap-2.5 text-[13px] text-sabbia/70">
-                          <div className="w-4 h-4 border border-grigio/30 flex-shrink-0" />
+                          <div className="w-4 h-4 border border-grigio/40 flex-shrink-0" />
                           <span>Architecture diagram</span>
                         </div>
                       </>
@@ -179,17 +179,17 @@ export default function Process() {
                       <>
                         <div className="flex items-center gap-2.5 text-[13px] text-sabbia/70">
                           <svg className="w-4 h-4 flex-shrink-0" viewBox="0 0 16 16" fill="none">
-                            <rect x="0.5" y="0.5" width="15" height="15" stroke="rgb(78, 88, 78)" strokeWidth="1" />
-                            <path d="M4 8l2.5 2.5L12 5" stroke="rgb(78, 88, 78)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                            <rect x="0.5" y="0.5" width="15" height="15" fill="rgb(78, 88, 78)" stroke="rgb(78, 88, 78)" strokeWidth="1" />
+                            <path d="M4 8l2.5 2.5L12 5" stroke="rgb(232, 230, 220)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                           </svg>
                           <span>Production-ready code</span>
                         </div>
                         <div className="flex items-center gap-2.5 text-[13px] text-sabbia/70">
-                          <div className="w-4 h-4 border border-grigio/30 flex-shrink-0" />
+                          <div className="w-4 h-4 border border-grigio/40 flex-shrink-0" />
                           <span>Test coverage &gt;80%</span>
                         </div>
                         <div className="flex items-center gap-2.5 text-[13px] text-sabbia/70">
-                          <div className="w-4 h-4 border border-grigio/30 flex-shrink-0" />
+                          <div className="w-4 h-4 border border-grigio/40 flex-shrink-0" />
                           <span>CI/CD pipeline</span>
                         </div>
                       </>
@@ -198,22 +198,22 @@ export default function Process() {
                       <>
                         <div className="flex items-center gap-2.5 text-[13px] text-sabbia/70">
                           <svg className="w-4 h-4 flex-shrink-0" viewBox="0 0 16 16" fill="none">
-                            <rect x="0.5" y="0.5" width="15" height="15" stroke="rgb(78, 88, 78)" strokeWidth="1" />
-                            <path d="M4 8l2.5 2.5L12 5" stroke="rgb(78, 88, 78)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                            <rect x="0.5" y="0.5" width="15" height="15" fill="rgb(78, 88, 78)" stroke="rgb(78, 88, 78)" strokeWidth="1" />
+                            <path d="M4 8l2.5 2.5L12 5" stroke="rgb(232, 230, 220)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                           </svg>
                           <span>App live in produzione</span>
                         </div>
                         <div className="flex items-center gap-2.5 text-[13px] text-sabbia/70">
                           <svg className="w-4 h-4 flex-shrink-0" viewBox="0 0 16 16" fill="none">
-                            <rect x="0.5" y="0.5" width="15" height="15" stroke="rgb(78, 88, 78)" strokeWidth="1" />
-                            <path d="M4 8l2.5 2.5L12 5" stroke="rgb(78, 88, 78)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                            <rect x="0.5" y="0.5" width="15" height="15" fill="rgb(78, 88, 78)" stroke="rgb(78, 88, 78)" strokeWidth="1" />
+                            <path d="M4 8l2.5 2.5L12 5" stroke="rgb(232, 230, 220)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                           </svg>
                           <span>Monitoring setup</span>
                         </div>
                         <div className="flex items-center gap-2.5 text-[13px] text-sabbia/70">
                           <svg className="w-4 h-4 flex-shrink-0" viewBox="0 0 16 16" fill="none">
-                            <rect x="0.5" y="0.5" width="15" height="15" stroke="rgb(78, 88, 78)" strokeWidth="1" />
-                            <path d="M4 8l2.5 2.5L12 5" stroke="rgb(78, 88, 78)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                            <rect x="0.5" y="0.5" width="15" height="15" fill="rgb(78, 88, 78)" stroke="rgb(78, 88, 78)" strokeWidth="1" />
+                            <path d="M4 8l2.5 2.5L12 5" stroke="rgb(232, 230, 220)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                           </svg>
                           <span>Documentation</span>
                         </div>
@@ -230,7 +230,7 @@ export default function Process() {
 
         {/* Methodology */}
         <div className="mt-16 pt-12 border-t border-grigio/20">
-          <div className="text-[9px] uppercase tracking-wider text-grigio/60 font-light mb-4">METODOLOGIA</div>
+          <div className="text-[11px] uppercase tracking-[0.15em] text-grigio/60 font-light mb-4">Methodology</div>
           <div className="text-[14px] text-sabbia/70 leading-relaxed mb-4">
             Agile · Test-Driven Development · Continuous Integration
           </div>

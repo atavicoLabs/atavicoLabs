@@ -4,12 +4,24 @@
     "description": "Progettiamo e sviluppiamo web e app mobile per PMI e team di prodotto: design essenziale, ingegneria affidabile e risultati misurabili.",
     "keywords": "sviluppo software, web app, app mobile, ux design, mvp, sviluppo full-stack, consulenza digitale"
   },
+  "navbar": {
+    "about": "Chi siamo",
+    "work": "Progetti",
+    "process": "Processo",
+    "insights": "Approfondimenti",
+    "contact": "Contatti"
+  },
   "hero": {
-    "title": "Costruiamo software che funziona. Senza compromessi sulla qualità.",
-    "tagline": "PROGETTAZIONE TECNICA • SVILUPPO AFFIDABILE",
-    "description": "Progettiamo e sviluppiamo web app, piattaforme e sistemi custom per aziende che cercano qualità documentabile e partnership trasparenti. Architetture moderne, codice testato, rilasci puntuali.",
-    "cta": "Esplora progetti",
-    "scroll": "Scorri"
+    "label": "Design. Sviluppo. Rilascio.",
+    "title": "Prodotti digitali solidi, progettati con cura.",
+    "description": "Soluzioni end-to-end per aziende che cercano qualità, trasparenza e rilasci puntuali.",
+    "ctaPrimary": "Vedi i progetti",
+    "ctaSecondary": "Scopri il processo",
+    "available": "Disponibili per progetti",
+    "since": "Dal 2017",
+    "remote": "Remote-first",
+    "onsite": "On-site su richiesta",
+    "deliveryNote": "Delivery da remoto, supporto in presenza solo per fasi critiche."
   },
   "about": {
     "title": "Cura, precisione, continuità.",

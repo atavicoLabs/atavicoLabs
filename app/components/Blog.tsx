@@ -11,22 +11,22 @@ export default function Blog() {
     <section 
       id="blog" 
       ref={ref}
-      className="relative py-24 px-6 lg:px-16 bg-carbone"
+      className="relative py-32 px-6 lg:px-16 bg-carbone w-full overflow-hidden border-t border-grigio/20"
     >
       {/* Section Number */}
-      <div className="absolute top-12 right-6 lg:right-16 text-[14px] font-mono text-oliva/40">[06]</div>
+      <div className="absolute top-12 right-6 lg:right-16 text-[11px] font-mono text-oliva/30">[06]</div>
 
       <div className="relative max-w-7xl mx-auto">
         {/* Header */}
         <div className="max-w-[750px] mb-16">
-          <div className="text-[9px] uppercase tracking-wider text-grigio/60 font-light mb-3">APPROFONDIMENTI</div>
+          <div className="text-[11px] uppercase tracking-[0.15em] text-grigio/60 font-light mb-4">Insights</div>
           <h2 
             className={`text-[32px] font-medium text-sabbia mb-4 leading-[1.2] fade-up ${isRevealed ? 'revealed' : ''}`}
           >
             {t('title')}
           </h2>
           <p 
-            className={`text-[16px] leading-[1.7] text-sabbia/60 font-light fade-up ${isRevealed ? 'revealed' : ''}`}
+            className={`text-[17px] leading-[1.65] text-sabbia/60 font-light max-w-[520px] fade-up ${isRevealed ? 'revealed' : ''}`}
             style={{ animationDelay: '100ms' }}
           >
             {t('subtitle')}

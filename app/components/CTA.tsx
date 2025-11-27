@@ -11,7 +11,7 @@ export default function CTA() {
     <section 
       id="contact" 
       ref={ref}
-      className="relative py-32 px-6 lg:px-16 bg-carbone border-t border-grigio/20 overflow-hidden"
+      className="relative py-40 px-6 lg:px-16 bg-carbone border-t border-grigio/20 overflow-hidden w-full"
     >
       {/* Blueprint Grid Background */}
       <div 
@@ -23,13 +23,13 @@ export default function CTA() {
       />
 
       {/* Section Number */}
-      <div className="absolute top-12 right-6 lg:right-16 text-[14px] font-mono text-oliva/40">[07]</div>
+      <div className="absolute top-12 right-6 lg:right-16 text-[11px] font-mono text-oliva/30">[07]</div>
 
-      <div className="relative max-w-7xl mx-auto grid lg:grid-cols-2 gap-16">
+      <div className="relative max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 lg:gap-20">
         {/* Left Column - Content */}
         <div className="space-y-8">
           {/* Micro Label */}
-          <div className="text-[9px] uppercase tracking-wider text-grigio/60 font-light">CONTATTI</div>
+          <div className="text-[11px] uppercase tracking-[0.15em] text-grigio/60 font-light mb-4">Get in touch</div>
 
           {/* Title */}
           <h2 
@@ -40,7 +40,7 @@ export default function CTA() {
 
           {/* Subtitle */}
           <p 
-            className={`text-[16px] leading-[1.7] text-sabbia/60 font-light fade-up ${isRevealed ? 'revealed' : ''}`}
+            className={`text-[17px] leading-[1.65] text-sabbia/60 font-light max-w-[520px] fade-up ${isRevealed ? 'revealed' : ''}`}
             style={{ animationDelay: '100ms' }}
           >
             {t('subtitle')}
@@ -53,10 +53,10 @@ export default function CTA() {
           >
             <a
               href={`mailto:${t('email')}`}
-              className="inline-flex items-center gap-3 px-5 py-3 border border-sabbia/60 text-sabbia font-normal text-[13px] uppercase tracking-wider hover:border-oliva hover:text-oliva hover:bg-oliva/5 transition-all duration-300"
+              className="inline-flex items-center gap-3 px-7 py-3.5 border border-sabbia/30 text-sabbia text-[13px] tracking-wide hover:border-oliva hover:text-oliva hover:bg-oliva/5 transition-all duration-300 uppercase"
             >
               {t('cta')}
-              <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
             </a>
@@ -74,7 +74,7 @@ export default function CTA() {
               { value: '8 anni', label: 'Esperienza' }
             ].map((stat, index) => (
               <div key={index}>
-                <div className="text-[20px] font-medium text-oliva">{stat.value}</div>
+                <div className="text-[28px] font-medium text-oliva">{stat.value}</div>
                 <div className="text-[11px] text-grigio/70 uppercase tracking-wider mt-1">{stat.label}</div>
               </div>
             ))}
@@ -97,7 +97,7 @@ export default function CTA() {
             <div className="space-y-4">
               {/* Email */}
               <div>
-                <div className="text-[11px] uppercase tracking-wider text-grigio/60 mb-1">Email</div>
+                <div className="text-[11px] uppercase tracking-[0.15em] text-grigio/60 mb-1">Email</div>
                 <a 
                   href={`mailto:${t('email')}`}
                   className="text-[15px] text-sabbia hover:text-oliva transition-colors"
@@ -108,20 +108,15 @@ export default function CTA() {
 
               {/* Location */}
               <div>
-                <div className="text-[11px] uppercase tracking-wider text-grigio/60 mb-1">Sede</div>
-                <div className="text-[15px] text-sabbia/70">Milano, Italia</div>
+                <div className="text-[11px] uppercase tracking-[0.15em] text-grigio/60 mb-1">Modalità lavoro</div>
+                <div className="text-[15px] text-sabbia/70">Remote-first • On-site su richiesta</div>
               </div>
 
               {/* Response Time */}
               <div>
-                <div className="text-[11px] uppercase tracking-wider text-grigio/60 mb-1">Tempo di risposta</div>
+                <div className="text-[11px] uppercase tracking-[0.15em] text-grigio/60 mb-1">Tempo di risposta</div>
                 <div className="text-[15px] text-sabbia/70">Entro 24 ore</div>
               </div>
-            </div>
-
-            {/* Coordinates */}
-            <div className="pt-6 border-t border-grigio/20">
-              <div className="text-[11px] font-mono text-grigio/50">45.4642° N, 9.1900° E</div>
             </div>
           </div>
         </div>

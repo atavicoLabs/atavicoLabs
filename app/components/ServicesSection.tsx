@@ -54,44 +54,44 @@ export default function ServicesSection() {
   return (
     <section 
       ref={ref}
-      className="relative w-full py-24 px-6 lg:px-16 bg-carbone"
+      className="relative w-full py-40 px-6 lg:px-24 bg-bg-primary overflow-hidden border-t border-text-ghost/10"
     >
       {/* Section Number - top right */}
-      <div className="absolute top-12 right-6 lg:right-16 text-[14px] font-mono text-oliva/40">[02]</div>
+      <div className="absolute top-16 right-6 lg:right-24 text-mono text-text-ghost">[03]</div>
 
-      <div className="relative max-w-7xl mx-auto">
-        {/* Header - max-width 750px */}
-        <div className="max-w-[750px] mb-16">
-          <div className="text-[9px] uppercase tracking-wider text-grigio/60 font-light mb-3">SERVIZI</div>
-          <h2 className="text-[32px] font-medium text-sabbia mb-4 leading-[1.2]">
+      <div className="relative max-w-content mx-auto">
+        {/* Header - max-width 780px */}
+        <div className="max-w-text mb-20">
+          <div className="text-label uppercase text-text-muted font-medium mb-6">What we do</div>
+          <h2 className="text-h1 lg:text-h2 text-text-primary mb-6">
             {t('title')}
           </h2>
-          <p className="text-[16px] leading-[1.7] text-sabbia/60 font-light">
+          <p className="text-body lg:text-body-lg text-text-tertiary font-light max-w-paragraph">
             {t('subtitle')}
           </p>
         </div>
 
-        {/* Services Grid - 4 columns, 1px gaps */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-1">
+        {/* Services Grid - 4 columns, gap aumentato */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((service, i) => (
             <div
               key={i}
               ref={(el) => { itemRefs.current[i] = el; }}
               data-index={i}
-              className="relative p-8 bg-grafite border border-grigio/30 min-h-[380px] hover:border-oliva/60 transition-all duration-250 hover:-translate-y-0.5"
+              className="relative p-10 bg-bg-secondary border border-text-ghost/15 min-h-[420px] rounded-sm hover:border-accent-primary hover:bg-bg-tertiary hover:-translate-y-2 hover:shadow-premium transition-all duration-400 group"
               style={{
                 opacity: revealed[i] ? 1 : 0,
-                transform: revealed[i] ? 'translateY(0)' : 'translateY(6px)',
-                transition: 'opacity 0.6s ease, transform 0.6s ease, border-color 0.25s ease, transform 0.25s ease',
+                transform: revealed[i] ? 'translateY(0)' : 'translateY(12px)',
+                transition: 'opacity 0.7s cubic-bezier(0.25, 0.1, 0.25, 1), transform 0.7s cubic-bezier(0.25, 0.1, 0.25, 1), border-color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease',
                 transitionDelay: revealed[i] ? `${i * 0.1}s` : '0s'
               }}
             >
               {/* Index Number - top left */}
-              <div className="absolute top-4 left-4 text-[10px] font-mono text-grigio/30">0{i + 1}</div>
+              <div className="text-mono text-text-ghost mb-6">0{i + 1}</div>
               
-              {/* Icon placeholder - 24x24px outline */}
-              <div className="mb-6 mt-4">
-                <svg className="w-6 h-6 stroke-sabbia/40" fill="none" viewBox="0 0 24 24" strokeWidth={1.5}>
+              {/* Icon - più grande */}
+              <div className="w-10 h-10 mb-8 text-text-tertiary group-hover:text-accent-primary transition-colors">
+                <svg className="w-full h-full" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
                   {i === 0 && <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z" />}
                   {i === 1 && <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" />}
                   {i === 2 && <path strokeLinecap="round" strokeLinejoin="round" d="M5.25 14.25h13.5m-13.5 0a3 3 0 01-3-3m3 3a3 3 0 100 6h13.5a3 3 0 100-6m-16.5-3a3 3 0 013-3h13.5a3 3 0 013 3m-19.5 0a4.5 4.5 0 01.9-2.7L5.737 5.1a3.375 3.375 0 012.7-1.35h7.126c1.062 0 2.062.5 2.7 1.35l2.587 3.45a4.5 4.5 0 01.9 2.7m0 0a3 3 0 01-3 3m0 3h.008v.008h-.008v-.008zm0-6h.008v.008h-.008v-.008zm-3 6h.008v.008h-.008v-.008zm0-6h.008v.008h-.008v-.008z" />}
@@ -99,17 +99,17 @@ export default function ServicesSection() {
                 </svg>
               </div>
               
-              <h3 className="text-[16px] font-semibold text-sabbia mb-3 leading-[1.3]">
+              <h3 className="text-h3 text-text-primary mb-4">
                 {service.title}
               </h3>
-              <p className="text-[14px] leading-[1.7] text-sabbia/70 font-light mb-4">
+              <p className="text-body text-text-secondary mb-6">
                 {service.description}
               </p>
               
               {/* Timeline */}
-              <div className="text-[11px] text-grigio/60 mb-3">
-                <span className="uppercase tracking-wider">Tempistiche: </span>
-                <span className="text-sabbia/70">
+              <div className="text-body-sm text-text-muted mb-4">
+                <span className="uppercase tracking-wider font-medium">Tempistiche: </span>
+                <span className="text-text-secondary">
                   {i === 0 && '2–4 settimane'}
                   {i === 1 && '4–8 settimane'}
                   {i === 2 && '6–12 settimane'}
@@ -118,29 +118,29 @@ export default function ServicesSection() {
               </div>
               
               {/* Skill Tags */}
-              <div className="flex flex-wrap gap-2 mt-auto pt-4 border-t border-grigio/20">
-                {i === 0 && <><span className="text-[10px] text-grigio/60 px-2 py-1 border border-grigio/20">Figma</span><span className="text-[10px] text-grigio/60 px-2 py-1 border border-grigio/20">Prototyping</span><span className="text-[10px] text-grigio/60 px-2 py-1 border border-grigio/20">User Testing</span></>}
-                {i === 1 && <><span className="text-[10px] text-grigio/60 px-2 py-1 border border-grigio/20">React</span><span className="text-[10px] text-grigio/60 px-2 py-1 border border-grigio/20">Next.js</span><span className="text-[10px] text-grigio/60 px-2 py-1 border border-grigio/20">Flutter</span></>}
-                {i === 2 && <><span className="text-[10px] text-grigio/60 px-2 py-1 border border-grigio/20">Node.js</span><span className="text-[10px] text-grigio/60 px-2 py-1 border border-grigio/20">PostgreSQL</span><span className="text-[10px] text-grigio/60 px-2 py-1 border border-grigio/20">API Design</span></>}
-                {i === 3 && <><span className="text-[10px] text-grigio/60 px-2 py-1 border border-grigio/20">OpenAI</span><span className="text-[10px] text-grigio/60 px-2 py-1 border border-grigio/20">Automation</span><span className="text-[10px] text-grigio/60 px-2 py-1 border border-grigio/20">Integration</span></>}
+              <div className="flex flex-wrap gap-2 mt-auto pt-6 border-t border-text-ghost/10">
+                {i === 0 && <><span className="px-3 py-1.5 text-[12px] text-text-secondary border border-text-ghost/25 rounded-sm hover:border-accent-primary hover:text-text-primary transition-colors">Figma</span><span className="px-3 py-1.5 text-[12px] text-text-secondary border border-text-ghost/25 rounded-sm hover:border-accent-primary hover:text-text-primary transition-colors">Prototyping</span><span className="px-3 py-1.5 text-[12px] text-text-secondary border border-text-ghost/25 rounded-sm hover:border-accent-primary hover:text-text-primary transition-colors">User Testing</span></>}
+                {i === 1 && <><span className="px-3 py-1.5 text-[12px] text-text-secondary border border-text-ghost/25 rounded-sm hover:border-accent-primary hover:text-text-primary transition-colors">React</span><span className="px-3 py-1.5 text-[12px] text-text-secondary border border-text-ghost/25 rounded-sm hover:border-accent-primary hover:text-text-primary transition-colors">Next.js</span><span className="px-3 py-1.5 text-[12px] text-text-secondary border border-text-ghost/25 rounded-sm hover:border-accent-primary hover:text-text-primary transition-colors">Flutter</span></>}
+                {i === 2 && <><span className="px-3 py-1.5 text-[12px] text-text-secondary border border-text-ghost/25 rounded-sm hover:border-accent-primary hover:text-text-primary transition-colors">Node.js</span><span className="px-3 py-1.5 text-[12px] text-text-secondary border border-text-ghost/25 rounded-sm hover:border-accent-primary hover:text-text-primary transition-colors">PostgreSQL</span><span className="px-3 py-1.5 text-[12px] text-text-secondary border border-text-ghost/25 rounded-sm hover:border-accent-primary hover:text-text-primary transition-colors">API Design</span></>}
+                {i === 3 && <><span className="px-3 py-1.5 text-[12px] text-text-secondary border border-text-ghost/25 rounded-sm hover:border-accent-primary hover:text-text-primary transition-colors">OpenAI</span><span className="px-3 py-1.5 text-[12px] text-text-secondary border border-text-ghost/25 rounded-sm hover:border-accent-primary hover:text-text-primary transition-colors">Automation</span><span className="px-3 py-1.5 text-[12px] text-text-secondary border border-text-ghost/25 rounded-sm hover:border-accent-primary hover:text-text-primary transition-colors">Integration</span></>}
               </div>
             </div>
           ))}
         </div>
 
         {/* Process Flow Diagram */}
-        <div className="mt-20 pt-16 border-t border-grigio/20">
+        <div className="mt-24 pt-20 border-t border-text-ghost/10">
           <div className="max-w-4xl mx-auto">
-            <div className="text-[9px] uppercase tracking-wider text-grigio/60 font-light mb-6">FLUSSO DI LAVORO</div>
+            <div className="text-label uppercase text-text-muted font-medium mb-10">Workflow</div>
             <div className="flex items-center justify-between">
               {['Design', 'Build', 'Test', 'Deploy'].map((step, i) => (
                 <div key={i} className="flex items-center">
                   <div className="text-center">
-                    <div className="w-12 h-12 rounded-full border border-grigio/30 flex items-center justify-center mb-3 mx-auto">
-                      <span className="text-[10px] font-mono text-grigio/60">0{i + 1}</span>
+                    <div className="w-14 h-14 rounded-full border border-text-ghost/20 flex items-center justify-center mb-4 mx-auto hover:border-accent-primary hover:bg-accent-subtle transition-all duration-300">
+                      <span className="text-mono text-text-tertiary">0{i + 1}</span>
                     </div>
-                    <div className="text-[12px] text-sabbia mb-1">{step}</div>
-                    <div className="text-[10px] text-grigio/60">
+                    <div className="text-body-sm text-text-primary mb-1.5 font-medium">{step}</div>
+                    <div className="text-mono text-text-muted">
                       {i === 0 && '2–3w'}
                       {i === 1 && '4–8w'}
                       {i === 2 && '1w'}
@@ -148,8 +148,8 @@ export default function ServicesSection() {
                     </div>
                   </div>
                   {i < 3 && (
-                    <svg className="w-8 h-4 mx-4 stroke-grigio/30" fill="none" viewBox="0 0 32 16" strokeWidth={1}>
-                      <path d="M0 8h28M28 8l-4-4M28 8l-4 4" strokeLinecap="round" strokeLinejoin="round" />
+                    <svg className="w-10 h-5 mx-6 stroke-text-ghost/30" fill="none" viewBox="0 0 40 20" strokeWidth={1.5}>
+                      <path d="M0 10h36M36 10l-5-5M36 10l-5 5" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   )}
                 </div>
