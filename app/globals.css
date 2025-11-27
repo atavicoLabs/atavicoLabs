@@ -16,251 +16,70 @@ html {
 
 body {
   font-family: 'Inter', sans-serif;
-  background-color: #0B0B0D;
-  color: #F9FAFB;
+  font-weight: 300;
+  background-color: #0D0E0F; /* carbone */
+  color: #D3D1C8; /* sabbia */
+  line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 /* ============================================
-   ANIMATION SYSTEM V2 - Premium Minimal
+   ANIMATION SYSTEM - Technical Minimal
    
    Philosophy:
-   - ONE-TIME reveals only (.revealed class)
-   - Max 12-16px movement
-   - Transform + opacity ONLY
-   - cubic-bezier(0.25, 0.1, 0.25, 1) uniform
-   - 450ms duration standard
-   - Stagger with CSS variables
+   - Subtle, slow reveals (600ms duration)
+   - Minimal movement (6-8px translateY)
+   - Smooth easing (ease-out)
+   - Sequential stagger with 150ms increments
+   - Opacity transitions only when necessary
    ============================================ */
 
 /* Base state: hidden before reveal */
 .fade-up,
-.fade-in,
-.fade-slide-left,
-.fade-slide-right,
-.scale-in {
+.fade-in {
   opacity: 0;
-  transform: translateY(12px);
+  transform: translateY(8px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
-/* Keyframes */
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(14px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* Revealed state */
+.fade-up.revealed {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+.fade-in.revealed {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-@keyframes fadeSlideLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-12px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes fadeSlideRight {
-  from {
-    opacity: 0;
-    transform: translateX(12px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes scaleIn {
-  from {
-    opacity: 0;
-    transform: scale(0.97);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-/* Animation classes - triggered by .revealed */
-.revealed.fade-up {
-  animation: fadeUp 0.45s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
-}
-
-.revealed.fade-in {
-  animation: fadeIn 0.45s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
-}
-
-.revealed.fade-slide-left {
-  animation: fadeSlideLeft 0.45s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
-}
-
-.revealed.fade-slide-right {
-  animation: fadeSlideRight 0.45s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
-}
-
-.revealed.scale-in {
-  animation: scaleIn 0.45s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
-}
-
-/* Hero V3 - Micro variations for sequential entrance */
-@keyframes fadeUp4 {
-  from {
-    opacity: 0;
-    transform: translateY(4px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeUp6 {
-  from {
-    opacity: 0;
-    transform: translateY(6px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeUp8 {
-  from {
-    opacity: 0;
-    transform: translateY(8px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeUp10 {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Hero V3 animation classes */
-.animate-fade-up-4 {
+/* Stagger system - respects animation-delay from inline styles */
+.stagger-child {
   opacity: 0;
-  animation: fadeUp4 0.5s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+  transform: translateY(6px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
-.animate-fade-up-6 {
-  opacity: 0;
-  animation: fadeUp6 0.5s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
-}
-
-.animate-fade-up-8 {
-  opacity: 0;
-  animation: fadeUp8 0.5s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
-}
-
-.animate-fade-up-10 {
-  opacity: 0;
-  animation: fadeUp10 0.6s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
-}
-
-/* Hero micro symbol */
-.hero-symbol {
-  display: inline-block;
-  width: 12px;
-  height: 12px;
-  border-left: 2px solid rgba(14, 209, 178, 0.5);
-  border-top: 2px solid rgba(14, 209, 178, 0.5);
-  border-radius: 2px;
-  transition: transform 0.18s cubic-bezier(0.25, 0.1, 0.25, 1);
-}
-
-.hero-symbol:hover {
-  transform: translateY(-2px);
-}
-
-/* Stagger system with CSS variables */
-.stagger-container.revealed > .stagger-child {
-  animation: fadeUp 0.45s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
-  animation-delay: var(--stagger-delay, 0ms);
-  opacity: 0;
-  transform: translateY(12px);
-}
-
-/* Hover states - premium minimal */
-.hover-lift {
-  transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
-}
-
-.hover-lift:hover {
-  transform: translateY(-2px);
-}
-
-.hover-glow-subtle {
-  transition: box-shadow 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
-}
-
-.hover-glow-subtle:hover {
-  box-shadow: 0 8px 24px rgba(14, 209, 178, 0.06);
-}
-
-.hover-tilt-1deg {
-  transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
-  transform-style: preserve-3d;
-}
-
-.hover-tilt-1deg:hover {
-  transform: perspective(1000px) rotateX(0.5deg) rotateY(-0.5deg);
+.stagger-child.revealed {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Performance optimization */
 .fade-up,
 .fade-in,
-.fade-slide-left,
-.fade-slide-right,
-.scale-in,
-.hover-lift,
-.hover-glow-subtle,
-.hover-tilt-1deg {
+.stagger-child {
   will-change: transform, opacity;
 }
 
 /* Reduced motion support */
 @media (prefers-reduced-motion: reduce) {
-  .revealed.fade-up,
-  .revealed.fade-in,
-  .revealed.fade-slide-left,
-  .revealed.fade-slide-right,
-  .revealed.scale-in,
-  .stagger-container.revealed > .stagger-child {
-    animation-duration: 0.01ms !important;
+  .fade-up,
+  .fade-in,
+  .stagger-child {
+    transition-duration: 0.01ms !important;
     animation-delay: 0ms !important;
-  }
-  
-  .hover-lift:hover,
-  .hover-tilt-1deg:hover {
-    transform: none !important;
   }
 }
 

@@ -5,14 +5,11 @@
     "keywords": "software development, web apps, mobile apps, ux design, mvp, full-stack development, digital consulting"
   },
   "hero": {
-    "tagline": "Reliable software for SMEs and demanding teams.",
-    "title1": "We build",
-    "title2": "digital products.",
-    "subtitleLine1": "",
-    "subtitleLine2": "",
-    "cta": "",
-    "trust": "",
-    "scroll": ""
+    "tagline": "TECHNICAL DESIGN • RELIABLE DEVELOPMENT",
+    "title": "We build software that works. No compromises on quality.",
+    "description": "We design and build web apps, platforms and custom systems for companies seeking documentable quality and transparent partnerships. Modern architectures, tested code, punctual releases.",
+    "cta": "Explore projects",
+    "scroll": "Scroll"
   },
   "about": {
     "title": "About us",
@@ -33,8 +30,8 @@
     ]
   },
   "services": {
-    "title": "What we do",
-    "subtitle": "One team, one process, consistent quality.",
+    "title": "One team, one process, consistent quality.",
+    "subtitle": "We build end-to-end products: design, engineering and release in one continuous flow. No silos, no surprises, no wasted work.",
     "cta": "View portfolio",
     "items": [
       {
@@ -42,7 +39,7 @@
         "description": "We design clear, functional interfaces based on real goals. Design systems, clickable prototypes and user testing to reduce risks and costs."
       },
       {
-        "title": "Mobile Apps",
+        "title": "Web & Mobile Apps",
         "description": "Native or cross-platform iOS and Android apps, fast, consistent and built to last. Real performance, stable code, simplified maintenance."
       },
       {
@@ -57,7 +54,7 @@
   },
   "portfolio": {
     "title": "Selected projects",
-    "subtitle": "Concrete solutions that improve operations, quality and decision-making.",
+    "subtitle": "Real projects, built to last. Concrete solutions that improve operations, quality and decision-making.",
     "items": [
       {
         "title": "Lytera",

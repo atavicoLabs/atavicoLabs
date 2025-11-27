@@ -5,79 +5,65 @@
     "keywords": "sviluppo software, web app, app mobile, ux design, mvp, sviluppo full-stack, consulenza digitale"
   },
   "hero": {
-    "tagline": "Software affidabile per PMI e team esigenti.",
-    "title1": "Costruiamo",
-    "title2": "prodotti digitali.",
-    "subtitleLine1": "",
-    "subtitleLine2": "",
-    "cta": "",
-    "trust": "",
-    "scroll": ""
+    "title": "Costruiamo software che funziona. Senza compromessi sulla qualità.",
+    "tagline": "PROGETTAZIONE TECNICA • SVILUPPO AFFIDABILE",
+    "description": "Progettiamo e sviluppiamo web app, piattaforme e sistemi custom per aziende che cercano qualità documentabile e partnership trasparenti. Architetture moderne, codice testato, rilasci puntuali.",
+    "cta": "Esplora progetti",
+    "scroll": "Scorri"
   },
   "about": {
-    "title": "Chi siamo",
-    "subtitle": "Uno studio di design e sviluppo che unisce cura artigianale e solidità ingegneristica. Costruiamo prodotti digitali affidabili, comprensibili e piacevoli da usare.",
+    "title": "Cura, precisione, continuità.",
+    "subtitle": "Ogni progetto nasce da un'esigenza reale. Lo trasformiamo in un prodotto concreto attraverso un processo che controlla ogni fase: analisi, design, sviluppo e rilascio. Tecnologia come mezzo, qualità come obiettivo.",
     "technologies": [
-      {
-        "title": "Cura",
-        "description": "Ogni dettaglio conta: architettura, interfacce, micro-interazioni e comunicazione."
-      },
-      {
-        "title": "Chiarezza",
-        "description": "Processi trasparenti, prototipi verificabili e nessun tecnicismo superfluo."
-      },
-      {
-        "title": "Affidabilità",
-        "description": "Sviluppo stabile, scalabile e pensato per durare oltre il primo rilascio."
-      }
+      {}
     ]
   },
   "services": {
     "title": "Un team, un processo, qualità costante.",
-    "subtitle": "Un team, un processo, qualità costante.",
-    "cta": "Guarda il portfolio",
+    "subtitle": "Costruiamo prodotti end-to-end: design, ingegneria e rilascio in un flusso continuo.",
+    "cta": "Scopri il portfolio",
     "items": [
       {
         "title": "Progettazione UX/UI",
-        "description": "Progettiamo interfacce chiare, funzionali e basate su obiettivi reali. Design system, prototipi navigabili e test con utenti per ridurre rischi e costi."
+        "description": "Interfacce chiare, coerenti e basate su obiettivi reali. Wireframe, design system e prototipi che riducono rischi e tempi."
       },
       {
-        "title": "App Mobile",
-        "description": "App iOS e Android native o cross-platform, veloci, consistenti e progettate per durare. Prestazioni reali, codice stabile, manutenzione semplificata."
+        "title": "Sviluppo Web & Mobile",
+        "description": "Applicazioni veloci, stabili e pensate per durare. Architetture moderne, codice affidabile, manutenzione semplice."
       },
       {
         "title": "Sviluppo Full-Stack",
-        "description": "Costruiamo piattaforme robuste, API sicure e dashboard affidabili. Architetture moderne, versionamento chiaro e zero sorprese tecniche."
+        "description": "API sicure, backend solidi e dashboard affidabili. Soluzioni scalabili con standard tecnici elevati."
       },
       {
         "title": "AI & Automazione",
-        "description": "Integrazioni AI affidabili e workflow automatizzati che riducono costi e tempi. Modelli, orchestrazione e strumenti realmente utili al business."
+        "description": "Integrazioni AI che semplificano processi e riducono costi. Automazioni su misura, dal concept al deploy."
       }
     ]
   },
   "portfolio": {
-    "title": "Progetti selezionati",
-    "subtitle": "Soluzioni concrete che migliorano operatività, qualità e decisioni.",
+    "title": "Il nostro lavoro.",
+    "subtitle": "Progetti reali, costruiti per durare. Soluzioni concrete che migliorano processi, qualità e decisioni.",
     "items": [
       {
         "title": "Lytera",
-        "description": "Sistema di pianificazione turni basato su AI. Riduzione del 70% dei tempi e –85% errori operativi.",
+        "description": "Sistema di pianificazione turni basato su AI. –70% tempo di pianificazione e –85% errori operativi.",
         "tags": ["Next.js", "Node.js", "MongoDB", "OpenAI API"]
       },
       {
         "title": "Crispin",
-        "description": "Dashboard ESG per KPI ambientali e sostenibilità. Audit 40% più rapidi, €180k/anno di costi evitati.",
+        "description": "Dashboard ESG per KPI ambientali e sostenibilità. Audit 40% più veloci, €180k/anno di costi evitati.",
         "tags": ["React", "D3.js", "PostgreSQL", "TensorFlow"]
       },
       {
         "title": "Vectis",
-        "description": "Piattaforma di collaborazione visiva per team creativi. –50% cicli di revisione, +60% soddisfazione clienti.",
+        "description": "Piattaforma di collaborazione visiva per team creativi. –50% cicli di revisione, +60% soddisfazione cliente.",
         "tags": ["Flutter", "Firebase", "WebSockets"]
       }
     ]
   },
   "process": {
-    "title": "Come lavoriamo",
+    "title": "Come lavoriamo.",
     "subtitle": "Un processo chiaro, senza sorprese.",
     "steps": [
       {
@@ -89,19 +75,19 @@
       {
         "number": "02",
         "title": "Design",
-        "description": "Wireframe, UI, architettura del sistema. Output: prototipo realistico.",
+        "description": "Wireframe, UI e architettura del sistema. Output: prototipo realistico.",
         "duration": "2–3 settimane"
       },
       {
         "number": "03",
         "title": "Sviluppo",
-        "description": "Codice pulito, versionamento chiaro, verifiche costanti. Output: release testabili.",
+        "description": "Codice pulito, versioning chiaro e verifiche continue. Output: release testabili.",
         "duration": "4–8 settimane"
       },
       {
         "number": "04",
-        "title": "Lancio",
-        "description": "Deploy, ottimizzazioni e supporto post-lancio.",
+        "title": "Rilascio",
+        "description": "Deploy, ottimizzazione e supporto post-lancio.",
         "duration": "1 settimana"
       }
     ]
@@ -132,7 +118,7 @@
   },
   "blog": {
     "title": "Approfondimenti",
-    "subtitle": "Guide pratiche e processi utili per costruire prodotti migliori.",
+    "subtitle": "Guide pratiche e processi per costruire prodotti migliori.",
     "cta": "Leggi l'articolo",
     "items": [
       {
@@ -159,28 +145,29 @@
     ]
   },
   "cta": {
-    "title": "Costruiamo qualcosa insieme.",
-    "subtitle": "Parliamo del tuo progetto — anche solo per capire se possiamo aiutarti.",
+    "title": "Costruiamo qualcosa di solido.",
+    "subtitle": "Che sia un nuovo prodotto o una piattaforma esistente, possiamo aiutarti a progettare, sviluppare e rilasciare soluzioni concrete.",
+    "cta": "Parliamone",
     "email": "contact@atavicolabs.com"
   },
   "footer": {
     "brand": "AtavicoLabs",
-    "description": "Studio di design & sviluppo. Prodotti digitali costruiti con cura, pensati per durare.",
+    "description": "Design, sviluppo e rilascio di prodotti digitali.",
     "quickLinks": {
-      "title": "Link rapidi",
-      "about": "Chi siamo",
+      "title": "Menu",
       "services": "Servizi",
       "portfolio": "Portfolio",
+      "process": "Processo",
       "contact": "Contatti"
     },
     "contact": {
       "title": "Contatti",
       "location": "Italia"
     },
-    "copyright": "© {year} AtavicoLabs. Tutti i diritti riservati.",
+    "copyright": "© {year} AtavicoLabs",
     "legal": {
-      "privacy": "Privacy Policy",
-      "terms": "Termini di Servizio"
+      "privacy": "Privacy",
+      "terms": "Termini"
     }
   }
 }

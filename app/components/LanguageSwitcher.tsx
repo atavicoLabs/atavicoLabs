@@ -75,22 +75,24 @@ export default function LanguageSwitcher() {
       }`}
       style={{ willChange: 'transform, opacity' }}
     >
-      {/* Larger, more visible floating pill */}
-      <div className="flex items-center gap-3 bg-warm-black/70 border border-warm-border rounded-lg px-2 py-2 shadow-lg">
+      {/* Floating language selector - stile tecnico */}
+      <div className="flex items-center gap-2 bg-carbone/90 border border-grigio/30 px-2 py-2 backdrop-blur-sm">
         <Link
           href={getLocalizedPath('it')}
-          className={`text-base md:text-lg font-semibold uppercase tracking-wider px-3 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-warm-accent transition-colors ${
-            locale === 'it' ? 'text-warm-accent bg-warm-accent/10' : 'text-warm-muted/80 hover:text-warm-accent'
+          className={`text-xs font-normal uppercase tracking-wider-2 px-3 py-2 focus:outline-none focus:ring-1 focus:ring-oliva transition-colors ${
+            locale === 'it' ? 'text-oliva border-b border-oliva' : 'text-grigio hover:text-oliva'
           }`}
           aria-current={locale === 'it' ? 'page' : undefined}
         >
           IT
         </Link>
 
+        <div className="w-px h-4 bg-grigio/30" />
+
         <Link
           href={getLocalizedPath('en')}
-          className={`text-base md:text-lg font-semibold uppercase tracking-wider px-3 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-warm-accent transition-colors ${
-            locale === 'en' ? 'text-warm-accent bg-warm-accent/10' : 'text-warm-muted/80 hover:text-warm-accent'
+          className={`text-xs font-normal uppercase tracking-wider-2 px-3 py-2 focus:outline-none focus:ring-1 focus:ring-oliva transition-colors ${
+            locale === 'en' ? 'text-oliva border-b border-oliva' : 'text-grigio hover:text-oliva'
           }`}
           aria-current={locale === 'en' ? 'page' : undefined}
         >

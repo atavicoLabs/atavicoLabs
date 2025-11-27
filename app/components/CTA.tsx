@@ -11,55 +11,118 @@ export default function CTA() {
     <section 
       id="contact" 
       ref={ref}
-      className="relative py-24 md:py-32 px-6 lg:px-8 bg-warm-darker overflow-hidden"
+      className="relative py-32 px-6 lg:px-16 bg-carbone border-t border-grigio/20 overflow-hidden"
     >
-      {/* Background - static opacity */}
-      <div className="absolute inset-0 bg-gradient-to-br from-warm-accent/5 via-transparent to-transparent opacity-100" />
+      {/* Blueprint Grid Background */}
+      <div 
+        className="absolute inset-0 opacity-[0.015] pointer-events-none"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='1' cy='1' r='1' fill='%23D3D1C8'/%3E%3C/svg%3E")`,
+          backgroundAttachment: 'fixed'
+        }}
+      />
 
-      <div className="relative max-w-3xl mx-auto text-center">
+      {/* Section Number */}
+      <div className="absolute top-12 right-6 lg:right-16 text-[14px] font-mono text-oliva/40">[07]</div>
+
+      <div className="relative max-w-7xl mx-auto grid lg:grid-cols-2 gap-16">
+        {/* Left Column - Content */}
         <div className="space-y-8">
+          {/* Micro Label */}
+          <div className="text-[9px] uppercase tracking-wider text-grigio/60 font-light">CONTATTI</div>
+
           {/* Title */}
           <h2 
-            className={`text-3xl md:text-4xl lg:text-5xl font-semibold text-warm-text tracking-tight leading-tight fade-up ${isRevealed ? 'revealed' : ''}`}
+            className={`text-[32px] font-medium text-sabbia leading-[1.2] fade-up ${isRevealed ? 'revealed' : ''}`}
           >
             {t('title')}
           </h2>
 
           {/* Subtitle */}
           <p 
-            className={`text-lg md:text-xl text-warm-secondary max-w-xl mx-auto leading-relaxed fade-up ${isRevealed ? 'revealed' : ''}`}
-            style={{ animationDelay: '150ms' }}
+            className={`text-[16px] leading-[1.7] text-sabbia/60 font-light fade-up ${isRevealed ? 'revealed' : ''}`}
+            style={{ animationDelay: '100ms' }}
           >
             {t('subtitle')}
           </p>
 
-          {/* Contact info - only email (phone removed) */}
+          {/* CTA Button */}
           <div 
-            className={`flex items-center justify-center gap-6 text-warm-muted fade-in ${isRevealed ? 'revealed' : ''}`}
-            style={{ animationDelay: '250ms' }}
+            className={`pt-4 fade-up ${isRevealed ? 'revealed' : ''}`}
+            style={{ animationDelay: '200ms' }}
           >
             <a
               href={`mailto:${t('email')}`}
-              className="hover:text-warm-accent transition-colors duration-300"
+              className="inline-flex items-center gap-3 px-5 py-3 border border-sabbia/60 text-sabbia font-normal text-[13px] uppercase tracking-wider hover:border-oliva hover:text-oliva hover:bg-oliva/5 transition-all duration-300"
             >
-              {t('email')}
+              {t('cta')}
+              <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
             </a>
           </div>
 
-          {/* CTA button with hover effects */}
+          {/* Stats Row */}
           <div 
-            className={`pt-4 fade-up ${isRevealed ? 'revealed' : ''}`}
-            style={{ animationDelay: '350ms' }}
+            className={`grid grid-cols-4 gap-4 pt-8 border-t border-grigio/20 fade-up ${isRevealed ? 'revealed' : ''}`}
+            style={{ animationDelay: '300ms' }}
           >
-            <a
-              href={`mailto:${t('email')}`}
-              className="inline-flex items-center gap-2 px-8 py-4 border-2 border-warm-accent text-warm-accent font-medium rounded-lg hover:bg-warm-accent/90 hover:backdrop-blur-xl hover:text-warm-black hover:shadow-[0_0_28px_-6px_rgba(245,166,35,0.4)] hover:-translate-y-0.5 transition-all duration-300"
-            >
-              Start a project
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </a>
+            {[
+              { value: '12', label: 'Progetti' },
+              { value: '98%', label: 'Retention' },
+              { value: '4.9/5', label: 'Rating' },
+              { value: '8 anni', label: 'Esperienza' }
+            ].map((stat, index) => (
+              <div key={index}>
+                <div className="text-[20px] font-medium text-oliva">{stat.value}</div>
+                <div className="text-[11px] text-grigio/70 uppercase tracking-wider mt-1">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Right Column - Contact Info Box */}
+        <div 
+          className={`fade-up ${isRevealed ? 'revealed' : ''}`}
+          style={{ animationDelay: '400ms' }}
+        >
+          <div className="border border-grigio/20 bg-grafite/30 p-8 space-y-6">
+            {/* Availability Indicator */}
+            <div className="flex items-center gap-2 text-[13px] text-sabbia/70 pb-6 border-b border-grigio/20">
+              <div className="w-2 h-2 rounded-full bg-oliva animate-pulse"></div>
+              <span className="uppercase tracking-wider">Disponibili per nuovi progetti</span>
+            </div>
+
+            {/* Contact Details */}
+            <div className="space-y-4">
+              {/* Email */}
+              <div>
+                <div className="text-[11px] uppercase tracking-wider text-grigio/60 mb-1">Email</div>
+                <a 
+                  href={`mailto:${t('email')}`}
+                  className="text-[15px] text-sabbia hover:text-oliva transition-colors"
+                >
+                  {t('email')}
+                </a>
+              </div>
+
+              {/* Location */}
+              <div>
+                <div className="text-[11px] uppercase tracking-wider text-grigio/60 mb-1">Sede</div>
+                <div className="text-[15px] text-sabbia/70">Milano, Italia</div>
+              </div>
+
+              {/* Response Time */}
+              <div>
+                <div className="text-[11px] uppercase tracking-wider text-grigio/60 mb-1">Tempo di risposta</div>
+                <div className="text-[15px] text-sabbia/70">Entro 24 ore</div>
+              </div>
+            </div>
+
+            {/* Coordinates */}
+            <div className="pt-6 border-t border-grigio/20">
+              <div className="text-[11px] font-mono text-grigio/50">45.4642° N, 9.1900° E</div>
+            </div>
           </div>
         </div>
       </div>

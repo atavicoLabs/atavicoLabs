@@ -44,124 +44,203 @@ export default function Process() {
     };
   }, []);
 
-  const steps = [
-    {
-      number: '01',
-      title: t('steps.0.title'),
-      description: t('steps.0.description'),
-      duration: t('steps.0.duration'),
-    },
-    {
-      number: '02',
-      title: t('steps.1.title'),
-      description: t('steps.1.description'),
-      duration: t('steps.1.duration'),
-    },
-    {
-      number: '03',
-      title: t('steps.2.title'),
-      description: t('steps.2.description'),
-      duration: t('steps.2.duration'),
-    },
-    {
-      number: '04',
-      title: t('steps.3.title'),
-      description: t('steps.3.description'),
-      duration: t('steps.3.duration'),
-    },
-  ];
-
   return (
     <section 
       id="process" 
       ref={ref}
-      className="relative py-24 md:py-32 px-6 lg:px-8 bg-warm-darker"
+      className="relative py-24 px-6 lg:px-16 bg-carbone"
     >
-  <div className="relative max-w-4xl mx-auto">
+      {/* Section Number - top right */}
+      <div className="absolute top-12 right-6 lg:right-16 text-[14px] font-mono text-oliva/40">[04]</div>
+
+      <div className="relative max-w-[900px] mx-auto">
 
         {/* Header */}
-        <div className="mb-20">
+        <div className="max-w-[750px] mb-16">
+          <div className="text-[9px] uppercase tracking-wider text-grigio/60 font-light mb-3">PROCESSO</div>
           <h2 
-            className={`text-3xl md:text-4xl lg:text-5xl font-semibold text-warm-text tracking-tight leading-tight mb-6 fade-up ${isRevealed ? 'revealed' : ''}`}
+            className={`text-[32px] font-medium text-sabbia mb-4 leading-[1.2] fade-up ${isRevealed ? 'revealed' : ''}`}
           >
             {t('title')}
           </h2>
           <p 
-            className={`text-lg md:text-xl text-warm-secondary max-w-2xl leading-relaxed fade-up ${isRevealed ? 'revealed' : ''}`}
+            className={`text-[16px] leading-[1.7] text-sabbia/60 font-light fade-up ${isRevealed ? 'revealed' : ''}`}
             style={{ animationDelay: '100ms' }}
           >
             {t('subtitle')}
           </p>
         </div>
 
-        {/* Timeline */}
+        {/* Timeline - vertical line with dots */}
         <div className="relative">
+          {/* Vertical line */}
+          <div 
+            className="absolute left-[24px] top-8 bottom-8 w-px bg-grigio/20"
+            style={{ 
+              transform: isRevealed ? 'scaleY(1)' : 'scaleY(0)',
+              transformOrigin: 'top',
+              transition: 'transform 1.2s ease-out'
+            }}
+          />
 
-          <div className="space-y-0">
-
-            {/* Linea unica disegnata nella COLONNA della LINEA */}
-              <div 
-                className={`
-                  absolute 
-                  top-0 
-                  left-[calc(10rem+1px)]    /* center the 1px vertical line to the middle of the 2px grid column */
-                  w-px 
-                  bg-warm-border
-                  ${isRevealed ? 'animate-draw-line' : 'h-0'}
-                `}
-                style={{ height: '100%' }}
-              />
-
-            {/* Steps */}
-            {steps.map((step, index) => (
+          {/* Steps */}
+          <div className="space-y-16">
+            {[0, 1, 2, 3].map((index) => {
+              const percentages = ['15%', '25%', '50%', '10%'];
+              return (
               <div
                 key={index}
                 ref={(el) => { stepRefs.current[index] = el; if (el && observerRef.current) observerRef.current.observe(el); }}
-                className={`relative py-12 fade-up ${revealed[index] ? 'revealed' : 'opacity-0 translate-y-6'}`}
+                className={`relative fade-up ${revealed[index] ? 'revealed' : 'opacity-0'}`}
+                style={{ 
+                  transitionDelay: `${index * 150}ms`,
+                  marginLeft: `${index * 40}px` // Diagonal offset
+                }}
               >
-
-                {/* 3 colonne: number | LINE COLUMN (2px) | content */}
-                <div className="grid grid-cols-[8rem_2px_1fr] gap-8 items-start">
-
-                  {/* NUMERO */}
-                  <div className="relative flex items-start justify-center">
-                    <div className="text-4xl md:text-5xl font-semibold text-warm-muted">
-                      {step.number}
-                    </div>
-                  </div>
-
-                  {/* COLONNA LINEA (qui mettiamo il punto) */}
-                  <div className="relative">
-
-                    {/* Pallino centrato sulla linea */}
-                      <div 
-                        className={`absolute top-4 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-warm-accent transition-all duration-500 ${revealed[index] ? 'opacity-100 scale-100' : 'opacity-0 scale-50'}`}
-                      />
-
-                  </div>
-
-                  {/* CONTENUTO */}
-                  <div className="flex-1 border-b border-warm-border pb-12 last:border-0">
-                    <div className="flex flex-col sm:flex-row sm:items-center sm:gap-6 gap-3 mb-4">
-                      <h3 className="text-xl md:text-2xl font-semibold text-warm-text leading-tight">
-                        {step.title}
-                      </h3>
-                      <span className="px-3 py-1 text-xs text-warm-muted border border-warm-border whitespace-nowrap">
-                        {step.duration}
-                      </span>
-                    </div>
-                    <p className="text-warm-muted leading-relaxed max-w-xl">
-                      {step.description}
-                    </p>
-                  </div>
-
+                {/* Dot on timeline */}
+                <div 
+                  className="absolute left-0 top-4 w-12 h-12 flex items-center justify-center"
+                  style={{
+                    opacity: revealed[index] ? 1 : 0,
+                    transform: revealed[index] ? 'scale(1)' : 'scale(0)',
+                    transition: 'opacity 0.4s ease, transform 0.4s ease',
+                    transitionDelay: `${index * 150 + 200}ms`
+                  }}
+                >
+                  <div className="w-2 h-2 rounded-full bg-oliva" />
                 </div>
 
+                {/* Content */}
+                <div className="pl-16">
+                  <div className="mb-2 flex items-center gap-3">
+                    <span className="text-[10px] font-mono text-grigio/40">PHASE_0{index + 1}</span>
+                    <span className="text-[10px] text-grigio/50">•</span>
+                    <span className="text-[10px] text-grigio/50">{percentages[index]} del progetto</span>
+                  </div>
+                  <h3 className="text-[20px] font-semibold text-sabbia mb-2 leading-[1.3]">
+                    {t(`steps.${index}.title`)}
+                  </h3>
+                  <p className="text-[14px] leading-[1.7] text-sabbia/70 font-light mb-3">
+                    {t(`steps.${index}.description`)}
+                  </p>
+                  <div className="text-[13px] text-oliva font-medium mb-4">
+                    {t(`steps.${index}.duration`)}
+                  </div>
+
+                  {/* Deliverables */}
+                  <div className="border border-grigio/20 bg-carbone/50 p-5">
+                    <div className="text-[9px] uppercase tracking-wider text-grigio/60 mb-3">DELIVERABLES</div>
+                  <div className="space-y-2">
+                    {index === 0 && (
+                      <>
+                        <div className="flex items-center gap-2.5 text-[13px] text-sabbia/70">
+                          <svg className="w-4 h-4 flex-shrink-0" viewBox="0 0 16 16" fill="none">
+                            <rect x="0.5" y="0.5" width="15" height="15" stroke="rgb(78, 88, 78)" strokeWidth="1" />
+                            <path d="M4 8l2.5 2.5L12 5" stroke="rgb(78, 88, 78)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                          </svg>
+                          <span>Product brief condiviso</span>
+                        </div>
+                        <div className="flex items-center gap-2.5 text-[13px] text-sabbia/70">
+                          <svg className="w-4 h-4 flex-shrink-0" viewBox="0 0 16 16" fill="none">
+                            <rect x="0.5" y="0.5" width="15" height="15" stroke="rgb(78, 88, 78)" strokeWidth="1" />
+                            <path d="M4 8l2.5 2.5L12 5" stroke="rgb(78, 88, 78)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                          </svg>
+                          <span>Technical requirements</span>
+                        </div>
+                        <div className="flex items-center gap-2.5 text-[13px] text-sabbia/70">
+                          <div className="w-4 h-4 border border-grigio/30 flex-shrink-0" />
+                          <span>Project timeline</span>
+                        </div>
+                      </>
+                    )}
+                    {index === 1 && (
+                      <>
+                        <div className="flex items-center gap-2.5 text-[13px] text-sabbia/70">
+                          <svg className="w-4 h-4 flex-shrink-0" viewBox="0 0 16 16" fill="none">
+                            <rect x="0.5" y="0.5" width="15" height="15" stroke="rgb(78, 88, 78)" strokeWidth="1" />
+                            <path d="M4 8l2.5 2.5L12 5" stroke="rgb(78, 88, 78)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                          </svg>
+                          <span>Design system library</span>
+                        </div>
+                        <div className="flex items-center gap-2.5 text-[13px] text-sabbia/70">
+                          <svg className="w-4 h-4 flex-shrink-0" viewBox="0 0 16 16" fill="none">
+                            <rect x="0.5" y="0.5" width="15" height="15" stroke="rgb(78, 88, 78)" strokeWidth="1" />
+                            <path d="M4 8l2.5 2.5L12 5" stroke="rgb(78, 88, 78)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                          </svg>
+                          <span>Clickable prototype</span>
+                        </div>
+                        <div className="flex items-center gap-2.5 text-[13px] text-sabbia/70">
+                          <div className="w-4 h-4 border border-grigio/30 flex-shrink-0" />
+                          <span>Architecture diagram</span>
+                        </div>
+                      </>
+                    )}
+                    {index === 2 && (
+                      <>
+                        <div className="flex items-center gap-2.5 text-[13px] text-sabbia/70">
+                          <svg className="w-4 h-4 flex-shrink-0" viewBox="0 0 16 16" fill="none">
+                            <rect x="0.5" y="0.5" width="15" height="15" stroke="rgb(78, 88, 78)" strokeWidth="1" />
+                            <path d="M4 8l2.5 2.5L12 5" stroke="rgb(78, 88, 78)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                          </svg>
+                          <span>Production-ready code</span>
+                        </div>
+                        <div className="flex items-center gap-2.5 text-[13px] text-sabbia/70">
+                          <div className="w-4 h-4 border border-grigio/30 flex-shrink-0" />
+                          <span>Test coverage &gt;80%</span>
+                        </div>
+                        <div className="flex items-center gap-2.5 text-[13px] text-sabbia/70">
+                          <div className="w-4 h-4 border border-grigio/30 flex-shrink-0" />
+                          <span>CI/CD pipeline</span>
+                        </div>
+                      </>
+                    )}
+                    {index === 3 && (
+                      <>
+                        <div className="flex items-center gap-2.5 text-[13px] text-sabbia/70">
+                          <svg className="w-4 h-4 flex-shrink-0" viewBox="0 0 16 16" fill="none">
+                            <rect x="0.5" y="0.5" width="15" height="15" stroke="rgb(78, 88, 78)" strokeWidth="1" />
+                            <path d="M4 8l2.5 2.5L12 5" stroke="rgb(78, 88, 78)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                          </svg>
+                          <span>App live in produzione</span>
+                        </div>
+                        <div className="flex items-center gap-2.5 text-[13px] text-sabbia/70">
+                          <svg className="w-4 h-4 flex-shrink-0" viewBox="0 0 16 16" fill="none">
+                            <rect x="0.5" y="0.5" width="15" height="15" stroke="rgb(78, 88, 78)" strokeWidth="1" />
+                            <path d="M4 8l2.5 2.5L12 5" stroke="rgb(78, 88, 78)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                          </svg>
+                          <span>Monitoring setup</span>
+                        </div>
+                        <div className="flex items-center gap-2.5 text-[13px] text-sabbia/70">
+                          <svg className="w-4 h-4 flex-shrink-0" viewBox="0 0 16 16" fill="none">
+                            <rect x="0.5" y="0.5" width="15" height="15" stroke="rgb(78, 88, 78)" strokeWidth="1" />
+                            <path d="M4 8l2.5 2.5L12 5" stroke="rgb(78, 88, 78)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                          </svg>
+                          <span>Documentation</span>
+                        </div>
+                      </>
+                    )}
+                  </div>
+                </div>
+                </div>
+              </div>
+            );
+            })}
+          </div>
+        </div>
+
+        {/* Methodology */}
+        <div className="mt-16 pt-12 border-t border-grigio/20">
+          <div className="text-[9px] uppercase tracking-wider text-grigio/60 font-light mb-4">METODOLOGIA</div>
+          <div className="text-[14px] text-sabbia/70 leading-relaxed mb-4">
+            Agile · Test-Driven Development · Continuous Integration
+          </div>
+          <div className="flex flex-wrap gap-3">
+            {['Figma', 'GitHub', 'Linear', 'Slack'].map((tool, i) => (
+              <div key={i} className="px-3 py-1.5 border border-grigio/30 text-[11px] text-grigio/60">
+                {tool}
               </div>
             ))}
-
           </div>
-
         </div>
       </div>
     </section>

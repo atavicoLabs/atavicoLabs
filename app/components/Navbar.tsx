@@ -28,56 +28,45 @@ export default function Navbar() {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'backdrop-blur-xl bg-warm-black/70 shadow-lg' : 'bg-transparent'
+        isScrolled ? 'backdrop-blur-xl bg-carbone/90 border-b border-grigio/20' : 'bg-transparent'
       }`}
       aria-hidden={false}
     >
       <div className="w-full px-8 lg:px-16">
         <div className="flex items-center justify-between h-20 md:h-24">
-          {/* Logo */}
+          {/* Logo - versione tecnica con tracking */}
           <Link 
             href="/" 
-            className="text-2xl md:text-3xl font-bold text-warm-text hover:text-warm-accent transition-colors duration-200"
+            className="text-2xl md:text-3xl font-normal tracking-wider-2 text-sabbia hover:text-oliva transition-colors duration-300 uppercase"
           >
-            AtavicoLabs
+            ATAVICOLABS
           </Link>
 
           {/* Navigation Links - Desktop */}
-          <div className="hidden md:flex items-center gap-6">
+          <div className="hidden md:flex items-center gap-8">
             <a
               href="#services"
-              className="text-lg font-semibold text-warm-text hover:text-warm-accent transition-colors duration-200"
+              className="text-sm font-normal tracking-wider text-sabbia hover:text-oliva transition-colors duration-300 uppercase"
             >
               Servizi
             </a>
             <a
               href="#portfolio"
-              className="text-lg font-semibold text-warm-text hover:text-warm-accent transition-colors duration-200"
+              className="text-sm font-normal tracking-wider text-sabbia hover:text-oliva transition-colors duration-300 uppercase"
             >
               Portfolio
             </a>
             <a
               href="#process"
-              className="text-lg font-semibold text-warm-text hover:text-warm-accent transition-colors duration-200"
+              className="text-sm font-normal tracking-wider text-sabbia hover:text-oliva transition-colors duration-300 uppercase"
             >
               Processo
             </a>
-            {/* Temporarily hide 'Chi siamo' link in the navbar. To restore, remove the JSX comment. */}
-            {/*
-            <a
-              href="#about"
-              className="text-lg font-semibold text-warm-text hover:text-warm-accent transition-colors duration-200"
-            >
-              Chi siamo
-            </a>
-            */}
           </div>
-
-          {/* language selector moved to floating position (bottom-right) */}
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-warm-text hover:text-warm-accent transition-colors duration-200"
+            className="md:hidden text-sabbia hover:text-oliva transition-colors duration-300"
             aria-label="Menu"
           >
             <svg
@@ -85,7 +74,7 @@ export default function Navbar() {
               fill="none"
               strokeLinecap="round"
               strokeLinejoin="round"
-              strokeWidth="2"
+              strokeWidth="1.5"
               viewBox="0 0 24 24"
               stroke="currentColor"
             >

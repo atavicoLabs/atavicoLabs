@@ -32,62 +32,64 @@ export default function Services() {
   ];
 
   return (
-  <section id="services" className="relative py-28 px-6 sm:px-8 lg:px-12 overflow-hidden">
-  {/* Glassmorphism background with lighter tone (avoid heavy backdrop-filter for scroll perf) */}
-  <div className="absolute inset-0 bg-gradient-to-b from-slate-800/30 via-slate-800/20 to-slate-900/30"></div>
-      
-      {/* Subtle glow elements */}
-  {/* Subtle glow elements (smaller and less blur to reduce repaints) */}
-  <div className="absolute top-0 right-1/4 w-72 h-72 bg-blue-500/6 rounded-full blur-3xl"></div>
-  <div className="absolute bottom-0 left-1/4 w-72 h-72 bg-purple-500/6 rounded-full blur-3xl"></div>
+  <section id="services" className="relative py-32 px-6 sm:px-8 lg:px-16 overflow-hidden">
+  {/* Sfondo carbone con pattern tecnico */}
+  <div className="absolute inset-0 bg-carbone"></div>
+  
+  {/* Grid pattern tecnico sottile */}
+  <div 
+    className="absolute inset-0 opacity-[0.02] pointer-events-none"
+    style={{
+      backgroundImage: 'linear-gradient(rgba(211, 209, 200, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(211, 209, 200, 0.3) 1px, transparent 1px)',
+      backgroundSize: '48px 48px'
+    }}
+  />
 
-  <div className="relative z-10 max-w-7xl mx-auto">
+  <div className="relative z-10 max-w-6xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
+          className="mb-20"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+          <h2 className="text-3xl md:text-4xl font-normal mb-6 text-sabbia tracking-tight">
             {t('title')}
           </h2>
-          <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+          <p className="text-base text-grigio max-w-2xl leading-relaxed">
             {t('subtitle')}
           </p>
         </motion.div>
 
-        {/* Lightweight icon-based grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-6xl mx-auto">
+        {/* Grid servizi - minimal tecnico */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
           {services.map((service, index) => (
               <motion.div
               key={service.key}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ 
-                duration: 0.5,
-                delay: index * 0.1,
-                ease: "easeOut"
+                duration: 0.45,
+                delay: index * 0.08,
+                ease: [0.25, 0.1, 0.25, 1]
               }}
               className="group relative"
             >
-              {/* Glassmorphic card */}
-              <div className="relative bg-white/5 p-8 rounded-2xl border border-white/10 hover:border-white/20 transition-transform duration-300">
-                {/* Icon with gradient */}
-                <div className={`inline-flex items-center justify-center w-20 h-20 rounded-xl bg-gradient-to-br ${service.gradient} p-0.5 mb-5 group-hover:scale-105 transition-transform duration-300`}>
-                  <div className="w-full h-full bg-slate-900 rounded-lg flex items-center justify-center text-white">
-                    {service.icon}
-                  </div>
+              {/* Card tecnica minimal */}
+              <div className="relative bg-grafite p-8 border border-grigio/30 hover:border-oliva/60 transition-all duration-300">
+                {/* Icon minimal outline */}
+                <div className="inline-flex items-center justify-center w-12 h-12 mb-6 text-grigio group-hover:text-oliva transition-colors duration-300">
+                  {service.icon}
                 </div>
 
                 {/* Title */}
-                <h3 className="text-2xl font-bold mb-3 group-hover:text-blue-400 transition-colors duration-300">
+                <h3 className="text-xl font-normal mb-4 text-sabbia tracking-tight">
                   {t(`items.${index}.title`)}
                 </h3>
 
-                {/* Micro description */}
-                <p className="text-gray-400 text-base leading-relaxed">
+                {/* Description */}
+                <p className="text-grigio text-sm leading-relaxed">
                   {t(`items.${index}.description`)}
                 </p>
               </div>

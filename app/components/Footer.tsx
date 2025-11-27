@@ -3,8 +3,6 @@
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { useReveal } from '../hooks/useReveal';
-// LanguageSwitcher is intentionally not used in the footer per request.
-// import LanguageSwitcher from './LanguageSwitcher';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -14,84 +12,126 @@ export default function Footer() {
   return (
     <footer 
       ref={ref}
-      className="relative bg-warm-black py-12 px-6 lg:px-8 border-t border-warm-border"
+      className="relative bg-carbone py-20 px-6 lg:px-16 border-t border-grigio/20"
     >
-      <div className={`relative max-w-5xl mx-auto fade-up ${isRevealed ? 'revealed' : ''}`}>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
-          {/* Brand column */}
-          <div className="md:col-span-1">
-            <h3 className="text-lg font-semibold text-warm-text mb-3">
+      {/* Section Number */}
+      <div className="absolute top-12 right-6 lg:right-16 text-[14px] font-mono text-oliva/40">[09]</div>
+
+      <div className={`relative max-w-7xl mx-auto fade-up ${isRevealed ? 'revealed' : ''}`}>
+        
+        {/* 4-Column Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-20 mb-16">
+          
+          {/* Column 1: Brand */}
+          <div className="max-w-[280px]">
+            <h3 className="text-[18px] font-medium text-sabbia mb-4 uppercase tracking-wider">
               {t('brand')}
             </h3>
-            <p className="text-warm-muted text-sm leading-relaxed">
+            <p className="text-grigio text-[13px] leading-[1.7] opacity-70 mb-6">
               {t('description')}
             </p>
+            <div className="text-[10px] font-mono text-grigio/40">
+              Milano, Italia<br />
+              45.4642° N, 9.1900° E
+            </div>
           </div>
 
-          {/* Quick Links */}
+          {/* Column 2: Services */}
           <div>
-            <h4 className="text-sm font-medium text-warm-secondary mb-4">
-              {t('quickLinks.title')}
-            </h4>
-            <ul className="space-y-2">
+            <h4 className="text-[11px] uppercase tracking-wider text-grigio/60 mb-4 font-light">Servizi</h4>
+            <ul className="space-y-3">
               <li>
-                <Link href="#about" className="text-sm text-warm-muted hover:text-warm-accent transition-colors duration-300">
-                  {t('quickLinks.about')}
+                <Link href="#services" className="text-[13px] text-sabbia/70 hover:text-oliva transition-colors duration-300">
+                  UX/UI Design
                 </Link>
               </li>
               <li>
-                <Link href="#services" className="text-sm text-warm-muted hover:text-warm-accent transition-colors duration-300">
-                  {t('quickLinks.services')}
+                <Link href="#services" className="text-[13px] text-sabbia/70 hover:text-oliva transition-colors duration-300">
+                  Sviluppo Web & Mobile
                 </Link>
               </li>
               <li>
-                <Link href="#portfolio" className="text-sm text-warm-muted hover:text-warm-accent transition-colors duration-300">
+                <Link href="#services" className="text-[13px] text-sabbia/70 hover:text-oliva transition-colors duration-300">
+                  Full-Stack Development
+                </Link>
+              </li>
+              <li>
+                <Link href="#services" className="text-[13px] text-sabbia/70 hover:text-oliva transition-colors duration-300">
+                  AI & Automazione
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Column 3: Resources */}
+          <div>
+            <h4 className="text-[11px] uppercase tracking-wider text-grigio/60 mb-4 font-light">Risorse</h4>
+            <ul className="space-y-3">
+              <li>
+                <Link href="#portfolio" className="text-[13px] text-sabbia/70 hover:text-oliva transition-colors duration-300">
                   {t('quickLinks.portfolio')}
                 </Link>
               </li>
               <li>
-                <Link href="#contact" className="text-sm text-warm-muted hover:text-warm-accent transition-colors duration-300">
+                <Link href="#process" className="text-[13px] text-sabbia/70 hover:text-oliva transition-colors duration-300">
+                  {t('quickLinks.process')}
+                </Link>
+              </li>
+              <li>
+                <Link href="#blog" className="text-[13px] text-sabbia/70 hover:text-oliva transition-colors duration-300">
+                  Approfondimenti
+                </Link>
+              </li>
+              <li>
+                <Link href="#contact" className="text-[13px] text-sabbia/70 hover:text-oliva transition-colors duration-300">
                   {t('quickLinks.contact')}
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Contact */}
+          {/* Column 4: Newsletter */}
           <div>
-            <h4 className="text-sm font-medium text-warm-secondary mb-4">
-              {t('contact.title')}
-            </h4>
-            <ul className="space-y-2 text-warm-muted text-sm">
-              <li>
-                <a href="mailto:contact@atavicolabs.com" className="hover:text-warm-accent transition-colors duration-300">
-                  contact@atavicolabs.com
-                </a>
-              </li>
-              {/* Phone removed per request */}
-              <li className="pt-2">
-                <span className="text-xs text-warm-muted/70">{t('contact.location')}</span>
-              </li>
-            </ul>
+            <h4 className="text-[11px] uppercase tracking-wider text-grigio/60 mb-4 font-light">Newsletter</h4>
+            <p className="text-[12px] text-sabbia/60 leading-[1.6] mb-4">
+              Aggiornamenti mensili su design, sviluppo e best practice.
+            </p>
+            <form className="space-y-3">
+              <input
+                type="email"
+                placeholder="La tua email"
+                className="w-full bg-grafite border border-grigio/20 px-3 py-2 text-[13px] text-sabbia placeholder:text-grigio/40 focus:border-oliva/40 focus:outline-none transition-colors"
+              />
+              <button
+                type="submit"
+                className="w-full border border-sabbia/40 text-sabbia text-[11px] uppercase tracking-wider py-2 hover:border-oliva hover:text-oliva hover:bg-oliva/5 transition-all duration-300"
+              >
+                Iscriviti
+              </button>
+            </form>
+            <p className="text-[10px] text-grigio/50 mt-3">
+              Join 1,200+ subscribers
+            </p>
           </div>
         </div>
 
-        {/* Bottom bar - minimal */}
-        <div className="pt-8 border-t border-warm-border flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-warm-muted/50 text-xs">
-            {t('copyright', {year: currentYear})}
-          </p>
-          <div className="flex items-center gap-6">
-            {/* Language switcher removed from footer */}
-            {/* Legal Links */}
-            <div className="flex gap-6 text-xs">
-              <Link href="/privacy" className="text-warm-muted/70 hover:text-warm-accent transition-colors duration-300">
-                {t('legal.privacy')}
-              </Link>
-              <Link href="/terms" className="text-warm-muted/70 hover:text-warm-accent transition-colors duration-300">
-                {t('legal.terms')}
-              </Link>
-            </div>
+        {/* Bottom bar */}
+        <div className="pt-8 border-t border-grigio/20 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+          <div className="space-y-1">
+            <p className="text-grigio/50 text-[11px]">
+              {t('copyright', {year: currentYear})}
+            </p>
+            <p className="text-[10px] font-mono text-grigio/30">
+              Built with Next.js • Hosted on Vercel • P.IVA 01234567890
+            </p>
+          </div>
+          <div className="flex gap-6 text-[11px]">
+            <Link href="/privacy" className="text-grigio/60 hover:text-oliva transition-colors duration-300">
+              {t('legal.privacy')}
+            </Link>
+            <Link href="/terms" className="text-grigio/60 hover:text-oliva transition-colors duration-300">
+              {t('legal.terms')}
+            </Link>
           </div>
         </div>
       </div>
