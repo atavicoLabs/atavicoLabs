@@ -2,6 +2,7 @@
 
 import { useTranslations } from 'next-intl';
 import { useReveal } from '../hooks/useReveal';
+import { ArrowRight, ArrowUpRight } from 'lucide-react';
 
 export default function Hero() {
   const t = useTranslations('hero');
@@ -10,228 +11,158 @@ export default function Hero() {
   return (
     <section 
       ref={ref}
-      className="relative overflow-hidden w-full min-h-screen flex items-center bg-neutral-950"
+      className="relative overflow-hidden w-full min-h-screen flex items-center bg-carbone"
     >
-      {/* Background Pattern */}
+      {/* Background Gradient + Noise - enhanced */}
+      <div className="absolute inset-0 bg-gradient-to-b from-carbone via-grafite/30 to-grafite/60" />
       <div 
-        className="absolute inset-0 opacity-[0.02] pointer-events-none"
+        className="absolute inset-0 opacity-[0.04] pointer-events-none mix-blend-overlay"
         style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='1' cy='1' r='1' fill='%239D9A8E'/%3E%3C/svg%3E")`,
-          backgroundSize: '40px 40px',
-          backgroundAttachment: 'fixed'
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='200' height='200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' /%3E%3C/svg%3E")`,
         }}
       />
 
-      {/* Section Number */}
+      {/* Section Number - more visible */}
       <div 
-        className={`absolute top-24 right-6 lg:right-24 text-xs text-white/10 fade-in ${isRevealed ? 'revealed' : ''}`}
-        style={{ animationDelay: '0ms' }}
+        className={`absolute top-32 right-8 lg:right-16 text-[11px] font-mono text-oliva/30 tracking-wider fade-in ${isRevealed ? 'revealed' : ''}`}
       >
         [001]
       </div>
       
-      {/* Main Container */}
-      <div className="relative w-full px-6 lg:px-24 py-24 lg:py-40">
-        <div className="max-w-7xl mx-auto relative">
+      {/* Main Container - centered composition */}
+      <div className="relative w-full px-6 lg:px-16 py-32 lg:py-40">
+        <div className="max-w-6xl mx-auto">
           
-          {/* Left Content Column */}
-          <div className="max-w-2xl">
+          {/* Content - centered, single column */}
+          <div className="max-w-4xl mx-auto text-left">
             
-            {/* Eyebrow */}
+            {/* Eyebrow - refined */}
             <div 
-              className={`text-[10px] uppercase mb-12 tracking-[0.15em] text-white/40 font-normal fade-up ${
+              className={`inline-flex items-center gap-3 text-[12px] uppercase mb-8 tracking-[0.15em] text-oliva/60 font-medium fade-up ${
                 isRevealed ? 'revealed' : ''
               }`}
             >
+              <span className="w-10 h-[1px] bg-oliva/40"></span>
               {t('label')}
             </div>
 
-            {/* H1 Title */}
-            <h1 
-              className={`text-4xl lg:text-7xl font-medium mb-10 leading-[1.1] tracking-tight fade-up ${
+            {/* H1 Title - optimized spacing & tracking */}
+            <h1
+              className={`font-display text-[48px] sm:text-[56px] lg:text-[72px] leading-[1.1] font-medium mb-8 max-w-3xl fade-up ${
                 isRevealed ? 'revealed' : ''
               }`}
-              style={{ color: '#EAEAE6', animationDelay: '100ms' }}
+              style={{ 
+                color: '#EAEAE6', 
+                animationDelay: '100ms',
+                letterSpacing: '-0.015em'
+              }}
             >
               {t('title')}
             </h1>
 
-            {/* Paragraph */}
+            {/* Paragraph - tighter line-height */}
             <p 
-              className={`text-lg lg:text-xl font-light mb-12 leading-relaxed max-w-xl fade-up ${
+              className={`text-[19px] sm:text-[21px] font-light mb-10 leading-[1.6] max-w-2xl fade-up ${
                 isRevealed ? 'revealed' : ''
               }`}
-              style={{ color: '#D0CECA', animationDelay: '200ms' }}
+              style={{ color: '#C8C5B8', animationDelay: '200ms' }}
             >
               {t('description')}
             </p>
 
-            {/* CTA Buttons */}
+            {/* CTA Buttons - refined hierarchy */}
             <div 
-              className={`flex flex-wrap gap-4 mb-14 fade-up ${isRevealed ? 'revealed' : ''}`}
+              className={`flex flex-col sm:flex-row gap-4 mb-10 fade-up ${isRevealed ? 'revealed' : ''}`}
               style={{ animationDelay: '300ms' }}
             >
               {/* Primary CTA */}
               <a
                 href="#portfolio"
-                className="inline-flex items-center gap-2.5 px-7 py-3.5 bg-accent-primary text-white text-sm font-medium hover:bg-accent-hover hover:-translate-y-0.5 transition-all duration-300 shadow-lg hover:shadow-xl"
+                className="group inline-flex items-center justify-center gap-3 px-8 py-4 bg-oliva text-carbone text-[14px] font-medium tracking-wide hover:bg-oliva/90 hover:-translate-y-1 transition-all duration-300 shadow-xl hover:shadow-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-oliva/60 focus-visible:ring-offset-2 focus-visible:ring-offset-carbone"
               >
-                {t('ctaPrimary')} →
+                {t('ctaPrimary')}
+                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" strokeWidth={2} />
               </a>
 
               {/* Secondary CTA */}
               <a
                 href="#process"
-                className="inline-flex items-center gap-2.5 px-7 py-3.5 border border-white/10 text-sm font-medium hover:border-accent-primary hover:bg-white/5 hover:-translate-y-0.5 transition-all duration-300"
-                style={{ color: '#D0CEC3' }}
+                className="group inline-flex items-center justify-center gap-3 px-8 py-4 border border-sabbia/30 bg-transparent text-[14px] font-medium text-sabbia tracking-wide hover:border-oliva/50 hover:bg-oliva/5 hover:-translate-y-1 transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-oliva/60 focus-visible:ring-offset-2 focus-visible:ring-offset-carbone"
               >
                 {t('ctaSecondary')}
+                <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" strokeWidth={2} />
               </a>
             </div>
 
-            {/* Info Row */}
+            {/* Info Row + Delivery Note */}
             <div 
-              className={`space-y-3 fade-in ${isRevealed ? 'revealed' : ''}`}
+              className={`mb-8 fade-in ${isRevealed ? 'revealed' : ''}`}
               style={{ animationDelay: '400ms' }}
             >
-              <div className="flex flex-wrap items-center gap-3 text-xs text-white/60 font-light">
+              {/* Primary info - inline with separators */}
+              <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-[14px] text-sabbia/80 font-light mb-3 max-w-2xl">
                 <div className="flex items-center gap-2">
-                  <span className="text-accent-primary">●</span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-oliva"></span>
                   <span>{t('available')}</span>
                 </div>
+                <span className="hidden sm:inline text-sabbia/40">•</span>
                 <div className="flex items-center gap-2">
-                  <span className="text-accent-primary">●</span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-oliva/60"></span>
                   <span>{t('since')}</span>
                 </div>
+                <span className="hidden sm:inline text-sabbia/40">•</span>
                 <div className="flex items-center gap-2">
-                  <span className="text-accent-primary">●</span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-oliva/60"></span>
                   <span>{t('remote')}</span>
                 </div>
+                <span className="hidden sm:inline text-sabbia/40">•</span>
                 <div className="flex items-center gap-2">
-                  <span className="text-accent-primary">●</span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-oliva/60"></span>
                   <span>{t('onsite')}</span>
                 </div>
               </div>
               
-              <p className="text-[11px] text-white/40 font-light max-w-md">
+              {/* Delivery note - improved readability */}
+              <p className="text-[14px] text-sabbia/60 font-light max-w-xl leading-[1.6]">
                 {t('deliveryNote')}
               </p>
             </div>
 
-          </div>
-          
-          {/* Technical Build Card - Bottom Right Desktop */}
-          <div 
-            className={`
-              hidden lg:block
-              absolute bottom-0 right-0 
-              w-[360px] 
-              backdrop-blur-sm
-              p-4
-              font-mono text-[9px] leading-relaxed
-              fade-in
-              ${isRevealed ? 'revealed' : ''}
-            `}
-            style={{ 
-              backgroundColor: 'rgba(255, 255, 255, 0.05)',
-              border: '1px solid rgba(255, 255, 255, 0.08)',
-              boxShadow: '0px 4px 24px rgba(0, 0, 0, 0.25)',
-              animationDelay: '500ms' 
-            }}
-          >
-            <div className="flex items-start justify-between mb-3 pb-2 border-b border-white/5">
-              <div className="uppercase tracking-widest text-[8px]" style={{ color: 'rgba(255, 255, 255, 0.7)' }}>
-                BUILD STATUS
+            {/* BUILD STATUS - inline compact badge */}
+            <div 
+              className={`inline-flex items-center flex-wrap gap-x-8 gap-y-3 px-6 py-3 border border-grigio/20 bg-grafite/20 backdrop-blur-sm fade-in ${isRevealed ? 'revealed' : ''}`}
+              style={{ animationDelay: '500ms' }}
+            >
+              {/* Header label */}
+              <div className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-oliva/60"></span>
+                <span className="text-[11px] font-mono uppercase tracking-wider text-sabbia/60">
+                  System Status
+                </span>
               </div>
-              <div className="text-white/40 text-[8px]">
-                Last Deployment
+
+              {/* Metrics - inline */}
+              <div className="flex items-center gap-6">
+                {/* Build */}
+                <div className="flex items-center gap-2">
+                  <span className="text-oliva text-[14px]">✓</span>
+                  <span className="text-[12px] text-sabbia/70 font-light">Build</span>
+                </div>
+
+                {/* Tests */}
+                <div className="flex items-center gap-2">
+                  <span className="text-oliva text-[14px]">✓</span>
+                  <span className="text-[12px] text-sabbia/70 font-light font-mono">Tests 127/127</span>
+                </div>
+
+                {/* Performance */}
+                <div className="flex items-center gap-2">
+                  <span className="text-oliva text-[14px]">✓</span>
+                  <span className="text-[12px] font-medium text-oliva font-mono">Perf 98/100</span>
+                </div>
               </div>
             </div>
 
-            <div className="space-y-1 mb-3 text-white/70">
-              <div className="flex items-center gap-2">
-                <span className="text-accent-primary">✓</span>
-                <span>Compilazione completata</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="text-accent-primary">✓</span>
-                <span>Test superati (127/127)</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="text-accent-primary">✓</span>
-                <span>Type checking OK</span>
-              </div>
-              <div className="flex items-center gap-2 mt-2 text-white/90">
-                <span>→</span>
-                <span className="font-medium">Ready for production</span>
-              </div>
-            </div>
-
-            <div className="pt-3 border-t border-white/5 space-y-1 text-[9px]">
-              <div className="flex items-center justify-between">
-                <span className="text-white/50">Performance:</span>
-                <span className="text-white/90 font-medium">98/100</span>
-              </div>
-              <div className="flex items-center justify-between">
-                <span className="text-white/50">Accessibility:</span>
-                <span className="text-white/90 font-medium">100/100</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Technical Card Mobile/Tablet */}
-          <div 
-            className={`
-              lg:hidden
-              mt-12 mb-8
-              w-full max-w-md mx-auto
-              bg-white/5 backdrop-blur-sm
-              border border-white/10
-              p-4
-              font-mono text-[9px] leading-relaxed
-              fade-in
-              ${isRevealed ? 'revealed' : ''}
-            `}
-            style={{ animationDelay: '500ms' }}
-          >
-            <div className="flex items-start justify-between mb-3 pb-2 border-b border-white/5">
-              <div className="text-white/60 uppercase tracking-widest text-[8px]">
-                BUILD STATUS
-              </div>
-              <div className="text-white/40 text-[8px]">
-                Last Deployment
-              </div>
-            </div>
-
-            <div className="space-y-1 mb-3 text-white/70">
-              <div className="flex items-center gap-2">
-                <span className="text-accent-primary">✓</span>
-                <span>Compilazione completata</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="text-accent-primary">✓</span>
-                <span>Test superati (127/127)</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="text-accent-primary">✓</span>
-                <span>Type checking OK</span>
-              </div>
-              <div className="flex items-center gap-2 mt-2 text-white/90">
-                <span>→</span>
-                <span className="font-medium">Ready for production</span>
-              </div>
-            </div>
-
-            <div className="pt-3 border-t border-white/5 space-y-1">
-              <div className="flex items-center justify-between">
-                <span className="text-white/50">Performance:</span>
-                <span className="text-white/90 font-medium">98/100</span>
-              </div>
-              <div className="flex items-center justify-between">
-                <span className="text-white/50">Accessibility:</span>
-                <span className="text-white/90 font-medium">100/100</span>
-              </div>
-            </div>
           </div>
 
         </div>

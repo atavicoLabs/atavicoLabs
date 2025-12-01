@@ -1,10 +1,13 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
+import { useLocale } from 'next-intl';
 import { useReveal } from '../hooks/useReveal';
+import { getMetrics } from '../constants/metrics';
 
 export default function CTA() {
   const t = useTranslations('cta');
+  const locale = useLocale() as 'it' | 'en';
   const { ref, isRevealed } = useReveal();
 
   return (
@@ -33,7 +36,7 @@ export default function CTA() {
 
           {/* Title */}
           <h2 
-            className={`text-[32px] font-medium text-sabbia leading-[1.2] fade-up ${isRevealed ? 'revealed' : ''}`}
+            className={`font-display text-[32px] font-medium text-sabbia leading-[1.2] fade-up ${isRevealed ? 'revealed' : ''}`}
           >
             {t('title')}
           </h2>
@@ -46,6 +49,14 @@ export default function CTA() {
             {t('subtitle')}
           </p>
 
+          {/* What happens next */}
+          <p 
+            className={`text-[14px] leading-[1.7] text-sabbia/50 font-light max-w-[520px] fade-up ${isRevealed ? 'revealed' : ''}`}
+            style={{ animationDelay: '160ms' }}
+          >
+            {t('nextSteps')}
+          </p>
+
           {/* CTA Button */}
           <div 
             className={`pt-4 fade-up ${isRevealed ? 'revealed' : ''}`}
@@ -53,7 +64,7 @@ export default function CTA() {
           >
             <a
               href={`mailto:${t('email')}`}
-              className="inline-flex items-center gap-3 px-7 py-3.5 border border-sabbia/30 text-sabbia text-[13px] tracking-wide hover:border-oliva hover:text-oliva hover:bg-oliva/5 transition-all duration-300 uppercase"
+              className="inline-flex w-full sm:w-auto items-center justify-center gap-3 px-7 py-3.5 border border-sabbia/30 text-sabbia text-[13px] tracking-wide hover:border-oliva hover:text-oliva hover:bg-oliva/5 transition-all duration-300 uppercase"
             >
               {t('cta')}
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -67,12 +78,7 @@ export default function CTA() {
             className={`grid grid-cols-4 gap-4 pt-8 border-t border-grigio/20 fade-up ${isRevealed ? 'revealed' : ''}`}
             style={{ animationDelay: '300ms' }}
           >
-            {[
-              { value: '12', label: 'Progetti' },
-              { value: '98%', label: 'Retention' },
-              { value: '4.9/5', label: 'Rating' },
-              { value: '8 anni', label: 'Esperienza' }
-            ].map((stat, index) => (
+            {getMetrics(locale).map((stat, index) => (
               <div key={index}>
                 <div className="text-[28px] font-medium text-oliva">{stat.value}</div>
                 <div className="text-[11px] text-grigio/70 uppercase tracking-wider mt-1">{stat.label}</div>

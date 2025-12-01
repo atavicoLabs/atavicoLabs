@@ -1,10 +1,13 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
+import { useLocale } from 'next-intl';
 import { useReveal } from '../hooks/useReveal';
+import { getAboutMetrics } from '../constants/metrics';
 
 export default function About() {
   const t = useTranslations('about');
+  const locale = useLocale() as 'it' | 'en';
   const { ref, isRevealed } = useReveal();
 
   const principles = [
@@ -13,18 +16,13 @@ export default function About() {
     { number: '03', title: 'AFFIDABILITÀ', description: 'Sviluppo stabile e scalabile, progettato per durare oltre il primo rilascio. Code review, test, monitoraggio.' }
   ];
 
-  const metrics = [
-    { label: 'Progetti rilasciati', value: '12' },
-    { label: 'Client retention', value: '98%' },
-    { label: 'Rating medio', value: '4.9/5' },
-    { label: 'Exp. media team', value: '8 anni' }
-  ];
+  const metrics = getAboutMetrics(locale);
 
   return (
     <section 
       id="about" 
       ref={ref}
-      className="relative py-40 px-6 lg:px-16 bg-carbone w-full overflow-hidden border-t border-grigio/20"
+      className="relative py-24 sm:py-32 lg:py-40 px-6 lg:px-16 bg-carbone w-full overflow-hidden border-t border-grigio/20"
     >
       {/* Section Number */}
       <div className="absolute top-12 right-6 lg:right-16 text-[11px] font-mono text-oliva/30">[02]</div>
@@ -35,10 +33,10 @@ export default function About() {
           {/* Left Column */}
           <div>
             <div className="text-[11px] uppercase tracking-[0.15em] text-grigio/60 font-light mb-4">About</div>
-            <h2 className={`text-[32px] font-medium text-sabbia mb-6 leading-[1.2] fade-up ${isRevealed ? 'revealed' : ''}`}>
+            <h2 className={`font-display text-[32px] font-medium text-sabbia mb-6 leading-[1.2] fade-up ${isRevealed ? 'revealed' : ''}`}>
               {t('title')}
             </h2>
-            <p className={`text-[17px] leading-[1.65] text-sabbia/70 font-light mb-12 max-w-[520px] fade-up ${isRevealed ? 'revealed' : ''}`} style={{ animationDelay: '100ms' }}>
+            <p className={`text-[17px] leading-[1.65] text-sabbia/70 font-light mb-12 max-w-[580px] fade-up ${isRevealed ? 'revealed' : ''}`} style={{ animationDelay: '100ms' }}>
               {t('subtitle')}
             </p>
 
@@ -54,7 +52,7 @@ export default function About() {
                     <span className="text-[11px] font-mono text-oliva/50">{principle.number}</span>
                     <h3 className="text-[18px] font-medium text-sabbia uppercase tracking-wide">{principle.title}</h3>
                   </div>
-                  <p className="text-[15px] leading-[1.7] text-sabbia/60 font-light pl-10">
+                  <p className="text-[15px] leading-[1.7] text-sabbia/70 font-light pl-10 max-w-[520px]">
                     {principle.description}
                   </p>
                 </div>
@@ -79,12 +77,12 @@ export default function About() {
 
             {/* Metrics Dashboard */}
             <div className="border border-grigio/20 p-6 bg-grafite/30">
-              <div className="text-[11px] uppercase tracking-[0.15em] text-grigio/60 font-light mb-6">Metrics</div>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="text-[11px] uppercase tracking-[0.15em] text-grigio/50 font-light mb-6">Metrics</div>
+              <div className="grid grid-cols-2 gap-6">
                 {metrics.map((metric, i) => (
-                  <div key={i} className="space-y-1">
-                    <div className="text-[28px] font-medium text-oliva">{metric.value}</div>
-                    <div className="text-[11px] text-grigio/70">{metric.label}</div>
+                  <div key={i} className="space-y-2">
+                    <div className="text-[28px] font-medium text-oliva leading-[1.1]">{metric.value}</div>
+                    <div className="text-[11px] text-grigio/70 leading-relaxed max-w-[160px]">{metric.label}</div>
                   </div>
                 ))}
               </div>

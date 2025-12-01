@@ -97,11 +97,11 @@ export default function Footer() {
               <input
                 type="email"
                 placeholder="La tua email"
-                className="w-full bg-grafite border border-grigio/20 px-3 py-2 text-[13px] text-sabbia placeholder:text-grigio/40 focus:border-oliva/40 focus:outline-none transition-colors"
+                className="w-full bg-grafite border border-grigio/20 px-3 py-2 text-[13px] text-sabbia placeholder:text-grigio/40 rounded-sm focus:border-oliva/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-oliva/60 focus-visible:ring-offset-2 focus-visible:ring-offset-carbone transition-colors"
               />
               <button
                 type="submit"
-                className="w-full border border-sabbia/40 text-sabbia text-[11px] uppercase tracking-wider py-2 hover:border-oliva hover:text-oliva hover:bg-oliva/5 transition-all duration-300"
+                className="w-full border border-sabbia/40 text-sabbia text-[11px] uppercase tracking-wider py-2 rounded-sm hover:border-oliva hover:text-oliva hover:bg-oliva/5 transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-oliva/60 focus-visible:ring-offset-2 focus-visible:ring-offset-carbone"
               >
                 Iscriviti
               </button>
@@ -123,10 +123,10 @@ export default function Footer() {
             </p>
           </div>
           <div className="flex gap-6 text-[11px]">
-            <Link href="/privacy" className="text-grigio/60 hover:text-oliva transition-colors duration-300">
+            <Link href="/privacy" className="text-grigio/60 hover:text-oliva transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-oliva/60 focus-visible:ring-offset-2 focus-visible:ring-offset-carbone">
               {t('legal.privacy')}
             </Link>
-            <Link href="/terms" className="text-grigio/60 hover:text-oliva transition-colors duration-300">
+            <Link href="/terms" className="text-grigio/60 hover:text-oliva transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-oliva/60 focus-visible:ring-offset-2 focus-visible:ring-offset-carbone">
               {t('legal.terms')}
             </Link>
           </div>

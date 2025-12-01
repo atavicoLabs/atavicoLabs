@@ -54,7 +54,7 @@ export default function ServicesSection() {
   return (
     <section 
       ref={ref}
-      className="relative w-full py-40 px-6 lg:px-24 bg-bg-primary overflow-hidden border-t border-text-ghost/10"
+      className="relative w-full py-24 sm:py-32 lg:py-40 px-6 lg:px-24 bg-bg-primary overflow-hidden border-t border-text-ghost/10"
     >
       {/* Section Number - top right */}
       <div className="absolute top-16 right-6 lg:right-24 text-mono text-text-ghost">[03]</div>
@@ -63,7 +63,7 @@ export default function ServicesSection() {
         {/* Header - max-width 780px */}
         <div className="max-w-text mb-20">
           <div className="text-label uppercase text-text-muted font-medium mb-6">What we do</div>
-          <h2 className="text-h1 lg:text-h2 text-text-primary mb-6">
+          <h2 className="font-display text-h1 lg:text-h2 text-text-primary mb-5">
             {t('title')}
           </h2>
           <p className="text-body lg:text-body-lg text-text-tertiary font-light max-w-paragraph">
@@ -78,7 +78,7 @@ export default function ServicesSection() {
               key={i}
               ref={(el) => { itemRefs.current[i] = el; }}
               data-index={i}
-              className="relative p-10 bg-bg-secondary border border-text-ghost/15 min-h-[420px] rounded-sm hover:border-accent-primary hover:bg-bg-tertiary hover:-translate-y-2 hover:shadow-premium transition-all duration-400 group"
+              className="relative p-6 sm:p-8 lg:p-10 bg-bg-secondary border border-text-ghost/15 min-h-[420px] rounded-sm hover:border-accent-primary hover:bg-bg-tertiary hover:-translate-y-2 hover:shadow-premium transition-all duration-400 group"
               style={{
                 opacity: revealed[i] ? 1 : 0,
                 transform: revealed[i] ? 'translateY(0)' : 'translateY(12px)',
@@ -99,15 +99,26 @@ export default function ServicesSection() {
                 </svg>
               </div>
               
-              <h3 className="text-h3 text-text-primary mb-4">
+              <h3 className="text-h3 text-text-primary mb-3">
                 {service.title}
               </h3>
-              <p className="text-body text-text-secondary mb-6">
+              <p className="text-body text-text-secondary mb-7">
                 {service.description}
               </p>
+
+              {/* Micro-CTA towards contact */}
+              <a
+                href="#contact"
+                className="inline-flex items-center px-2 py-1 text-body-sm text-accent-primary hover:text-accent-strong focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary focus-visible:ring-offset-2 focus-visible:ring-offset-bg-secondary transition-colors mb-5"
+              >
+                Scopri se è il servizio giusto per te
+                <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </a>
               
               {/* Timeline */}
-              <div className="text-body-sm text-text-muted mb-4">
+              <div className="text-body-sm text-text-muted mb-5">
                 <span className="uppercase tracking-wider font-medium">Tempistiche: </span>
                 <span className="text-text-secondary">
                   {i === 0 && '2–4 settimane'}
@@ -118,7 +129,7 @@ export default function ServicesSection() {
               </div>
               
               {/* Skill Tags */}
-              <div className="flex flex-wrap gap-2 mt-auto pt-6 border-t border-text-ghost/10">
+              <div className="flex flex-wrap gap-2 mt-auto pt-6 border-t border-text-ghost/15">
                 {i === 0 && <><span className="px-3 py-1.5 text-[12px] text-text-secondary border border-text-ghost/25 rounded-sm hover:border-accent-primary hover:text-text-primary transition-colors">Figma</span><span className="px-3 py-1.5 text-[12px] text-text-secondary border border-text-ghost/25 rounded-sm hover:border-accent-primary hover:text-text-primary transition-colors">Prototyping</span><span className="px-3 py-1.5 text-[12px] text-text-secondary border border-text-ghost/25 rounded-sm hover:border-accent-primary hover:text-text-primary transition-colors">User Testing</span></>}
                 {i === 1 && <><span className="px-3 py-1.5 text-[12px] text-text-secondary border border-text-ghost/25 rounded-sm hover:border-accent-primary hover:text-text-primary transition-colors">React</span><span className="px-3 py-1.5 text-[12px] text-text-secondary border border-text-ghost/25 rounded-sm hover:border-accent-primary hover:text-text-primary transition-colors">Next.js</span><span className="px-3 py-1.5 text-[12px] text-text-secondary border border-text-ghost/25 rounded-sm hover:border-accent-primary hover:text-text-primary transition-colors">Flutter</span></>}
                 {i === 2 && <><span className="px-3 py-1.5 text-[12px] text-text-secondary border border-text-ghost/25 rounded-sm hover:border-accent-primary hover:text-text-primary transition-colors">Node.js</span><span className="px-3 py-1.5 text-[12px] text-text-secondary border border-text-ghost/25 rounded-sm hover:border-accent-primary hover:text-text-primary transition-colors">PostgreSQL</span><span className="px-3 py-1.5 text-[12px] text-text-secondary border border-text-ghost/25 rounded-sm hover:border-accent-primary hover:text-text-primary transition-colors">API Design</span></>}
@@ -132,7 +143,7 @@ export default function ServicesSection() {
         <div className="mt-24 pt-20 border-t border-text-ghost/10">
           <div className="max-w-4xl mx-auto">
             <div className="text-label uppercase text-text-muted font-medium mb-10">Workflow</div>
-            <div className="flex items-center justify-between">
+            <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-8 md:gap-0">
               {['Design', 'Build', 'Test', 'Deploy'].map((step, i) => (
                 <div key={i} className="flex items-center">
                   <div className="text-center">

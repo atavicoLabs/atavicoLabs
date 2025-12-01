@@ -2,6 +2,7 @@ import {NextIntlClientProvider} from 'next-intl';
 import {getMessages} from 'next-intl/server';
 import {notFound} from 'next/navigation';
 import {locales} from '@/src/i18n/config';
+import CustomCursor from '../components/CustomCursor';
 import "../globals.css";
 
 export function generateStaticParams() {
@@ -57,7 +58,8 @@ export default async function LocaleLayout({
           dangerouslySetInnerHTML={{__html: JSON.stringify(structuredData)}}
         />
       </head>
-      <body className="antialiased">
+      <body className="antialiased" suppressHydrationWarning>
+        <CustomCursor />
         <NextIntlClientProvider messages={messages} locale={locale}>
           {children}
         </NextIntlClientProvider>

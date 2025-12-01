@@ -6,7 +6,7 @@
   },
   "navbar": {
     "about": "About",
-    "work": "Projects",
+    "work": "Case studies",
     "process": "Process",
     "insights": "Insights",
     "contact": "Contact"
@@ -54,25 +54,63 @@
     ]
   },
   "portfolio": {
-    "title": "Our work.",
-    "subtitle": "Real projects, built to last. Concrete solutions that improve processes, quality and decisions.",
+    "title": "Real case studies, measurable results.",
+    "subtitle": "Each project starts from a concrete need. Here are three real cases where we made processes smoother, decisions faster and teams’ work more solid.",
     "items": [
       {
-        "title": "Lytera",
-        "description": "AI-based shift planning system. –70% planning time and –85% operational errors.",
-        "tags": ["Next.js", "Node.js", "MongoDB", "OpenAI API"]
+        "title": "Team Scheduler",
+        "description": "Smart platform to organize availability, shifts and events with AI suggestions. –60% planning time, +40% participation.",
+        "tags": ["React", "Next.js", "Node.js", "MongoDB", "OpenAI API", "WebSocket"],
+        "metrics": {
+          "timeline": "10 weeks",
+          "team": "3 dev + 1 designer",
+          "users": "450+ active",
+          "performance": "96/100",
+          "uptime": "99.8%",
+          "status": "In production"
+        }
       },
       {
-        "title": "Crispin",
-        "description": "ESG dashboard for environmental KPIs and sustainability. 40% faster audits, €180k/year in avoided costs.",
-        "tags": ["React", "D3.js", "PostgreSQL", "TensorFlow"]
+        "title": "Energy Intelligence",
+        "description": "Advanced energy monitoring and device detection via NILM models. –25% energy inefficiencies in 2 months.",
+        "tags": ["Python", "PyTorch", "React", "Next.js", "PostgreSQL", "TimeSeries DB"],
+        "metrics": {
+          "timeline": "14 weeks",
+          "team": "4 dev + 1 data scientist",
+          "users": "12 facilities",
+          "status": "In production"
+        }
       },
       {
-        "title": "Vectis",
-        "description": "Visual collaboration platform for creative teams. –50% review cycles, +60% client satisfaction.",
-        "tags": ["Flutter", "Firebase", "WebSockets"]
+        "title": "AI Workflow Assistant",
+        "description": "Intelligent automations for ticketing and knowledge base with Slack/Trello integrations. –50% repetitive ticket handling time.",
+        "tags": ["LLM API", "Vector DB", "Node.js", "React", "Slack API", "Trello API"],
+        "metrics": {
+          "timeline": "8 weeks",
+          "team": "2 dev + 1 designer",
+          "users": "200+ team members",
+          "status": "In production"
+        }
       }
-    ]
+    ],
+    "labels": {
+      "timeline": "Timeline",
+      "status": "Status",
+      "team": "Team",
+      "users": "Users",
+      "performance": "Performance",
+      "uptime": "Uptime",
+      "caseStudy": "Read case study",
+      "metricsTitle": "Project metrics",
+      "timelineTitle": "Timeline",
+      "phases": {
+        "kickoff": "Kickoff",
+        "design": "Design",
+        "dev": "Dev",
+        "test": "Test",
+        "launch": "Launch"
+      }
+    }
   },
   "process": {
     "title": "How we work.",
@@ -82,25 +120,29 @@
         "number": "01",
         "title": "Analysis",
         "description": "We understand goals, constraints and context. Output: shared documentation.",
-        "duration": "1–2 weeks"
+        "duration": "1–2 weeks",
+        "next": "At the end of this phase you have a clear picture of the project and a shared document we use as the base for every next decision."
       },
       {
         "number": "02",
         "title": "Design",
         "description": "Wireframes, UI and system architecture. Output: realistic prototype.",
-        "duration": "2–3 weeks"
+        "duration": "2–3 weeks",
+        "next": "We close this phase with a clickable prototype and a defined architecture, so you can validate the product before investing in full development."
       },
       {
         "number": "03",
         "title": "Development",
         "description": "Clean code, clear versioning and continuous verification. Output: testable releases.",
-        "duration": "4–8 weeks"
+        "duration": "4–8 weeks",
+        "next": "We ship incrementally: you get testable builds in staging and continuous visibility on what is ready."
       },
       {
         "number": "04",
         "title": "Release",
         "description": "Deploy, optimization and post-launch support.",
-        "duration": "1 week"
+        "duration": "1 week",
+        "next": "We handle go-live and stay by your side for monitoring, fine-tuning and planning the next iterations."
       }
     ]
   },
@@ -159,6 +201,7 @@
   "cta": {
     "title": "Let's build something solid.",
     "subtitle": "Whether it's a new product or an existing platform, we can help you design, develop and release concrete solutions.",
+    "nextSteps": "We get back to you within one business day with a couple of focused questions and, if it makes sense, suggest a 30-minute exploratory call.",
     "cta": "Let's talk",
     "email": "contact@atavicolabs.com"
   },
@@ -180,6 +223,263 @@
     "legal": {
       "privacy": "Privacy",
       "terms": "Terms"
+    }
+  },
+  "projects": {
+    "teamScheduler": {
+      "back": "← Back to portfolio",
+      "title": "Team Scheduler",
+      "description": "Smart platform to organize availability, shifts and events with AI suggestions. –60% planning time, +40% participation.",
+      "metrics": {
+        "timeline": {
+          "label": "Timeline",
+          "value": "10 weeks"
+        },
+        "team": {
+          "label": "Team",
+          "value": "3 dev + 1 designer"
+        },
+        "users": {
+          "label": "Active users",
+          "value": "450+"
+        },
+        "performance": {
+          "label": "Performance",
+          "value": "96/100"
+        },
+        "uptime": {
+          "label": "Uptime",
+          "value": "99.8%"
+        },
+        "status": {
+          "label": "Status",
+          "value": "In production"
+        }
+      },
+      "challenge": {
+        "title": "The challenge",
+        "description": "A distributed team across multiple locations struggled to coordinate availability, shifts, and recurring events. The manual process required hours of weekly work and generated conflicts.",
+        "points": [
+          "Manual availability collection via email and shared spreadsheets",
+          "Frequent shift conflicts and event overlaps",
+          "No real-time visibility on who is available and when",
+          "Low participation in recurring events due to lack of effective reminders"
+        ]
+      },
+      "solution": {
+        "title": "The solution",
+        "description": "We designed and developed a platform that centralizes availability, shifts, and events. AI integration automatically suggests optimal slots and reduces conflicts.",
+        "features": [
+          {
+            "title": "Unified dashboard",
+            "description": "Centralized view of availability, assigned shifts, and upcoming events. Filters by team, location, and role."
+          },
+          {
+            "title": "AI suggestions",
+            "description": "The algorithm analyzes history and preferences to suggest optimal slots, avoiding conflicts and balancing workload."
+          },
+          {
+            "title": "Smart notifications",
+            "description": "Automatic reminders via email and push, synced with external calendars (Google Calendar, Outlook)."
+          },
+          {
+            "title": "Real-time updates",
+            "description": "WebSocket for live updates when someone modifies availability or confirms an event."
+          }
+        ]
+      },
+      "results": {
+        "title": "Results",
+        "metrics": [
+          {
+            "value": "–60%",
+            "label": "Planning time"
+          },
+          {
+            "value": "+40%",
+            "label": "Event participation"
+          },
+          {
+            "value": "450+",
+            "label": "Active users"
+          },
+          {
+            "value": "99.8%",
+            "label": "Monthly uptime"
+          }
+        ],
+        "summary": "The team recovered valuable hours every week and drastically reduced conflicts. Event participation increased thanks to timely notifications and simplified UX."
+      }
+    },
+    "energyIntelligence": {
+      "back": "← Back to portfolio",
+      "title": "Energy Intelligence",
+      "description": "Advanced energy monitoring and device detection via NILM models. –25% energy inefficiencies in 2 months.",
+      "metrics": {
+        "timeline": {
+          "label": "Timeline",
+          "value": "14 weeks"
+        },
+        "team": {
+          "label": "Team",
+          "value": "4 dev + 1 data scientist"
+        },
+        "facilities": {
+          "label": "Monitored facilities",
+          "value": "25"
+        },
+        "performance": {
+          "label": "Performance",
+          "value": "94/100"
+        },
+        "uptime": {
+          "label": "Uptime",
+          "value": "99.9%"
+        },
+        "status": {
+          "label": "Status",
+          "value": "In production"
+        }
+      },
+      "challenge": {
+        "title": "The challenge",
+        "description": "A group of facility managers had limited visibility into actual energy consumption. Existing data was aggregated and didn't allow identifying waste or anomalous devices.",
+        "points": [
+          "Monitoring limited to global meters, without device-level detail",
+          "Inability to detect anomalies in real-time",
+          "No predictive system to optimize future consumption",
+          "Difficulty justifying investments in energy efficiency"
+        ]
+      },
+      "solution": {
+        "title": "The solution",
+        "description": "We implemented a monitoring platform with NILM (Non-Intrusive Load Monitoring) models that identify individual devices from aggregated consumption. Predictive dashboard and real-time alerts.",
+        "features": [
+          {
+            "title": "NILM Engine",
+            "description": "PyTorch models trained on real datasets to disaggregate consumption and detect active devices without additional sensors."
+          },
+          {
+            "title": "Predictive dashboard",
+            "description": "D3.js visualizations with weekly consumption forecasts, anomaly alerts, and benchmarks between facilities."
+          },
+          {
+            "title": "Smart alerts",
+            "description": "Automatic notifications when a device consumes above threshold or shows anomalous patterns."
+          },
+          {
+            "title": "TimeSeries DB",
+            "description": "Optimized storage for high-frequency time series, with configurable retention policies."
+          }
+        ]
+      },
+      "results": {
+        "title": "Results",
+        "metrics": [
+          {
+            "value": "–25%",
+            "label": "Energy inefficiencies"
+          },
+          {
+            "value": "+70%",
+            "label": "Early anomaly detection"
+          },
+          {
+            "value": "25",
+            "label": "Monitored facilities"
+          },
+          {
+            "value": "99.9%",
+            "label": "Monthly uptime"
+          }
+        ],
+        "summary": "Facility managers gained granular visibility into consumption, identifying hidden waste and optimizing investments. The infrastructure ROI paid for itself in less than 6 months."
+      }
+    },
+    "aiWorkflowAssistant": {
+      "back": "← Back to portfolio",
+      "title": "AI Workflow Assistant",
+      "description": "Intelligent automations for ticketing and knowledge base with Slack/Trello integrations. –50% repetitive ticket handling time.",
+      "metrics": {
+        "timeline": {
+          "label": "Timeline",
+          "value": "8 weeks"
+        },
+        "team": {
+          "label": "Team",
+          "value": "2 dev + 1 AI engineer"
+        },
+        "users": {
+          "label": "Team members",
+          "value": "200+"
+        },
+        "performance": {
+          "label": "Performance",
+          "value": "97/100"
+        },
+        "uptime": {
+          "label": "Uptime",
+          "value": "99.7%"
+        },
+        "status": {
+          "label": "Status",
+          "value": "In production"
+        }
+      },
+      "challenge": {
+        "title": "The challenge",
+        "description": "An internal support team handled hundreds of weekly tickets, many repetitive. The knowledge base was static and rarely consulted. Slack and Trello didn't communicate.",
+        "points": [
+          "Repetitive tickets requiring identical manual responses",
+          "Static textual knowledge base, difficult to navigate",
+          "No synchronization between Slack (communication) and Trello (task tracking)",
+          "Time lost searching for solutions already provided in the past"
+        ]
+      },
+      "solution": {
+        "title": "The solution",
+        "description": "We built an AI assistant that analyzes incoming tickets, suggests responses based on history, and automatically creates Trello tasks. Living knowledge base powered by Vector DB.",
+        "features": [
+          {
+            "title": "AI Triage",
+            "description": "LLM analyzes incoming tickets, classifies by priority, and suggests draft responses based on semantic embeddings."
+          },
+          {
+            "title": "Living Knowledge Base",
+            "description": "Vector DB indexes resolved tickets and documents. Semantic search with real-time contextual results."
+          },
+          {
+            "title": "Slack ↔ Trello sync",
+            "description": "Slack commands that automatically create Trello cards, update status, and notify the team."
+          },
+          {
+            "title": "Auto-resolution",
+            "description": "For common tickets (password reset, access), AI responds and closes autonomously if the solution is validated."
+          }
+        ]
+      },
+      "results": {
+        "title": "Results",
+        "metrics": [
+          {
+            "value": "–50%",
+            "label": "Ticket handling time"
+          },
+          {
+            "value": "+80%",
+            "label": "Reuse of existing solutions"
+          },
+          {
+            "value": "200+",
+            "label": "Active team members"
+          },
+          {
+            "value": "99.7%",
+            "label": "Monthly uptime"
+          }
+        ],
+        "summary": "The support team recovered valuable time, drastically reducing repetitive ticket handling. The knowledge base became a daily consulted asset."
+      }
     }
   }
 }

@@ -62,7 +62,26 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: ["Inter", "sans-serif"],
+        // Body/UI
+        sans: [
+          "Inter",
+          "system-ui",
+          "-apple-system",
+          "BlinkMacSystemFont",
+          "SF Pro Text",
+          "Segoe UI",
+          "sans-serif",
+        ],
+        // Headings / display
+        display: [
+          "Manrope",
+          "system-ui",
+          "-apple-system",
+          "BlinkMacSystemFont",
+          "SF Pro Text",
+          "Segoe UI",
+          "sans-serif",
+        ],
       },
       fontSize: {
         // ========================================
@@ -80,15 +99,6 @@ const config: Config = {
         'label': ['11px', { lineHeight: '1.4', letterSpacing: '0.15em', fontWeight: '500' }],
         'button': ['14px', { lineHeight: '1.4', letterSpacing: '0.03em', fontWeight: '500' }],
         'mono': ['11px', { lineHeight: '1.4', fontWeight: '400' }],
-      },
-      spacing: {
-        '18': '4.5rem',   // 72px
-        '22': '5.5rem',   // 88px
-        '30': '7.5rem',   // 120px
-        '36': '9rem',     // 144px
-        '40': '10rem',    // 160px
-        '44': '11rem',    // 176px
-        '52': '13rem',    // 208px
       },
       maxWidth: {
         'content': '1320px',
@@ -108,7 +118,6 @@ const config: Config = {
       },
       letterSpacing: {
         'wider-2': '0.02em',
-        'wider-4': '0.04em',
       },
     },
   },

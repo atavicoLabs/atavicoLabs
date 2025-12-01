@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Manrope:wght@500;600;700&display=swap');
 
 * {
   margin: 0;
@@ -14,18 +14,41 @@ html {
   scroll-behavior: smooth;
   overflow-x: hidden;
   width: 100%;
+  /* iOS Safari smooth scroll */
+  -webkit-overflow-scrolling: touch;
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
+    "SF Pro Text", "Segoe UI", sans-serif;
   font-weight: 300;
-  background-color: #0E0E0E; /* bg-primary - contrasto ottimizzato */
-  color: #D0CEC3; /* text-secondary - contrasto aumentato del 5% */
+  background-color: #0E0E0E;
+  color: #D0CEC3;
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
   width: 100%;
+  /* Prevent horizontal scroll on mobile */
+  max-width: 100vw;
+  /* Hide default cursor - custom cursor only on desktop */
+  cursor: none;
+}
+
+/* Restore cursor pointer for interactive elements */
+a, button, input, textarea, select, [role="button"], [onclick] {
+  cursor: none !important;
+}
+
+/* Restore default cursor on touch devices */
+@media (hover: none) and (pointer: coarse) {
+  body {
+    cursor: auto;
+  }
+  
+  a, button, input, textarea, select, [role="button"], [onclick] {
+    cursor: pointer !important;
+  }
 }
 
 /* Selection colors */
@@ -34,7 +57,7 @@ body {
   color: #E8E6DC;
 }
 
-/* Focus states */
+/* Focus states - premium subtle outline */
 :focus-visible {
   outline: 2px solid rgba(90, 109, 90, 0.5);
   outline-offset: 4px;
@@ -43,16 +66,8 @@ body {
 
 /* ============================================
    ANIMATION SYSTEM - Premium Smooth
-   
-   Philosophy:
-   - Fluid, slow reveals (700ms duration)
-   - Minimal movement (12px translateY)
-   - Smooth easing (cubic-bezier)
-   - Sequential stagger with 150ms increments
-   - Opacity transitions optimized
    ============================================ */
 
-/* Base state: hidden before reveal */
 .fade-up,
 .fade-in {
   opacity: 0;
@@ -61,7 +76,6 @@ body {
               transform 0.7s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
-/* Revealed state */
 .fade-up.revealed {
   opacity: 1;
   transform: translateY(0);
@@ -72,7 +86,6 @@ body {
   transform: translateY(0);
 }
 
-/* Stagger system - respects animation-delay from inline styles */
 .stagger-child {
   opacity: 0;
   transform: translateY(10px);
@@ -85,7 +98,6 @@ body {
   transform: translateY(0);
 }
 
-/* Performance optimization */
 .fade-up,
 .fade-in,
 .stagger-child {
@@ -103,28 +115,17 @@ body {
 }
 
 /* ============================================
-   MOBILE MENU ANIMATIONS
+   MOBILE MENU ANIMATIONS - iOS Safe
    ============================================ */
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateY(-8px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
 
 @layer utilities {
   .scrollbar-hide {
@@ -135,4 +136,143 @@ body {
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }
+
+  /* iOS Safe Area Insets */
+  .safe-area-inset {
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+
+  /* Prevent horizontal scroll on sections */
+  .no-horizontal-scroll {
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+}
+
+/* ============================================
+   BUTTON CONSISTENCY
+   ============================================ */
+
+.btn-primary {
+  @apply inline-flex items-center justify-center gap-2.5 px-7 py-3.5;
+  @apply bg-accent-primary text-white text-sm font-medium rounded-sm;
+  @apply hover:bg-accent-hover hover:-translate-y-0.5;
+  @apply transition-all duration-300 shadow-lg hover:shadow-xl;
+}
+
+.btn-secondary {
+  @apply inline-flex items-center justify-center gap-2.5 px-7 py-3.5;
+  @apply border border-white/10 text-sm font-medium rounded-sm;
+  @apply hover:border-accent-primary hover:bg-white/5 hover:-translate-y-0.5;
+  @apply transition-all duration-300;
+  color: #D0CEC3;
+}
+
+/* ============================================
+   LINK STYLES
+   ============================================ */
+
+a {
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+/* Desktop hover underline */
+@media (hover: hover) {
+  a:hover {
+    text-decoration: none;
+  }
+  
+  a.link-underline:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 1px;
+    text-decoration-color: rgba(90, 109, 90, 0.5);
+  }
+}
+
+/* Mobile no underline unless active */
+@media (hover: none) {
+  a:active {
+    opacity: 0.7;
+  }
+}
+
+/* ============================================
+   HEADING CONSISTENCY
+   ============================================ */
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  color: #EAEAE6;
+}
+
+h1 {
+  font-size: clamp(2.25rem, 5vw, 4.5rem);
+  line-height: 1.1;
+}
+
+h2 {
+  font-size: clamp(1.75rem, 4vw, 2rem);
+  line-height: 1.2;
+}
+
+h3 {
+  font-size: 1.25rem;
+  line-height: 1.3;
+}
+
+/* ============================================
+   CARD HOVER MICROINTERACTIONS
+   ============================================ */
+
+@media (hover: hover) {
+  .card-hover {
+    transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1),
+                box-shadow 0.3s cubic-bezier(0.25, 0.1, 0.25, 1),
+                border-color 0.3s ease,
+                filter 0.3s ease;
+  }
+
+  .card-hover:hover {
+    transform: translateY(-4px);
+    filter: brightness(1.05);
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.5), 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+}
+
+/* ============================================
+   SAFARI SPECIFIC FIXES
+   ============================================ */
+
+/* Prevent Safari bounce scroll on sections */
+@supports (-webkit-touch-callout: none) {
+  body {
+    overscroll-behavior-x: none;
+  }
+  
+  section {
+    overflow-x: clip;
+  }
+}
+
+/* ============================================
+   CUSTOM CURSOR - Micro Dot
+   ============================================ */
+
+.custom-cursor {
+  position: fixed;
+  top: -8px;
+  left: -8px;
+  width: 16px;
+  height: 16px;
+  background-color: #fff;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  will-change: transform;
 }

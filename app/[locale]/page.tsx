@@ -81,22 +81,22 @@ export default function HomePage() {
       <Hero />
       
       {/* 2. Services - Le nostre competenze al lavoro */}
-      <section id="services">
+      <section id="services" className="scroll-mt-24">
         <ServicesSection />
       </section>
       
       {/* 3. Portfolio - Prova concreta */}
-      <section id="portfolio">
+      <section id="portfolio" className="scroll-mt-24">
         <Portfolio />
       </section>
       
       {/* 4. Process - Coinvolgimento (How We Work) */}
-      <section id="process">
+      <section id="process" className="scroll-mt-24">
         <Process />
       </section>
       
       {/* 5. About - Credibilità sintetica (Chi Siamo) */}
-      <section id="about">
+      <section id="about" className="scroll-mt-24">
         <About />
       </section>
       
@@ -104,13 +104,15 @@ export default function HomePage() {
       <Testimonials />
       
       {/* 7. Blog - Valore */}
-      <Blog />
+      <section id="blog" className="scroll-mt-24">
+        <Blog />
+      </section>
       
       {/* Newsletter - Disabled */}
       {/* <Newsletter /> */}
       
       {/* 8. CTA finale - Conversione */}
-      <section id="cta">
+      <section id="contact" className="scroll-mt-24">
         <CTA />
       </section>
       

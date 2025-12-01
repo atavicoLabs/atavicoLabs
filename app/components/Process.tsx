@@ -48,7 +48,7 @@ export default function Process() {
     <section 
       id="process" 
       ref={ref}
-      className="relative py-40 px-6 lg:px-16 bg-carbone w-full overflow-hidden border-t border-grigio/20"
+      className="relative py-24 sm:py-32 lg:py-40 px-6 lg:px-16 bg-carbone w-full overflow-hidden border-t border-grigio/20"
     >
       {/* Section Number - top right */}
       <div className="absolute top-12 right-6 lg:right-16 text-[11px] font-mono text-oliva/30">[05]</div>
@@ -59,7 +59,7 @@ export default function Process() {
         <div className="max-w-[750px] mb-16">
           <div className="text-[11px] uppercase tracking-[0.15em] text-grigio/60 font-light mb-4">How we work</div>
           <h2 
-            className={`text-[32px] font-medium text-sabbia mb-4 leading-[1.2] fade-up ${isRevealed ? 'revealed' : ''}`}
+            className={`font-display text-[32px] font-medium text-sabbia mb-4 leading-[1.2] fade-up ${isRevealed ? 'revealed' : ''}`}
           >
             {t('title')}
           </h2>
@@ -84,19 +84,23 @@ export default function Process() {
           />
 
           {/* Steps */}
-          <div className="space-y-16">
+          <div className="space-y-12 md:space-y-16">
             {[0, 1, 2, 3].map((index) => {
               const percentages = ['15%', '25%', '50%', '10%'];
+              // Offset diagonale solo su schermi >= sm (640px), crescente per ogni step
+              const offsetClass = index === 0 ? '' : 
+                                  index === 1 ? 'sm:ml-[40px]' :
+                                  index === 2 ? 'sm:ml-[80px]' :
+                                  'sm:ml-[120px]';
               return (
                 <div
-                key={index}
-                ref={(el) => { stepRefs.current[index] = el; if (el && observerRef.current) observerRef.current.observe(el); }}
-                className={`relative fade-up max-w-full ${revealed[index] ? 'revealed' : 'opacity-0'}`}
-                style={{ 
-                  transitionDelay: `${index * 150}ms`,
-                  marginLeft: `min(${index * 40}px, calc(25vw - 40px))` // Diagonal offset responsive
-                }}
-              >
+                  key={index}
+                  ref={(el) => { stepRefs.current[index] = el; if (el && observerRef.current) observerRef.current.observe(el); }}
+                  className={`relative fade-up max-w-full ${revealed[index] ? 'revealed' : 'opacity-0'} ${offsetClass}`}
+                  style={{ 
+                    transitionDelay: `${index * 150}ms`
+                  }}
+                >
                 {/* Dot on timeline */}
                 <div 
                   className="absolute left-0 top-4 w-12 h-12 flex items-center justify-center"
@@ -117,20 +121,25 @@ export default function Process() {
                     <span className="text-[10px] text-grigio/50">•</span>
                     <span className="text-[10px] text-grigio/50">{percentages[index]} del progetto</span>
                   </div>
-                  <h3 className="text-[20px] font-semibold text-sabbia mb-2 leading-[1.3]">
+                  <h3 className="text-[20px] font-medium text-sabbia mb-2 leading-[1.3]">
                     {t(`steps.${index}.title`)}
                   </h3>
-                  <p className="text-[14px] leading-[1.7] text-sabbia/70 font-light mb-3">
+                  <p className="text-[14px] leading-[1.7] text-sabbia/70 font-light mb-3 max-w-[520px]">
                     {t(`steps.${index}.description`)}
                   </p>
                   <div className="text-[13px] text-oliva font-medium mb-4">
                     {t(`steps.${index}.duration`)}
                   </div>
 
+                  {/* Micro-CTA: when this step ends */}
+                  <div className="text-[13px] text-sabbia/60 mb-3">
+                    {t(`steps.${index}.next`)}
+                  </div>
+
                   {/* Deliverables */}
                   <div className="border border-grigio/30 bg-carbone/50 p-5">
                     <div className="text-[11px] uppercase tracking-[0.15em] text-grigio/70 mb-3">Deliverables</div>
-                  <div className="space-y-2">
+                  <div className="space-y-2.5">
                     {index === 0 && (
                       <>
                         <div className="flex items-center gap-2.5 text-[13px] text-sabbia/70">
@@ -241,6 +250,17 @@ export default function Process() {
               </div>
             ))}
           </div>
+
+          {/* Final nudge to contact */}
+          <a
+            href="#contact"
+            className="inline-flex items-center px-2 py-1 mt-6 text-[13px] text-oliva hover:text-oliva/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-oliva focus-visible:ring-offset-2 focus-visible:ring-offset-carbone transition-colors"
+          >
+            Vuoi capire come applichiamo questo processo al tuo prodotto?
+            <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
         </div>
       </div>
     </section>

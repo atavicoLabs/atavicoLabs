@@ -13,7 +13,7 @@ export default function Testimonials() {
     <section 
       id="testimonials" 
       ref={ref}
-      className="relative py-32 px-6 lg:px-16 bg-grafite border-t border-grigio/20 w-full overflow-hidden"
+      className="relative py-24 sm:py-32 px-6 lg:px-16 bg-grafite border-t border-grigio/20 w-full overflow-hidden"
     >
       {/* Section Number */}
       <div className="absolute top-12 right-6 lg:right-16 text-[14px] font-mono text-oliva/40">[05]</div>
@@ -23,7 +23,7 @@ export default function Testimonials() {
         <div className="max-w-[750px] mb-16">
           <div className="text-[11px] uppercase tracking-[0.15em] text-grigio/60 font-light mb-4">Testimonials</div>
           <h2 
-            className={`text-[32px] font-medium text-sabbia mb-4 leading-[1.2] fade-up ${isRevealed ? 'revealed' : ''}`}
+            className={`font-display text-[32px] font-medium text-sabbia mb-4 leading-[1.2] fade-up ${isRevealed ? 'revealed' : ''}`}
           >
             {t('title')}
           </h2>
@@ -36,11 +36,11 @@ export default function Testimonials() {
         </div>
 
         {/* 3-Column Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-1">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {testimonials.map((index) => (
             <div
               key={index}
-              className={`bg-carbone border border-grigio/30 p-8 hover:border-oliva/40 transition-all duration-300 hover:-translate-y-1 ${index === 0 ? 'md:col-span-2 md:row-span-1' : ''} fade-up ${isRevealed ? 'revealed' : ''}`}
+              className={`bg-carbone border border-grigio/30 p-6 sm:p-7 md:p-8 hover:border-oliva/40 transition-all duration-300 hover:-translate-y-1 ${index === 0 ? 'md:col-span-2 md:row-span-1' : ''} fade-up ${isRevealed ? 'revealed' : ''}`}
               style={{ animationDelay: `${index * 100 + 200}ms` }}
             >
               {/* Star Rating */}
@@ -82,6 +82,19 @@ export default function Testimonials() {
                     {t(`items.${index}.role`)} • {t(`items.${index}.company`)}
                   </p>
                 </div>
+              </div>
+              {/* Micro-CTA under testimonial */}
+              <div className="mt-5 pt-4 border-t border-grigio/20 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-[11px] text-grigio/70">
+                <span>Progetto in linea con il tuo?</span>
+                <a
+                  href="#contact"
+                  className="inline-flex items-center px-2 py-1 gap-1 text-[12px] text-oliva hover:text-oliva/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-oliva focus-visible:ring-offset-2 focus-visible:ring-offset-carbone transition-colors"
+                >
+                  Parliamone
+                  <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </a>
               </div>
             </div>
           ))}

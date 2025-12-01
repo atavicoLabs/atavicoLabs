@@ -11,7 +11,7 @@ export default function Blog() {
     <section 
       id="blog" 
       ref={ref}
-      className="relative py-32 px-6 lg:px-16 bg-carbone w-full overflow-hidden border-t border-grigio/20"
+      className="relative py-24 sm:py-32 px-6 lg:px-16 bg-carbone w-full overflow-hidden border-t border-grigio/20"
     >
       {/* Section Number */}
       <div className="absolute top-12 right-6 lg:right-16 text-[11px] font-mono text-oliva/30">[06]</div>
@@ -34,7 +34,7 @@ export default function Blog() {
         </div>
 
         {/* Articles Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-1">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {[0, 1, 2].map((index) => {
             const categoryColors = {
               0: 'border-oliva/30 text-oliva', // Business
@@ -48,7 +48,10 @@ export default function Blog() {
                 className={`group fade-up ${isRevealed ? 'revealed' : ''}`}
                 style={{ animationDelay: `${index * 100 + 200}ms` }}
               >
-                <a href="#" className="block h-full">
+                <a
+                  href="#"
+                  className="block h-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-oliva/60 focus-visible:ring-offset-2 focus-visible:ring-offset-carbone"
+                >
                   <div className="border-l border-grigio/40 pl-6 py-8 group-hover:border-oliva/80 transition-colors duration-250 h-full flex flex-col min-h-[280px]">
                     {/* Category Badge */}
                     <span className={`inline-block px-2 py-1 text-[11px] border uppercase tracking-wider mb-4 w-fit ${categoryColors[index as keyof typeof categoryColors]}`}>
