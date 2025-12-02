@@ -174,7 +174,7 @@ export default function Navbar() {
         >
           {/* Backdrop */}
           <div 
-            className={`absolute inset-0 bg-black/90 backdrop-blur-sm transition-opacity duration-300 ${
+            className={`fixed inset-0 bg-black/90 backdrop-blur-sm transition-opacity duration-300 ${
               menuOpen ? 'opacity-100' : 'opacity-0'
             }`}
             onClick={() => setMenuOpen(false)}
@@ -183,7 +183,7 @@ export default function Navbar() {
           
           {/* Menu Content */}
           <div 
-            className={`relative h-full flex flex-col bg-carbone safe-area-inset transition-all duration-300 ${
+            className={`fixed inset-0 h-full flex flex-col bg-carbone safe-area-inset transition-all duration-300 ${
               menuOpen ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'
             }`}
             style={{
