@@ -49,6 +49,11 @@ a, button, input, textarea, select, [role="button"], [onclick] {
   a, button, input, textarea, select, [role="button"], [onclick] {
     cursor: pointer !important;
   }
+  
+  /* Hide custom cursor on touch devices */
+  .custom-cursor {
+    display: none !important;
+  }
 }
 
 /* Selection colors */
@@ -269,10 +274,11 @@ h3 {
   left: -8px;
   width: 16px;
   height: 16px;
-  background-color: #fff;
+  background-color: #D3D1C8; /* sabbia - più visibile */
   border-radius: 50%;
   pointer-events: none;
   z-index: 9999;
   mix-blend-mode: difference;
   will-change: transform;
+  box-shadow: 0 0 0 1px rgba(211, 209, 200, 0.3);
 }

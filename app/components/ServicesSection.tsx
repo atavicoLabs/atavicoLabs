@@ -138,36 +138,6 @@ export default function ServicesSection() {
             </div>
           ))}
         </div>
-
-        {/* Process Flow Diagram */}
-        <div className="mt-24 pt-20 border-t border-text-ghost/10">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-label uppercase text-text-muted font-medium mb-10">Workflow</div>
-            <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-8 md:gap-0">
-              {['Design', 'Build', 'Test', 'Deploy'].map((step, i) => (
-                <div key={i} className="flex items-center">
-                  <div className="text-center">
-                    <div className="w-14 h-14 rounded-full border border-text-ghost/20 flex items-center justify-center mb-4 mx-auto hover:border-accent-primary hover:bg-accent-subtle transition-all duration-300">
-                      <span className="text-mono text-text-tertiary">0{i + 1}</span>
-                    </div>
-                    <div className="text-body-sm text-text-primary mb-1.5 font-medium">{step}</div>
-                    <div className="text-mono text-text-muted">
-                      {i === 0 && '2–3w'}
-                      {i === 1 && '4–8w'}
-                      {i === 2 && '1w'}
-                      {i === 3 && '1d'}
-                    </div>
-                  </div>
-                  {i < 3 && (
-                    <svg className="w-10 h-5 mx-6 stroke-text-ghost/30" fill="none" viewBox="0 0 40 20" strokeWidth={1.5}>
-                      <path d="M0 10h36M36 10l-5-5M36 10l-5 5" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );
