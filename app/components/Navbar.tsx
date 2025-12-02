@@ -164,8 +164,8 @@ export default function Navbar() {
       {menuMounted && (
         <div 
           id="mobile-menu"
-          className={`fixed inset-0 z-50 lg:hidden transition-opacity duration-200 ${
-            menuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+          className={`fixed inset-0 z-[100] lg:hidden ${
+            menuOpen ? 'pointer-events-auto' : 'pointer-events-none'
           }`}
           role="dialog"
           aria-modal="true"
@@ -174,15 +174,17 @@ export default function Navbar() {
         >
           {/* Backdrop */}
           <div 
-            className="absolute inset-0 bg-black/90 backdrop-blur-sm"
+            className={`absolute inset-0 bg-black/90 backdrop-blur-sm transition-opacity duration-300 ${
+              menuOpen ? 'opacity-100' : 'opacity-0'
+            }`}
             onClick={() => setMenuOpen(false)}
             aria-hidden="true"
           />
           
           {/* Menu Content */}
           <div 
-            className={`relative h-full flex flex-col bg-[#0A0A0A] safe-area-inset transition-transform duration-200 ${
-              menuOpen ? 'translate-y-0' : '-translate-y-2'
+            className={`relative h-full flex flex-col bg-carbone safe-area-inset transition-all duration-300 ${
+              menuOpen ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'
             }`}
             style={{
               paddingTop: 'max(1.5rem, env(safe-area-inset-top))',
@@ -198,12 +200,12 @@ export default function Navbar() {
                 <Link 
                   href={`/${locale}`}
                   onClick={() => setMenuOpen(false)}
-                  className="text-[22px] font-normal tracking-[0.08em] uppercase text-text-primary hover:text-accent-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary/60 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0A0A0A]"
+                  className="text-[22px] font-normal tracking-[0.08em] uppercase text-sabbia hover:text-oliva transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-oliva/60 focus-visible:ring-offset-2 focus-visible:ring-offset-carbone"
                   tabIndex={menuOpen ? 0 : -1}
                 >
                   ATAVICOLABS
                 </Link>
-                <span className="text-[9px] uppercase font-light tracking-[0.2em] text-text-primary/50">
+                <span className="text-[9px] uppercase font-light tracking-[0.2em] text-sabbia/50">
                   DIGITAL PRODUCT STUDIO
                 </span>
               </div>
@@ -211,23 +213,21 @@ export default function Navbar() {
               {/* Close Button - X animato */}
               <button
                 onClick={() => setMenuOpen(false)}
-                className="p-2 -mr-2 -mt-2 hover:opacity-70 transition-opacity duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary/60 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0A0A0A]"
+                className="p-2 -mr-2 -mt-2 hover:opacity-70 transition-opacity duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-oliva/60 focus-visible:ring-offset-2 focus-visible:ring-offset-carbone"
                 aria-label="Close menu"
                 tabIndex={menuOpen ? 0 : -1}
               >
                 <div className="w-[24px] h-[24px] relative flex items-center justify-center">
                   <span 
-                    className="absolute block h-[2px] w-full rounded-full"
+                    className="absolute block h-[2px] w-full rounded-full bg-sabbia"
                     style={{ 
-                      backgroundColor: '#ECECE7',
                       transform: 'rotate(45deg)',
                       transition: 'transform 0.25s cubic-bezier(0.4, 0, 0.2, 1)'
                     }}
                   />
                   <span 
-                    className="absolute block h-[2px] w-full rounded-full"
+                    className="absolute block h-[2px] w-full rounded-full bg-sabbia"
                     style={{ 
-                      backgroundColor: '#ECECE7',
                       transform: 'rotate(-45deg)',
                       transition: 'transform 0.25s cubic-bezier(0.4, 0, 0.2, 1)'
                     }}
@@ -241,7 +241,7 @@ export default function Navbar() {
               <a
                 href={`/${locale}#about`}
                 onClick={() => setMenuOpen(false)}
-                className="text-[32px] font-light tracking-[-0.02em] text-text-primary hover:text-accent-primary transition-colors duration-200 active:text-accent-hover"
+                className="text-[32px] font-light tracking-[-0.02em] text-sabbia hover:text-oliva transition-colors duration-200"
                 tabIndex={menuOpen ? 0 : -1}
               >
                 {t('about')}
@@ -250,7 +250,7 @@ export default function Navbar() {
               <a
                 href={`/${locale}#portfolio`}
                 onClick={() => setMenuOpen(false)}
-                className="text-[32px] font-light tracking-[-0.02em] text-text-primary hover:text-accent-primary transition-colors duration-200 active:text-accent-hover"
+                className="text-[32px] font-light tracking-[-0.02em] text-sabbia hover:text-oliva transition-colors duration-200"
                 tabIndex={menuOpen ? 0 : -1}
               >
                 {t('work')}
@@ -259,7 +259,7 @@ export default function Navbar() {
               <a
                 href={`/${locale}#process`}
                 onClick={() => setMenuOpen(false)}
-                className="text-[32px] font-light tracking-[-0.02em] text-text-primary hover:text-accent-primary transition-colors duration-200 active:text-accent-hover"
+                className="text-[32px] font-light tracking-[-0.02em] text-sabbia hover:text-oliva transition-colors duration-200"
                 tabIndex={menuOpen ? 0 : -1}
               >
                 {t('process')}
@@ -268,20 +268,20 @@ export default function Navbar() {
               <a
                 href={`/${locale}#blog`}
                 onClick={() => setMenuOpen(false)}
-                className="text-[32px] font-light tracking-[-0.02em] text-text-primary hover:text-accent-primary transition-colors duration-200 active:text-accent-hover"
+                className="text-[32px] font-light tracking-[-0.02em] text-sabbia hover:text-oliva transition-colors duration-200"
                 tabIndex={menuOpen ? 0 : -1}
               >
                 {t('insights')}
               </a>
 
               {/* Divider */}
-              <div className="h-px bg-text-ghost/20" style={{ margin: '1rem 0' }} />
+              <div className="h-px bg-grigio/20" style={{ margin: '1rem 0' }} />
 
               {/* Contact Button */}
               <a
                 href={`/${locale}#contact`}
                 onClick={() => setMenuOpen(false)}
-                className="inline-flex items-center justify-center gap-2 px-6 py-4 border border-text-primary/20 text-[15px] font-normal tracking-[0.02em] text-text-primary hover:border-accent-primary hover:bg-accent-subtle/20 active:bg-accent-subtle/30 transition-all duration-200 rounded-sm"
+                className="inline-flex items-center justify-center gap-2 px-6 py-4 border border-sabbia/20 text-[15px] font-normal tracking-[0.02em] text-sabbia hover:border-oliva hover:bg-oliva/10 transition-all duration-200"
                 tabIndex={menuOpen ? 0 : -1}
               >
                 {t('contact')}
@@ -292,13 +292,13 @@ export default function Navbar() {
             </nav>
 
             {/* Footer: Language Switcher + Meta */}
-            <div className="pt-6 border-t border-text-ghost/20 space-y-4">
+            <div className="pt-6 border-t border-grigio/20 space-y-4">
               <LanguageSwitcher inline />
               
-              <div className="flex items-center gap-2 text-[11px] font-light text-text-muted">
-                <span className="text-accent-primary">●</span>
+              <div className="flex items-center gap-2 text-[11px] font-light text-sabbia/60">
+                <span className="text-oliva">●</span>
                 <span>Remote-first</span>
-                <span className="text-accent-primary">●</span>
+                <span className="text-oliva">●</span>
                 <span>{locale === 'it' ? 'Dal 2017' : 'Since 2017'}</span>
               </div>
             </div>
