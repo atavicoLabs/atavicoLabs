@@ -11,7 +11,7 @@ export default function Portfolio() {
   const { ref, isRevealed } = useReveal();
 
   // Project slugs for routing
-  const projectSlugs = ['team-scheduler', 'energy-intelligence', 'ai-workflow-assistant'];
+  const projectSlugs = ['hostid', 'helixops', 'pulseshift', 'insightgrid', 'flowcanvas'];
 
   return (
     <section 

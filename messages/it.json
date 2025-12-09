@@ -55,12 +55,12 @@
   },
   "portfolio": {
     "title": "Case study reali, risultati misurabili.",
-    "subtitle": "Ogni progetto nasce da un'esigenza concreta. Qui trovi tre casi reali in cui abbiamo reso più fluidi i processi, più rapide le decisioni e più solido il lavoro dei team.",
+    "subtitle": "Ogni progetto nasce da un'esigenza concreta. Qui trovi cinque casi reali in cui abbiamo reso più fluidi i processi, più rapide le decisioni e più solido il lavoro dei team.",
     "items": [
       {
-        "title": "Team Scheduler",
-        "description": "Piattaforma smart per organizzare disponibilità, turni ed eventi con suggerimenti AI. –60% tempo di pianificazione, +40% partecipazione.",
-        "tags": ["React", "Next.js", "Node.js", "MongoDB", "OpenAI API", "WebSocket"],
+        "title": "HostID",
+        "description": "Piattaforma mobile sicura per l'identità digitale. −70% tempo di onboarding, 99.98% uptime.",
+        "tags": ["Flutter", "Node.js", "PostgreSQL", "Biometria"],
         "metrics": {
           "timeline": "10 settimane",
           "team": "3 dev + 1 designer",
@@ -71,9 +71,9 @@
         }
       },
       {
-        "title": "Energy Intelligence",
-        "description": "Monitoraggio avanzato dei consumi e rilevamento dispositivi tramite modelli NILM. –25% inefficienze energetiche in 2 mesi.",
-        "tags": ["Python", "PyTorch", "React", "Next.js", "PostgreSQL", "TimeSeries DB"],
+        "title": "HelixOps",
+        "description": "Motore AI per workflow operativi automatizzati. +50% efficienza, −60% attività manuali.",
+        "tags": ["Python", "TensorFlow", "Redis", "Kubernetes"],
         "metrics": {
           "timeline": "14 settimane",
           "team": "4 dev + 1 data scientist",
@@ -82,13 +82,35 @@
         }
       },
       {
-        "title": "AI Workflow Assistant",
-        "description": "Automazioni intelligenti per ticketing e knowledge base con integrazioni Slack/Trello. –50% tempo gestione ticket ripetitivi.",
-        "tags": ["LLM API", "Vector DB", "Node.js", "React", "Slack API", "Trello API"],
+        "title": "PulseShift",
+        "description": "Scheduling AI mobile per ottimizzazione risorse. −40% conflitti, +35% utilizzo risorse.",
+        "tags": ["React Native", "GraphQL", "AI/ML", "PostgreSQL"],
         "metrics": {
           "timeline": "8 settimane",
           "team": "2 dev + 1 designer",
           "users": "200+ team members",
+          "status": "In produzione"
+        }
+      },
+      {
+        "title": "InsightGrid",
+        "description": "Dashboard analytics real-time per business intelligence. 10x insight più veloci, fonti dati unificate.",
+        "tags": ["React", "D3.js", "Python", "BigQuery"],
+        "metrics": {
+          "timeline": "12 settimane",
+          "team": "3 dev + 1 data analyst",
+          "users": "Clienti enterprise",
+          "status": "In produzione"
+        }
+      },
+      {
+        "title": "FlowCanvas",
+        "description": "Piattaforma di collaborazione real-time per team distribuiti. −50% cicli revisione, +60% produttività.",
+        "tags": ["Next.js", "WebSockets", "Firebase", "Canvas API"],
+        "metrics": {
+          "timeline": "10 settimane",
+          "team": "4 dev + 1 designer",
+          "users": "500+ utenti",
           "status": "In produzione"
         }
       }
@@ -479,6 +501,461 @@
           }
         ],
         "summary": "Il team di supporto ha recuperato tempo prezioso, riducendo drasticamente la gestione di ticket ripetitivi. La knowledge base è diventata un asset consultato quotidianamente."
+      }
+    },
+    "hostid": {
+      "back": "Indietro",
+      "subtitle": "Una piattaforma mobile sicura per l'identità digitale, progettata per autenticazione fluida e accesso operativo.",
+      "meta": {
+        "client": "Cliente",
+        "clientName": "AtavicoLabs (Prodotto Interno)",
+        "timeline": "Timeline",
+        "timelineValue": "2023 — in corso",
+        "platform": "Piattaforma",
+        "platformValue": "Flutter · iOS & Android",
+        "team": "Team",
+        "teamValue": "Product Design · Mobile Engineering · Backend"
+      },
+      "overview": {
+        "title": "Panoramica",
+        "description": "HostID è una piattaforma di identità e accesso mobile-first progettata per semplificare l'autenticazione in ambienti operativi moderni. Centralizza credenziali, gestione delle sessioni e flussi di accesso sicuri all'interno di un'applicazione Flutter unificata — sostituendo esperienze di login frammentate con un'interfaccia unica e affidabile. Il sistema è sviluppato come prodotto standalone di AtavicoLabs e alimenta flussi di autenticazione interni ed esterni, con particolare attenzione a sicurezza, velocità e facilità di adozione."
+      },
+      "problem": {
+        "title": "La Sfida",
+        "items": {
+          "item1": {
+            "title": "Unificare i flussi di autenticazione",
+            "description": "Le organizzazioni si affidano spesso a sistemi di login disconnessi, causando frizioni e inconsistenze nella sicurezza."
+          },
+          "item2": {
+            "title": "Ridurre le friction nell'onboarding",
+            "description": "I nuovi utenti affrontano setup lenti e soggetti a errori a causa della distribuzione manuale delle credenziali e flussi obsoleti."
+          },
+          "item3": {
+            "title": "Rafforzare la sicurezza mobile",
+            "description": "I team necessitavano di controlli di accesso sicuri e consistenti con biometria, storage crittografato e gestione delle sessioni."
+          },
+          "item4": {
+            "title": "Garantire affidabilità in condizioni reali",
+            "description": "L'app doveva funzionare perfettamente su diverse piattaforme, in condizioni di rete deboli e contesti operativi variabili."
+          }
+        }
+      },
+      "solution": {
+        "title": "La Nostra Soluzione",
+        "description": "HostID consolida identità, autenticazione e flussi di accesso in una piattaforma mobile costruita con Flutter, offrendo un'esperienza utente pulita e sicurezza di livello enterprise.",
+        "features": {
+          "feature1": {
+            "title": "Mobile Identity Wallet",
+            "description": "Un'interfaccia unificata dove gli utenti gestiscono credenziali organizzative, sessioni attive e token sicuri — crittografati end-to-end."
+          },
+          "feature2": {
+            "title": "Accesso Istantaneo via QR / Link Sicuri",
+            "description": "Login rapido e pairing dei dispositivi tramite QR code e link sicuri a breve durata, eliminando la necessità di scambio manuale di credenziali."
+          },
+          "feature3": {
+            "title": "Layer di Autenticazione Biometrica",
+            "description": "Biometria native (FaceID / TouchID) abbinate a robusta crittografia locale garantiscono un'esperienza di login fluida e sicura."
+          }
+        }
+      },
+      "results": {
+        "title": "Risultati & Impatto",
+        "metrics": {
+          "metric1": {
+            "value": "−70%",
+            "label": "Tempo di onboarding"
+          },
+          "metric2": {
+            "value": "+40%",
+            "label": "Aumento adozione"
+          },
+          "metric3": {
+            "value": "99.98%",
+            "label": "Uptime autenticazione"
+          },
+          "metric4": {
+            "value": "−50%",
+            "label": "Richieste di supporto"
+          }
+        }
+      },
+      "tech": {
+        "title": "Stack Tecnologico",
+        "stack": "Mobile: Flutter (Dart), secure storage, biometrics API · Backend: Node.js, PostgreSQL, JWT + rotating refresh tokens · Sicurezza: device-bound keys · TLS pinning · AES-256 encrypted vault · Piattaforma: iOS, Android · CI/CD: GitHub Actions · Fastlane"
+      },
+      "gallery": {
+        "title": "Galleria",
+        "placeholder": "Placeholder per schermate mobile"
+      },
+      "cta": {
+        "title": "Pronto a costruire il tuo prodotto mobile sicuro?",
+        "description": "Parliamo di come possiamo aiutarti a creare un'esperienza di autenticazione affidabile e sicura per i tuoi utenti.",
+        "button": "Inizia il tuo progetto"
+      }
+    },
+    "helixops": {
+      "back": "Indietro",
+      "subtitle": "Un motore di workflow basato su AI che automatizza i processi operativi e riduce il lavoro ripetitivo tra i team.",
+      "meta": {
+        "client": "Cliente",
+        "clientName": "Confidenziale (Enterprise)",
+        "timeline": "Timeline",
+        "timelineValue": "2024",
+        "platform": "Piattaforma",
+        "platformValue": "Applicazione Web · AI Automation · Backend Orchestrator",
+        "team": "Team",
+        "teamValue": "Product Strategy · UX/UI · Engineering · AI"
+      },
+      "overview": {
+        "title": "Panoramica",
+        "description": "HelixOps è una piattaforma di automazione workflow basata su AI progettata per aiutare i team operativi a semplificare i processi ripetitivi, ridurre il carico manuale e aumentare la precisione su larga scala. Costruito come sistema enterprise-ready, HelixOps si integra perfettamente con strumenti esistenti e API interne, orchestrando attività attraverso una combinazione di trigger eventi, regole di business e ragionamento basato su LLM. La piattaforma offre dashboard pulite, monitoraggio dello stato e un orchestratore backend altamente scalabile capace di gestire migliaia di workflow concorrenti."
+      },
+      "problem": {
+        "title": "La Sfida",
+        "items": {
+          "item1": {
+            "title": "Workflow operativi frammentati",
+            "description": "I team si affidavano a strumenti multipli, fogli di calcolo e controlli manuali — rallentando l'esecuzione e aumentando il rischio di errore."
+          },
+          "item2": {
+            "title": "Elevato overhead operativo",
+            "description": "Attività ripetitive come approvazioni, validazione dati, classificazione contenuti e routing consumavano tempo significativo del personale."
+          },
+          "item3": {
+            "title": "Mancanza di visibilità sulle performance dei processi",
+            "description": "I manager non avevano un modo unificato per monitorare i workflow o misurare i colli di bottiglia."
+          },
+          "item4": {
+            "title": "Necessità di automazione intelligente senza sostituire i sistemi esistenti",
+            "description": "Qualsiasi nuova soluzione doveva integrarsi fluidamente nello stack esistente, senza interrompere le operazioni quotidiane."
+          }
+        }
+      },
+      "solution": {
+        "title": "La Nostra Soluzione",
+        "description": "HelixOps introduce un layer di automazione centralizzato che connette persone, sistemi e task all'interno di un singolo motore intelligente.",
+        "features": {
+          "feature1": {
+            "title": "AI Reasoning Engine",
+            "description": "Un sistema ibrido che combina workflow basati su regole con classificazione, routing e supporto decisionale alimentati da LLM. Il motore determina i prossimi passi, valida i dati, attiva alert e garantisce consistenza tra i processi."
+          },
+          "feature2": {
+            "title": "Visual Workflow Builder",
+            "description": "Un'interfaccia drag-and-drop che permette ai team di modellare processi, definire trigger e configurare azioni AI — senza scrivere codice."
+          },
+          "feature3": {
+            "title": "Real-Time Monitoring Dashboard",
+            "description": "I leader operativi ottengono visibilità su throughput dei workflow, durata dei task, tassi di errore e salute del sistema attraverso una dashboard analitica pulita e minimale."
+          }
+        }
+      },
+      "results": {
+        "title": "Risultati & Impatto",
+        "metrics": {
+          "metric1": {
+            "value": "−45%",
+            "label": "Carico di lavoro manuale"
+          },
+          "metric2": {
+            "value": "+60%",
+            "label": "Esecuzione più rapida"
+          },
+          "metric3": {
+            "value": "−35%",
+            "label": "Errori operativi"
+          },
+          "metric4": {
+            "value": "<200ms",
+            "label": "Tempo di risposta"
+          }
+        }
+      },
+      "tech": {
+        "title": "Stack Tecnologico",
+        "stack": "Frontend: Next.js, React, Tailwind, Zustand · Backend: Node.js, PostgreSQL, Redis, WebSocket task streams · AI: LLM routing, embeddings, vector DB (pgvector), fine-tuning pipeline · Orchestrazione: Event-driven microflows · retry policies · audit logging · Deployment: Docker · GitHub Actions · Load-balanced Node clusters"
+      },
+      "gallery": {
+        "title": "Galleria",
+        "placeholder": "Placeholder per schermate dashboard"
+      },
+      "cta": {
+        "title": "Pronto a ottimizzare le tue operazioni con automazione intelligente?",
+        "description": "Parliamo di come possiamo aiutarti a costruire workflow AI scalabili per il tuo team.",
+        "button": "Inizia il tuo progetto"
+      }
+    },
+    "pulseshift": {
+      "back": "Indietro",
+      "subtitle": "Una piattaforma di scheduling mobile-first che aiuta i team a gestire disponibilità, turni e assegnazioni con AI.",
+      "meta": {
+        "client": "Cliente",
+        "clientName": "Confidenziale (Operations Team)",
+        "timeline": "Timeline",
+        "timelineValue": "2024",
+        "platform": "Piattaforma",
+        "platformValue": "Flutter (iOS & Android) · Real-Time Backend",
+        "team": "Team",
+        "teamValue": "UX Design · Mobile Engineering · Backend · AI"
+      },
+      "overview": {
+        "title": "Panoramica",
+        "description": "PulseShift è una soluzione di scheduling workforce mobile progettata per team che necessitano di coordinare persone, tempo e disponibilità in ambienti operativi dinamici. Costruita con Flutter, fornisce un'esperienza veloce e intuitiva per lavoratori e manager, abilitando aggiornamenti in tempo reale, assegnazioni turni automatizzate e comunicazione chiara. La piattaforma integra un motore di scheduling AI che analizza disponibilità del team, vincoli e carico di lavoro per generare proposte di turni ottimali — riducendo il tempo di pianificazione e migliorando l'equità."
+      },
+      "problem": {
+        "title": "La Sfida",
+        "items": {
+          "item1": {
+            "title": "Gestione turni frammentata",
+            "description": "I team si affidavano a messaggi WhatsApp, fogli di calcolo e chiamate manuali per coordinare la disponibilità."
+          },
+          "item2": {
+            "title": "Mancanza di trasparenza per i lavoratori",
+            "description": "I dipendenti facevano fatica a tenere traccia di turni assegnati, aggiornamenti e modifiche, portando a confusione."
+          },
+          "item3": {
+            "title": "Alto carico di lavoro per gli schedulatori",
+            "description": "I manager trascorrevano ore a bilanciare vincoli, preferenze, conflitti e cambiamenti dell'ultimo minuto."
+          },
+          "item4": {
+            "title": "Necessità di aggiornamenti in tempo reale",
+            "description": "Gli ambienti operativi richiedevano sincronizzazione istantanea tra dispositivi per evitare schedule obsoleti."
+          }
+        }
+      },
+      "solution": {
+        "title": "La Nostra Soluzione",
+        "description": "PulseShift fornisce una piattaforma mobile unificata per gestire assegnazioni turni, disponibilità e workflow di scheduling — progettata per chiarezza e affidabilità operativa.",
+        "features": {
+          "feature1": {
+            "title": "Gestione Disponibilità & Turni",
+            "description": "I lavoratori possono impostare rapidamente la disponibilità su giorni e fasce orarie, mentre i manager assegnano e regolano turni con feedback immediato."
+          },
+          "feature2": {
+            "title": "AI Scheduling Engine",
+            "description": "Il sistema genera distribuzioni di turni ottimali basate su disponibilità, requisiti di ruolo, conflitti e criteri di equità. Gli schedulatori possono accettare, raffinare o rigenerare le proposte."
+          },
+          "feature3": {
+            "title": "Sincronizzazione Real-Time & Notifiche",
+            "description": "Le modifiche ai turni si propagano istantaneamente su tutti gli utenti, con notifiche chiare e log di audit per la trasparenza."
+          }
+        }
+      },
+      "results": {
+        "title": "Risultati & Impatto",
+        "metrics": {
+          "metric1": {
+            "value": "−50%",
+            "label": "Tempo di scheduling"
+          },
+          "metric2": {
+            "value": "−30%",
+            "label": "Conflitti turni"
+          },
+          "metric3": {
+            "value": "+65%",
+            "label": "Comunicazione team"
+          },
+          "metric4": {
+            "value": "4.8/5",
+            "label": "Soddisfazione utenti"
+          }
+        }
+      },
+      "tech": {
+        "title": "Stack Tecnologico",
+        "stack": "Mobile: Flutter (Dart), Provider/Bloc, local caching, offline mode · Backend: Node.js, PostgreSQL, WebSocket sync layer, REST API · AI: Constraint solver + heuristic scheduling engine + LLM per spiegazione conflitti · Notifiche: Push (FCM/APNS), event-driven alerts · Deployment: Docker · GitHub Actions · multi-env staging"
+      },
+      "gallery": {
+        "title": "Galleria",
+        "placeholder": "Placeholder per schermate mobile"
+      },
+      "cta": {
+        "title": "Pronto a costruire il tuo prodotto mobile?",
+        "description": "Parliamo di come possiamo aiutarti a creare un'esperienza mobile potente e intuitiva per il tuo team.",
+        "button": "Inizia il tuo progetto"
+      }
+    },
+    "insightgrid": {
+      "back": "Indietro",
+      "subtitle": "Una piattaforma di analytics real-time che trasforma dati operativi in insight azionabili attraverso dashboard veloci e analisi basate su AI.",
+      "meta": {
+        "client": "Cliente",
+        "clientName": "Confidenziale (Analytics Team)",
+        "timeline": "Timeline",
+        "timelineValue": "2024",
+        "platform": "Piattaforma",
+        "platformValue": "Applicazione Web · Data + AI",
+        "team": "Team",
+        "teamValue": "UX Design · Frontend · Backend · Data Engineering · AI"
+      },
+      "overview": {
+        "title": "Panoramica",
+        "description": "InsightGrid è una dashboard di analytics real-time progettata per team che necessitano di accesso veloce e affidabile a metriche operative. La piattaforma aggrega stream di dati, calcola KPI su larga scala e fornisce visualizzazioni interattive costruite per chiarezza e velocità. Con un layer di AI insights, InsightGrid evidenzia anomalie, trend e indicatori predittivi — permettendo ai team di prendere decisioni informate senza scavare nei dati grezzi. Progettata con un'interfaccia tecnica e minimale, la piattaforma gestisce dati ad alto volume mantenendo una reattività eccezionale."
+      },
+      "problem": {
+        "title": "La Sfida",
+        "items": {
+          "item1": {
+            "title": "Sorgenti dati disconnesse",
+            "description": "I team avevano dati provenienti da sistemi multipli, rendendo difficile mantenere una vista unificata delle operazioni."
+          },
+          "item2": {
+            "title": "Dashboard lente sotto carico di picco",
+            "description": "Gli strumenti esistenti non potevano gestire aggiornamenti real-time o alta frequenza di query senza degradazione delle performance."
+          },
+          "item3": {
+            "title": "Mancanza di insight azionabili",
+            "description": "Gli utenti avevano metriche ma nessuna interpretazione: anomalie, trend e correlazioni venivano spesso mancate."
+          },
+          "item4": {
+            "title": "Necessità di UX tecnica e pulita per workflow data-heavy",
+            "description": "Il team richiedeva una dashboard che risultasse potente ma minimale, senza grafici sovrabbondanti."
+          }
+        }
+      },
+      "solution": {
+        "title": "La Nostra Soluzione",
+        "description": "InsightGrid centralizza ingestione dati real-time, query veloci e generazione di insight basati su AI in un'unica piattaforma di analytics.",
+        "features": {
+          "feature1": {
+            "title": "Metriche Real-Time & Grafici High-Performance",
+            "description": "Utilizzando un backend Timescale/PostgreSQL, la piattaforma invia dati freschi agli utenti, renderizzando aggiornamenti efficientemente e senza reload della pagina."
+          },
+          "feature2": {
+            "title": "AI Insights & Rilevamento Anomalie",
+            "description": "Un layer AI leggero identifica pattern inusuali, predice potenziali rischi ed evidenzia cambiamenti chiave."
+          },
+          "feature3": {
+            "title": "Layout Dashboard Modulare",
+            "description": "Gli utenti possono comporre e personalizzare dashboard con tile per KPI, grafici, tabelle e indicatori di trend — tutto in una UI pulita e minimale."
+          }
+        }
+      },
+      "results": {
+        "title": "Risultati & Impatto",
+        "metrics": {
+          "metric1": {
+            "value": "<300ms",
+            "label": "Tempo risposta query"
+          },
+          "metric2": {
+            "value": "+40%",
+            "label": "Velocità decisionale"
+          },
+          "metric3": {
+            "value": "−30%",
+            "label": "Anomalie mancate"
+          },
+          "metric4": {
+            "value": "+50%",
+            "label": "Engagement strumenti dati"
+          }
+        }
+      },
+      "tech": {
+        "title": "Stack Tecnologico",
+        "stack": "Frontend: Next.js, React, Tailwind, Recharts / visualizzazioni custom · Backend: Node.js, PostgreSQL + TimescaleDB, Redis caching · Real-Time: WebSocket update streams · AI: anomaly detection (z-score, isolation forest), LLM insight summaries · Deployment: Docker, auto-scaling runtimes, CDN caching per static assets"
+      },
+      "gallery": {
+        "title": "Galleria",
+        "placeholder": "Placeholder per schermate dashboard"
+      },
+      "cta": {
+        "title": "Pronto a trasformare i tuoi dati in insight?",
+        "description": "Parliamo di come possiamo aiutarti a costruire una piattaforma di analytics veloce e potente per il tuo team.",
+        "button": "Inizia il tuo progetto"
+      }
+    },
+    "flowcanvas": {
+      "back": "Indietro",
+      "subtitle": "Una lavagna collaborativa in tempo reale che aiuta i team a pensare, pianificare e creare insieme — con sincronizzazione multi-utente istantanea e un motore canvas custom ad alte prestazioni.",
+      "meta": {
+        "client": "Cliente",
+        "clientName": "Confidenziale (Product Team)",
+        "timeline": "Timeline",
+        "timelineValue": "2024",
+        "platform": "Piattaforma",
+        "platformValue": "Web Application · Real-Time · Canvas",
+        "team": "Team",
+        "teamValue": "UX/UI · Frontend Engineering · Real-Time Systems · Infrastructure"
+      },
+      "overview": {
+        "title": "Panoramica",
+        "description": "FlowCanvas è una lavagna collaborativa in tempo reale progettata per team di prodotto, designer e strategist. La piattaforma permette di disegnare, diagrammare, prendere note e brainstormmare a più utenti — tutto sincronizzato istantaneamente su tutti i dispositivi. Costruita con un motore di rendering canvas custom e un layer real-time basato su WebSocket, FlowCanvas offre un'esperienza fluida e a bassa latenza anche con più collaboratori simultanei. L'interfaccia minimale mantiene il focus sul contenuto, mentre strumenti potenti abilitano sessioni di ideazione profonde."
+      },
+      "problem": {
+        "title": "La Sfida",
+        "items": {
+          "item1": {
+            "title": "Abilitare la collaborazione senza latenza",
+            "description": "I team avevano bisogno di sincronizzazione visiva istantanea: cursori, forme, note e disegni dovevano aggiornarsi in tempo reale per ogni partecipante."
+          },
+          "item2": {
+            "title": "Creare un canvas ad alte prestazioni",
+            "description": "Il sistema doveva gestire strumenti vettoriali, testo, forme e disegno a mano libera senza rallentamenti."
+          },
+          "item3": {
+            "title": "Prevenire conflitti tra editor",
+            "description": "Quando più utenti modificano la stessa area, le operazioni devono essere unite con grazia."
+          },
+          "item4": {
+            "title": "Offrire una UX pulita e focalizzata",
+            "description": "Molti strumenti di whiteboard sembrano disordinati; il team voleva un ambiente minimale che incoraggiasse la creatività."
+          }
+        }
+      },
+      "solution": {
+        "title": "La Nostra Soluzione",
+        "description": "FlowCanvas offre uno spazio di lavoro collaborativo e veloce con un motore custom ottimizzato per l'interazione multi-utente.",
+        "features": {
+          "feature1": {
+            "title": "Sincronizzazione Multi-Utente in Tempo Reale",
+            "description": "Tutte le modifiche, forme, note e disegni vengono sincronizzati istantaneamente tramite stream WebSocket e aggiornamenti basati su delta. Ogni partecipante vede i cursori degli altri live — creando una consapevolezza spaziale condivisa."
+          },
+          "feature2": {
+            "title": "Motore Canvas ad Alte Prestazioni",
+            "description": "Un layer di rendering custom gestisce strumenti vettoriali, tratti a mano libera, zoom/pan, snapping, raggruppamento e trasformazioni — tutto ottimizzato per la velocità."
+          },
+          "feature3": {
+            "title": "Strumenti di Collaborazione e Cronologia",
+            "description": "FlowCanvas include commenti, annotazioni, note adesive e una timeline delle versioni che permette agli utenti di esplorare o ripristinare modifiche."
+          }
+        }
+      },
+      "results": {
+        "title": "Risultati & Impatto",
+        "metrics": {
+          "metric1": {
+            "value": "20ms",
+            "label": "Latenza media di sync"
+          },
+          "metric2": {
+            "value": "+55%",
+            "label": "Velocità di ideazione"
+          },
+          "metric3": {
+            "value": "−70%",
+            "label": "Conflitti di collaborazione"
+          },
+          "metric4": {
+            "value": "4×",
+            "label": "Prestazioni vs concorrenti"
+          }
+        }
+      },
+      "tech": {
+        "title": "Stack Tecnologico",
+        "stack": "Frontend: React, Next.js, Canvas/WebGL, Zustand, motore di rendering custom · Real-Time: layer di sincronizzazione WebSocket, aggiornamenti delta, tracking presenza, broadcasting cursori · Backend: Node.js, Redis pub/sub, PostgreSQL · Collaborazione: logica di merge ispirata a CRDT, cronologia versioni, log operazioni · Deployment: Docker, cluster di nodi scalabili"
+      },
+      "gallery": {
+        "title": "Galleria",
+        "placeholder": "Placeholder per schermate canvas"
+      },
+      "cta": {
+        "title": "Pronto a costruire il tuo prodotto collaborativo?",
+        "description": "Parliamo di come possiamo aiutarti a creare un'esperienza collaborativa potente e in tempo reale per il tuo team.",
+        "button": "Inizia il tuo progetto"
       }
     }
   }
